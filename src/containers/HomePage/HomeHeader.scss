@@ -75,7 +75,8 @@
         display: inline-block;
 
         &:hover .dropdown-content {
-          visibility: unset;
+          visibility: visible;
+          transition: visibility 0s ease-out 0.2s;
         }
         .dropdown-content {
           position: absolute;
