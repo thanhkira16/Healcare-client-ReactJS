@@ -46,17 +46,19 @@
     },
 
     "manage-user": {
+        "addingTitle": "Thêm người dùng",
+        "uploadImage": "Tải ảnh",
         "email": "Email",
         "password": "Mật khẩu",
         "firstname": "Họ",
         "lastname": "Tên",
         "address": "Địa chỉ",
-        "image": "Hình ảnh",
+        "image": "Ảnh đại diện",
         "phonenumber": "Số điện thoại",
         "gender": "Giới tính",
         "position": "Vị trí",
-        "role-id": "Vai trò",
-        "save": "Lưu"
+        "role": "Vai trò"
+       
       }
 
 }

@@ -43,20 +43,22 @@
           }
     }, 
 
+    "manage-user": {
+        "addingTitle": "Adding User With ThanhKira",
+        "uploadImage": "Upload Image",
+        "email": "Email",
+        "password": "Password",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "address": "Address",
+        "image": "Avatar",
+        "phonenumber": "Phone Number",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "save": "Save"
+    }
     
-        "manage-user": {
-          "email": "Email",
-          "password": "Password",
-          "firstname": "First Name",
-          "lastname": "Last Name",
-          "address": "Address",
-          "image": "Image",
-          "phonenumber": "Phone Number",
-          "gender": "Gender",
-          "position": "Position",
-          "role-id": "Role ID",
-          "save": "Save"
-        }
       
       
 }
