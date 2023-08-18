@@ -45,6 +45,7 @@
 
     "manage-user": {
         "addingTitle": "Adding User With ThanhKira",
+        "manageUserTitle": "Manage User With ThanhKira",
         "uploadImage": "Upload Image",
         "email": "Email",
         "password": "Password",
@@ -56,7 +57,10 @@
         "gender": "Gender",
         "position": "Position",
         "role": "Role",
-        "save": "Save"
+        "save": "Save", 
+        "userCreated": "USER CREATED SUCCESSFULLY",
+        "userDeleted": "USER DELETED SUCCESSFULLY",
+        "userDeleteFailed": "USER DELETED FAILED"
     }
     
       

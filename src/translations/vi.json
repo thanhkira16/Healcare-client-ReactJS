@@ -47,6 +47,7 @@
 
     "manage-user": {
         "addingTitle": "Thêm người dùng",
+        "manageUserTitle": "Quản lý người dùng",
         "uploadImage": "Tải ảnh",
         "email": "Email",
         "password": "Mật khẩu",
@@ -58,7 +59,10 @@
         "gender": "Giới tính",
         "position": "Vị trí",
         "role": "Vai trò",
-        "save": "Lưu"
+        "save": "Lưu",
+        "userCreated": "THÊM NGƯỜI DÙNG THÀNH CÔNG",
+        "userDeleted": "XÓA NGƯỜI DÙNG THÀNH CÔNG",
+        "userDeleteFailed": "XÓA NGƯỜI DÙNG THẤT BẠI"
       }
 
 }

@@ -27,6 +27,14 @@ const actionTypes = Object.freeze({
   //create user
   CREATE_USER_SUCCESS: "CREATE_USER_SUCCESS",
   CREATE_USER_FAILED: "CREATE_USER_FAILED",
+
+  //get all users
+  FETCH_ALL_USERS_SUCCESS: "FETCH_ALL_USERS_SUCCESS",
+  FETCH_ALL_USERS_FAILED: "FETCH_ALL_USERS_FAILED",
+
+  //delete user
+  DELETE_USER_SUCCESS: "DELETE_USER_SUCCESS",
+  DELETE_USER_FAILED: "DELETE_USER_FAILED",
 });
 
 export default actionTypes;

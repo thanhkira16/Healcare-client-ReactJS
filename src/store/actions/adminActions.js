@@ -2,7 +2,11 @@ import actionTypes from "./actionTypes";
 import {
   getAllCodeService,
   createNewUserService,
+  getAllUsers,
+  deleteUserService,
 } from "../../services/userService";
+import { toast } from "react-toastify";
+import { FormattedMessage } from "react-intl";
 //Gender
 export const fetchGenderStart = () => {
   return async (dispatch, getState) => {
@@ -81,19 +85,21 @@ export const fetchRoleFailed = () => ({
   type: actionTypes.FETCH_ROLE_FAILED,
 });
 
-//create user
+// user
 export const craateNewUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await createNewUserService(data);
       console.log("save user redux", res);
       if (res && res.errCode === 0) {
+        toast.success(<FormattedMessage id="manage-user.userCreated" />);
         dispatch(saveUserSuccess());
+        dispatch(fetchAllUserStart());
       } else {
         dispatch(saveUserFailed());
       }
     } catch (err) {
-      dispatch(fetchPositionFailed(err));
+      dispatch(saveUserFailed(err));
       console.log("Failed to fetch", err);
     }
   };
@@ -104,4 +110,58 @@ export const saveUserSuccess = () => ({
 });
 export const saveUserFailed = () => ({
   type: actionTypes.CREATE_USER_FAILED,
+});
+
+//get all users
+export const fetchAllUserStart = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllUsers("ALL");
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllUserSuccess(res.users.reverse()));
+      } else {
+        dispatch(fetchAllUserFailed());
+      }
+    } catch (err) {
+      dispatch(fetchAllUserFailed());
+      console.log("Failed to fetch", err);
+    }
+  };
+};
+
+export const fetchAllUserSuccess = (data) => ({
+  type: actionTypes.FETCH_ALL_USERS_SUCCESS,
+  users: data,
+});
+export const fetchAllUserFailed = () => ({
+  type: actionTypes.FETCH_ALL_USERS_FAILED,
+});
+
+//delete user
+export const deleteUser = (userId) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await deleteUserService(userId);
+      console.log("save user redux", res);
+      if (res && res.errCode === 0) {
+        toast.success(<FormattedMessage id="manage-user.userDeleted" />);
+        dispatch(deleteUserSuccess());
+        dispatch(fetchAllUserStart());
+      } else {
+        toast.error(<FormattedMessage id="manage-user.userDeleteFailed" />);
+        dispatch(deleteUserFailed());
+      }
+    } catch (err) {
+      dispatch(deleteUserFailed(err));
+      console.log("Failed to fetch", err);
+    }
+  };
+};
+
+export const deleteUserSuccess = () => ({
+  type: actionTypes.DELETE_USER_SUCCESS,
+});
+
+export const deleteUserFailed = (data) => ({
+  type: actionTypes.DELETE_USER_FAILED,
 });
