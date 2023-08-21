@@ -3,11 +3,14 @@ import { connect } from "react-redux";
 import "./TableManageUser.scss";
 import * as actions from "../../../store/actions";
 import { FormattedMessage } from "react-intl";
+import ModalEditUser from "./ModalEditUser";
 class TableManageUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
       usersRedux: [],
+      showModalEditUser: false,
+      userEdit: {},
     };
   }
 
@@ -25,9 +28,18 @@ class TableManageUser extends Component {
     this.props.deleteUserRedux(user.id);
   };
 
+  handleEditUser = (user) => {
+    console.log("Table manage", user);
+    this.props.handleEditUserFromParent(user);
+  };
+
+  handleCloseEditModal = () => {
+    this.setState({ showModalEditUser: false });
+  };
+
   render() {
-    console.log("check user from db", this.state.usersRedux);
     let arrUsers = this.state.usersRedux;
+    let showModalEditUser = this.state.showModalEditUser;
     return (
       <>
         <div className="title mb-3">
@@ -75,17 +87,29 @@ class TableManageUser extends Component {
                       </td>
                       <td className="d-none d-md-table-cell">{item.gender}</td>
                       <td>
-                        <button className="btn">Edit</button>
+                        <button
+                          className="btn"
+                          onClick={() => this.handleEditUser(item)}
+                        >
+                          <FormattedMessage id="manage-user.btnEdit" />
+                        </button>
                         <button
                           className="btn btn-warning"
                           onClick={() => this.handleDeleteUser(item)}
                         >
-                          Delete
+                          <FormattedMessage id="manage-user.btnDelete" />
                         </button>
                       </td>
                     </tr>
                   );
                 })}
+
+              {showModalEditUser && (
+                <ModalEditUser
+                  onCloseEditModal={this.handleCloseEditModal}
+                  currentUser={this.state.userEdit}
+                />
+              )}
             </tbody>
           </table>
         </div>

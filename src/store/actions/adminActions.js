@@ -4,6 +4,7 @@ import {
   createNewUserService,
   getAllUsers,
   deleteUserService,
+  editUserService,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 import { FormattedMessage } from "react-intl";
@@ -14,7 +15,6 @@ export const fetchGenderStart = () => {
       dispatch({ type: actionTypes.FETCH_GENDER_START });
       let res = await getAllCodeService("gender");
       if (res && res.errCode === 0) {
-        console.log(getState);
         dispatch(fetchGenderSucess(res.data));
       } else {
         dispatch(fetchGenderFailed());
@@ -90,9 +90,8 @@ export const craateNewUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await createNewUserService(data);
-      console.log("save user redux", res);
       if (res && res.errCode === 0) {
-        toast.success(<FormattedMessage id="manage-user.userCreated" />);
+        toast.success(<FormattedMessage id="manage-user.userCreatedSuccess" />);
         dispatch(saveUserSuccess());
         dispatch(fetchAllUserStart());
       } else {
@@ -142,9 +141,8 @@ export const deleteUser = (userId) => {
   return async (dispatch, getState) => {
     try {
       let res = await deleteUserService(userId);
-      console.log("save user redux", res);
       if (res && res.errCode === 0) {
-        toast.success(<FormattedMessage id="manage-user.userDeleted" />);
+        toast.success(<FormattedMessage id="manage-user.userDeletedSuccess" />);
         dispatch(deleteUserSuccess());
         dispatch(fetchAllUserStart());
       } else {
@@ -164,4 +162,34 @@ export const deleteUserSuccess = () => ({
 
 export const deleteUserFailed = (data) => ({
   type: actionTypes.DELETE_USER_FAILED,
+});
+
+//edit user
+export const editUser = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await editUserService(data);
+      if (res && res.errCode === 0) {
+        toast.success(<FormattedMessage id="manage-user.updateUserSuccess" />);
+        dispatch(editUserSuccess());
+        dispatch(fetchAllUserStart());
+      } else {
+        toast.error(
+          <FormattedMessage id="manage-user.updateUserSuccessFailed" />
+        );
+        dispatch(editUserFailed());
+      }
+    } catch (err) {
+      dispatch(editUserFailed(err));
+      console.log("Failed to fetch", err);
+    }
+  };
+};
+
+export const editUserSuccess = () => ({
+  type: actionTypes.EDIT_USER_SUCCESS,
+});
+
+export const editUserFailed = (data) => ({
+  type: actionTypes.EDIT_USER_FAILED,
 });

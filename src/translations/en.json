@@ -57,10 +57,15 @@
         "gender": "Gender",
         "position": "Position",
         "role": "Role",
-        "save": "Save", 
-        "userCreated": "USER CREATED SUCCESSFULLY",
-        "userDeleted": "USER DELETED SUCCESSFULLY",
-        "userDeleteFailed": "USER DELETED FAILED"
+        "submitCreate": "Create", 
+        "submitEdit": "Save changes",
+        "userCreatedSuccess": "USER CREATED SUCCESSFULLY",
+        "userDeletedSuccess": "USER DELETED SUCCESSFULLY",
+        "userDeleteFailed": "USER DELETED FAILED",
+        "updateUserSuccess": "UPDATE USER SUCCESSFULLY",
+        "updateUserSuccessFailed": "UPDATE USER FAILED",
+        "btnEdit": "Edit",
+        "btnDelete": "Delete"
     }
     
       
