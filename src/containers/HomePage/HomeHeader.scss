@@ -69,60 +69,67 @@
       }
 
       .dropdown-language {
-        font-size: 1.8rem;
-        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 62px;
+        height: 30px;
         position: relative;
-        display: inline-block;
-
-        &:hover .dropdown-content {
-          visibility: visible;
-          transition: visibility 0s ease-out 0.2s;
-        }
-        .dropdown-content {
+        .hide-language-btn {
           position: absolute;
-          display: flex;
+          width: 30px;
+          height: 30px;
           z-index: 1;
-          border-radius: 2px;
-          visibility: hidden;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 40px;
-          height: 76px;
-          background: var(--blue-medium-color);
-          left: 20px;
-          .language-vi {
-            width: 30px;
-            height: 30px;
-            display: block;
-            background-color: red;
-            border-radius: 50%;
-            text-align: center;
-            margin-bottom: 4px;
-            i {
-              color: yellow;
-              line-height: 30px;
-            }
-          }
-          .language-en {
-            width: 30px;
-            height: 30px;
-            display: block;
-            background-color: white;
-            border-radius: 50%;
-            text-align: center;
-            border: 1px solid #ccc;
-            i {
-              color: red;
-              font-size: 2.2rem;
-              line-height: 28px;
-            }
-          }
-
-          .offline {
-            background-color: #ccc;
+          background-color: rgba(255, 255, 255, 0.5);
+          left: 32px;
+          display: block;
+          transition: left 0.5s;
+          border: 0.5px solid #ccc;
+        }
+        .language-vi {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          display: block;
+          background-color: red;
+          text-align: center;
+          right: 0;
+          i {
+            color: yellow;
+            line-height: 30px;
           }
         }
+        .language-en {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          display: block;
+          background-color: white;
+          text-align: center;
+          border: 1px solid #ccc;
+          left: 0;
+          i {
+            color: red;
+            font-size: 2.2rem;
+            line-height: 28px;
+          }
+        }
+      }
+
+      .button {
+        width: 100px;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        background-color: lightblue;
+        color: white;
+        font-size: 20px;
+        position: relative; /* Add this to enable animation */
+        left: 0; /* Add this to set the initial position */
+        transition: left 0.5s; /* Add this to set the animation duration */
+      }
+      .button:hover {
+        background-color: blue;
       }
     }
   }

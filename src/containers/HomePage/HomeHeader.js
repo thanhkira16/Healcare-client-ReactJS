@@ -7,9 +7,27 @@ import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 
 class HomeHeader extends Component {
-  changeLanguage(language) {
-    this.props.changeLanguageAppRedux(language);
+  switchLanguage() {
+    const currLanguage = this.props.language;
+    console.log("curr", currLanguage);
+    console.log(LANGUAGES.VI, " ", LANGUAGES.EN);
+    const oppositeLanguage =
+      currLanguage === LANGUAGES.VI ? LANGUAGES.EN : LANGUAGES.VI;
+
+    const hideLanguageBtn =
+      document.getElementsByClassName("hide-language-btn")[0];
+    console.log(hideLanguageBtn);
+    console.log("op", oppositeLanguage);
+    if (oppositeLanguage === LANGUAGES.VI) {
+      hideLanguageBtn.style.left = "32px"; // Move to the left
+      console.log(hideLanguageBtn.style.left);
+    } else {
+      hideLanguageBtn.style.left = "0px"; // Move to the right
+      console.log(hideLanguageBtn.style.left);
+    }
+    this.props.changeLanguageAppRedux(oppositeLanguage);
   }
+
   render() {
     const language = this.props.language;
     return (
@@ -70,31 +88,42 @@ class HomeHeader extends Component {
                   <i className="fas fa-question-circle"></i>
                   <FormattedMessage id="homeheader.support" />
                 </div>
-                <div className="dropdown-language">
-                  <FormattedMessage id="homeheader.language" />
-                  <div className="dropdown-content">
-                    <span
-                      className={
-                        language !== LANGUAGES.VI
-                          ? "language-vi offline"
-                          : "language-vi"
-                      }
-                      onClick={() => this.changeLanguage(LANGUAGES.VI)}
-                    >
-                      <i className="fas fa-star"></i>
-                    </span>
-                    <span
-                      className={
-                        language !== LANGUAGES.EN
-                          ? "language-en offline"
-                          : "language-en"
-                      }
-                      onClick={() => this.changeLanguage(LANGUAGES.EN)}
-                    >
-                      <i className="fas fa-plus"></i>
-                    </span>
-                  </div>
+                <div
+                  className="dropdown-language "
+                  onClick={() => this.switchLanguage()}
+                >
+                  <span className="hide-language-btn"></span>
+                  <span
+                    className={`language-btn${
+                      language !== LANGUAGES.VI
+                        ? " language-vi offline"
+                        : " language-vi"
+                    }`}
+                    // onClick={() => this.changeLanguage(LANGUAGES.VI)}
+                  >
+                    <i className="fas fa-star"></i>
+                  </span>
+                  <span
+                    className={`language-btn${
+                      language !== LANGUAGES.EN
+                        ? " language-en offline"
+                        : " language-en"
+                    }`}
+                    // onClick={() => this.changeLanguage(LANGUAGES.EN)}
+                  >
+                    <i className="fas fa-plus"></i>
+                  </span>
                 </div>
+                {/* <div className="switch-language">
+                  <button
+                    id="language-button"
+                    className="button"
+                    value="en"
+                    onClick={() => this.switchLanguage()}
+                  >
+                    EN
+                  </button>
+                </div> */}
               </div>
             </div>
           </div>
