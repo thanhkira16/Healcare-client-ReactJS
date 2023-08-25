@@ -1,0 +1,18 @@
+.app {
+  .short-input {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    label {
+      font-size: 18px;
+    }
+    .select {
+      width: 30%;
+    }
+
+    .form {
+      width: 60%;
+    }
+  }
+}

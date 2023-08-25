@@ -68,6 +68,19 @@
         "updateUserSuccessFailed": "CẬP NHẬT NGƯỜI DÙNG THẤT BẠI",
         "btnEdit": "Chỉnh Sửa",
         "btnDelete": "Xóa"
-      }
+      },
 
+      "manage-doctor": {
+        "title": "Quản lý bác sỹ",
+        "doctorLabel": "Bác sỹ",
+        "description": "Mô tả",
+        "btnSave": "Lưu thông tin",
+        "saveDetailDoctorSuccess": "LƯU THÔNG TIN THÀNH CÔNG",
+        "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI"
+      },
+
+    "home-page": {
+        "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
+        "btnSeeMore": "Xem thêm"
+    }
 }

@@ -138,8 +138,6 @@ class HomeHeader extends Component {
 
                 <span className="option-banner-text">
                   <FormattedMessage id="banner.option2" />
-                  <br />
-                  <br />
                 </span>
               </a>
             </li>

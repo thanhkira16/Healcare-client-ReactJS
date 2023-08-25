@@ -35,8 +35,12 @@ class OutStandingDoctor extends Component {
     return (
       <div className="section-common section-outstanding-doctor">
         <div className="common-header">
-          <span className="title-section">common</span>
-          <button className="btn-section">See more</button>
+          <span className="title-section">
+            <FormattedMessage id="home-page.out-standings-doctor" />
+          </span>
+          <button className="btn-section">
+            <FormattedMessage id="home-page.btnSeeMore" />
+          </button>
         </div>
 
         <div className="common-body">

@@ -11,6 +11,10 @@
   }
 }
 
+.slick-disabled {
+  display: none !important;
+}
+
 .slick-next::before,
 .slick-prev::before {
   font-family: FontAwesome !important;

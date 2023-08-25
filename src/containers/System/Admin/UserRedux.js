@@ -108,16 +108,10 @@ class UserRedux extends Component {
 
   onChangeInput = (event, id) => {
     let copyState = { ...this.state };
-    console.log("Copy state: " + copyState);
     copyState[id] = event.target.value;
-    this.setState(
-      {
-        ...copyState,
-      },
-      () => {
-        console.log("check input state: ", this.state);
-      }
-    );
+    this.setState({
+      ...copyState,
+    });
   };
 
   openPreviewImage = () => {
@@ -190,6 +184,7 @@ class UserRedux extends Component {
         roleId: this.state.role,
         positionId: this.state.position,
       });
+
       this.props.fetchUserRedux();
     } else if (action === CRUD_ACTIONS.EDIT) {
       this.props.editUser({
@@ -203,7 +198,7 @@ class UserRedux extends Component {
         gender: this.state.gender,
         roleId: this.state.role,
         positionId: this.state.position,
-        // image: this.state.image,
+        image: this.state.image,
       });
     }
   };

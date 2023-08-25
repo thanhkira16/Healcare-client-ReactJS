@@ -66,8 +66,22 @@
         "updateUserSuccessFailed": "UPDATE USER FAILED",
         "btnEdit": "Edit",
         "btnDelete": "Delete"
-    }
-    
+    },
+
+    "manage-doctor": {
+        "title": "Manage Doctors",
+        "doctorLabel": "Doctor",
+        "description": "Description",
+        "btnSave": "Save changes",
+        "saveDetailDoctorSuccess": "SAVE DETAIL DOCTOR SUCCESS",
+        "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL"
+        }
+    , 
+
+    "home-page": {
+        "out-standings-doctor": "Outstanding Doctor of the Week",
+        "btnSeeMore": "See more"
+        }
       
       
 }

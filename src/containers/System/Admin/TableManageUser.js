@@ -3,13 +3,12 @@ import { connect } from "react-redux";
 import "./TableManageUser.scss";
 import * as actions from "../../../store/actions";
 import { FormattedMessage } from "react-intl";
-import ModalEditUser from "./ModalEditUser";
+
 class TableManageUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
       usersRedux: [],
-      showModalEditUser: false,
       userEdit: {},
     };
   }
@@ -33,13 +32,8 @@ class TableManageUser extends Component {
     this.props.handleEditUserFromParent(user);
   };
 
-  handleCloseEditModal = () => {
-    this.setState({ showModalEditUser: false });
-  };
-
   render() {
     let arrUsers = this.state.usersRedux;
-    let showModalEditUser = this.state.showModalEditUser;
     return (
       <>
         <div className="title mb-3">
@@ -103,13 +97,6 @@ class TableManageUser extends Component {
                     </tr>
                   );
                 })}
-
-              {showModalEditUser && (
-                <ModalEditUser
-                  onCloseEditModal={this.handleCloseEditModal}
-                  currentUser={this.state.userEdit}
-                />
-              )}
             </tbody>
           </table>
         </div>
