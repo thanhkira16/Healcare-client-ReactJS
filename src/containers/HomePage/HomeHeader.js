@@ -9,7 +9,7 @@ import { changeLanguageApp } from "../../store/actions";
 class HomeHeader extends Component {
   switchLanguage() {
     const currLanguage = this.props.language;
-    console.log("curr", currLanguage);
+
     console.log(LANGUAGES.VI, " ", LANGUAGES.EN);
     const oppositeLanguage =
       currLanguage === LANGUAGES.VI ? LANGUAGES.EN : LANGUAGES.VI;
@@ -17,7 +17,7 @@ class HomeHeader extends Component {
     const hideLanguageBtn =
       document.getElementsByClassName("hide-language-btn")[0];
     console.log(hideLanguageBtn);
-    console.log("op", oppositeLanguage);
+
     if (oppositeLanguage === LANGUAGES.VI) {
       hideLanguageBtn.style.left = "32px"; // Move to the left
       console.log(hideLanguageBtn.style.left);
@@ -129,85 +129,89 @@ class HomeHeader extends Component {
           </div>
         </div>
 
-        <div className="banner">
-          <div className="banner-container">
-            <div className=" grid-full-width">
-              <div className="title">
-                <h3>
-                  <FormattedMessage id="banner.main-title" />
-                </h3>
-                <h2>
-                  <FormattedMessage id="banner.sub-title" />
-                </h2>
+        {this.props.isShowBanner == true && (
+          <div className="banner">
+            <div className="banner-container">
+              <div className=" grid-full-width">
+                <div className="title">
+                  <h3>
+                    <FormattedMessage id="banner.main-title" />
+                  </h3>
+                  <h2>
+                    <FormattedMessage id="banner.sub-title" />
+                  </h2>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="search">
-            <i className="fas fa-search"></i>
-            <input
-              type="text"
-              placeholder={<FormattedMessage id="banner.search-placeholder" />}
-            />
-          </div>
+            <div className="search">
+              <i className="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder={
+                  <FormattedMessage id="banner.search-placeholder" />
+                }
+              />
+            </div>
 
-          <ul className="row options-banner-list">
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-hospital"></i>
-                <br />
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option1" />
-                </span>
-              </a>
-            </li>
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-mobile"></i>
-                <br />
+            <ul className="row options-banner-list">
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-hospital"></i>
+                  <br />
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option1" />
+                  </span>
+                </a>
+              </li>
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-mobile"></i>
+                  <br />
 
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option2" />
-                </span>
-              </a>
-            </li>
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-window-restore"></i>
-                <br />
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option3" />
-                </span>
-              </a>
-            </li>
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-syringe"></i>
-                <br />
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option4" />
-                </span>
-              </a>
-            </li>
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-user-md"></i>
-                <br />
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option5" />
-                </span>
-              </a>
-            </li>
-            <li className="col-2 option-banner-item">
-              <a href="#" className="option-banner-link">
-                <i className="fas fa-stethoscope"></i>
-                <br />
-                <span className="option-banner-text">
-                  <FormattedMessage id="banner.option6" />
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option2" />
+                  </span>
+                </a>
+              </li>
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-window-restore"></i>
+                  <br />
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option3" />
+                  </span>
+                </a>
+              </li>
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-syringe"></i>
+                  <br />
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option4" />
+                  </span>
+                </a>
+              </li>
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-user-md"></i>
+                  <br />
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option5" />
+                  </span>
+                </a>
+              </li>
+              <li className="col-2 option-banner-item">
+                <a href="#" className="option-banner-link">
+                  <i className="fas fa-stethoscope"></i>
+                  <br />
+                  <span className="option-banner-text">
+                    <FormattedMessage id="banner.option6" />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </React.Fragment>
     );
   }

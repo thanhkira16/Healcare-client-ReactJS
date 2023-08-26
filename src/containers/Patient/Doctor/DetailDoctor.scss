@@ -1,0 +1,35 @@
+.detail-doctor-container {
+  .introduction-doctor {
+    display: flex;
+
+    .avatar-doctor {
+      display: block;
+      border: 1px solid #ccc;
+      width: 120px;
+      height: 120px;
+      background-size: cover;
+      border-radius: 50%;
+    }
+
+    .info-doctor {
+      width: 70%;
+      margin-left: 30px;
+      .main-title {
+        margin-bottom: 15px;
+        font-size: 2.7rem;
+        font-weight: 600;
+      }
+
+      .desc {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .detail-doctor {
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    background-color: var(--gray-medium-color);
+  }
+}

@@ -48,7 +48,7 @@ class HomePage extends Component {
     };
     return (
       <>
-        <HomeHeader />
+        <HomeHeader isShowBanner={true} />
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />
