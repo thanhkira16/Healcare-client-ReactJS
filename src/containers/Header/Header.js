@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import Navigator from "../../components/Navigator";
-import { adminMenu } from "./menuApp";
+import { adminMenu, doctorMenu } from "./menuApp";
 import "./Header.scss";
 import { FormattedMessage } from "react-intl";
+import _ from "lodash";
+import { USER_ROLE } from "../../utils/constant";
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeLanguage: "vi",
+      menuApp: [],
     };
   }
 
@@ -18,14 +21,30 @@ class Header extends Component {
     this.setState({ activeLanguage: language });
   };
 
+  componentDidMount() {
+    let { userInfo } = this.props;
+    let menu = [];
+    if (userInfo && !_.isEmpty(userInfo)) {
+      let role = userInfo.roleId;
+      if (role === USER_ROLE.ADMIN) {
+        menu = adminMenu;
+      }
+      if (role === USER_ROLE.DOCTOR) {
+        menu = doctorMenu;
+      }
+    }
+    this.setState({ menuApp: menu });
+  }
+
   render() {
     const { processLogout, userInfo } = this.props;
     const { activeLanguage } = this.state;
+    // console.log("user info", userInfo);
     return (
       <div className="header-container">
         {/* thanh navigator */}
         <div className="header-tabs-container">
-          <Navigator menus={adminMenu} />
+          <Navigator menus={this.state.menuApp} />
         </div>
         <div className="languages">
           <span className="welcome">

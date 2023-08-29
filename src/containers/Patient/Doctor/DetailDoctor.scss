@@ -7,7 +7,10 @@
       border: 1px solid #ccc;
       width: 120px;
       height: 120px;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
+
       border-radius: 50%;
     }
 

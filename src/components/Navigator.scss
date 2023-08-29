@@ -45,6 +45,8 @@
         .menu-link {
           text-decoration: none;
           color: $text-in-light;
+          display: block;
+          width: 100%;
         }
         .sub-menu-list {
           display: none;

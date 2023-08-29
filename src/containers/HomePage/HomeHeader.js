@@ -5,7 +5,7 @@ import "./HomeHeader.scss";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
-
+import { withRouter } from "react-router";
 class HomeHeader extends Component {
   switchLanguage() {
     const currLanguage = this.props.language;
@@ -19,14 +19,18 @@ class HomeHeader extends Component {
     console.log(hideLanguageBtn);
 
     if (oppositeLanguage === LANGUAGES.VI) {
-      hideLanguageBtn.style.left = "32px"; // Move to the left
+      hideLanguageBtn.style.left = "0px"; // Move to the left
       console.log(hideLanguageBtn.style.left);
     } else {
-      hideLanguageBtn.style.left = "0px"; // Move to the right
+      hideLanguageBtn.style.left = "32px"; // Move to the right
       console.log(hideLanguageBtn.style.left);
     }
     this.props.changeLanguageAppRedux(oppositeLanguage);
   }
+
+  returnToHomePage = () => {
+    this.props.history.push("/home");
+  };
 
   render() {
     const language = this.props.language;
@@ -37,7 +41,11 @@ class HomeHeader extends Component {
             <div className="header-navbar row">
               <div className="col-2 nav-left">
                 <i className="fas fa-bars header-open-slidebar"></i>
-                <a href="" className="header-logo"></a>
+                <a
+                  href=""
+                  className="header-logo"
+                  onClick={this.returnToHomePage}
+                ></a>
               </div>
               <div className="col-8 nav-center">
                 <ul className="row nav-center-list">
@@ -230,4 +238,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(HomeHeader)
+);

@@ -89,7 +89,7 @@ export const fetchRoleFailed = () => ({
 });
 
 // user
-export const craateNewUser = (data) => {
+export const createNewUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await createNewUserService(data);
@@ -102,7 +102,7 @@ export const craateNewUser = (data) => {
       }
     } catch (err) {
       dispatch(saveUserFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to create new user", err);
     }
   };
 };
@@ -126,7 +126,7 @@ export const fetchAllUserStart = () => {
       }
     } catch (err) {
       dispatch(fetchAllUserFailed());
-      console.log("Failed to fetch", err);
+      console.log("Failed to get all users", err);
     }
   };
 };
@@ -154,7 +154,7 @@ export const deleteUser = (userId) => {
       }
     } catch (err) {
       dispatch(deleteUserFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to delete user", err);
     }
   };
 };
@@ -184,7 +184,7 @@ export const editUser = (data) => {
       }
     } catch (err) {
       dispatch(editUserFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to edit user", err);
     }
   };
 };
@@ -210,7 +210,7 @@ export const fetchTopDoctor = () => {
       }
     } catch (err) {
       dispatch(fetchTopDoctorFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to get top doctors", err);
     }
   };
 };
@@ -236,7 +236,7 @@ export const fetchAllDoctors = () => {
       }
     } catch (err) {
       dispatch(fetchAllDoctorsFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to get all doctor", err);
     }
   };
 };
@@ -252,7 +252,7 @@ export const fetchAllDoctorsFailed = (data) => ({
 
 //save details doctor
 export const doSaveDetailDoctor = (data) => {
-  console.log(data);
+  console.log("do detail doctor admin actions", data);
   return async (dispatch, getState) => {
     try {
       let res = await saveDetailDoctor(data);
@@ -269,7 +269,7 @@ export const doSaveDetailDoctor = (data) => {
       }
     } catch (err) {
       dispatch(doSaveDetailDoctorFailed(err));
-      console.log("Failed to fetch", err);
+      console.log("Failed to save doctor", err);
     }
   };
 };
@@ -280,4 +280,30 @@ export const doSaveDetailDoctorSuccess = (res) => ({
 
 export const doSaveDetailDoctorFailed = (data) => ({
   type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
+});
+
+//getch schedule Time for doctor
+export const fetchAllScheduleTime = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllCodeService("TIME");
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllScheduleTimeSuccess(res));
+      } else {
+        dispatch(fetchAllScheduleTimeFailed());
+      }
+    } catch (err) {
+      dispatch(fetchAllScheduleTimeFailed(err));
+      console.log("Failed to fetch All code time", err);
+    }
+  };
+};
+
+export const fetchAllScheduleTimeSuccess = (res) => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+  dataTime: res.data,
+});
+
+export const fetchAllScheduleTimeFailed = (data) => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
 });

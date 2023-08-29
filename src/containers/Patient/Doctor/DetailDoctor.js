@@ -5,6 +5,7 @@ import { getDetailInfoDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import "../../../styles/Base.scss";
 import "./DetailDoctor.scss";
+
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);

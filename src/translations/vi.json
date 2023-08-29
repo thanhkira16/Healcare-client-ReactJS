@@ -40,8 +40,11 @@
 
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý cẩm nang"
-        }
+        },
 
+        "doctor": {
+          "manage-schedule": "Quản lý lịch khám bệnh"
+        }
         
     },
 
@@ -82,5 +85,11 @@
     "home-page": {
         "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
         "btnSeeMore": "Xem thêm"
+    },
+
+    "manage-schedules": {
+      "title": "Quản lý lịch khám bệnh",
+      "pick-doctor": "Chọn bác sỹ",
+      "pick-date": "Chọn ngày khám"
     }
 }

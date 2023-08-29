@@ -64,6 +64,12 @@ class Login extends Component {
       isShowPassword: !prevState.isShowPassword,
     }));
   };
+
+  handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      this.handleLogin();
+    }
+  };
   render() {
     return (
       <section
@@ -121,6 +127,7 @@ class Login extends Component {
                             onChange={(event) =>
                               this.handlePasswordChange(event)
                             }
+                            onKeyDown={(event) => this.handleKeyDown(event)}
                           />
 
                           <button

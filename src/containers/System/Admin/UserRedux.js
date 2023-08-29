@@ -172,7 +172,7 @@ class UserRedux extends Component {
 
     let action = this.state.action;
     if (action === CRUD_ACTIONS.CREATE) {
-      this.props.craateNewUser({
+      this.props.createNewUser({
         email: this.state.email,
         password: this.state.password,
         firstname: this.state.firstname,
@@ -536,7 +536,7 @@ const mapDispatchToProps = (dispatch) => {
     getGenderStart: () => dispatch(actions.fetchGenderStart()),
     getPositionStart: () => dispatch(actions.fetchPositionStart()),
     getRoleStart: () => dispatch(actions.fetchRoleStart()),
-    craateNewUser: (data) => dispatch(actions.craateNewUser(data)),
+    createNewUser: (data) => dispatch(actions.createNewUser(data)),
     fetchUserRedux: () => dispatch(actions.fetchAllUserStart()),
     editUser: (data) => dispatch(actions.editUser(data)),
   };
