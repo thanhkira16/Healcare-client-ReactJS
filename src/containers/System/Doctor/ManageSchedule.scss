@@ -3,9 +3,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .btn {
-    margin-top: 4px;
+    .btn-custom {
+      width: 200px;
+      &.active {
+        background-color: var(--blue-medium-color);
+      }
+    }
   }
 }

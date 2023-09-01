@@ -1,97 +1,101 @@
 {
+  "homeheader": {
+    "speciality": "Speciality",
+    "searchdoctor": "Find doctors by speciality",
+    "health-facility": "Health facility",
+    "select-room": "Select hospital/clinic",
+    "doctor": "Doctor",
+    "select-doctor": "Select a good doctor",
+    "fee": "Package fee",
+    "check-health": "General health check",
+    "support": "Support",
+    "language": "Language",
+    "welcome": "Welcome "
+  },
 
-    "homeheader": {
-        "speciality": "Speciality",
-        "searchdoctor": "Find doctors by speciality",
-        "health-facility": "Health facility",
-        "select-room": "Select hospital/clinic",
-        "doctor": "Doctor",
-        "select-doctor": "Select a good doctor",
-        "fee": "Package fee",
-        "check-health": "General health check",
-        "support": "Support", 
-        "language": "Language", 
-        "welcome": "Welcome "
-        },
-        
-    "banner": {
-        "main-title": "HEALTHCARE PLATFORM ",
-        "sub-title": "COMPREHENSIVE HEALTHCARE",
-        "search-placeholder": "Find a doctor",
-        "option1": "Specialty Examination",
-        "option2": "Remote Consultation",
-        "option3": "General Check-up",
-        "option4": "Medical Tests",
-        "option5": "Mental Health",
-        "option6": "Dental Examination"
-     },
-    "menu": {
+  "banner": {
+    "main-title": "HEALTHCARE PLATFORM ",
+    "sub-title": "COMPREHENSIVE HEALTHCARE",
+    "search-placeholder": "Find a doctor",
+    "option1": "Specialty Examination",
+    "option2": "Remote Consultation",
+    "option3": "General Check-up",
+    "option4": "Medical Tests",
+    "option5": "Mental Health",
+    "option6": "Dental Examination"
+  },
+  "menu": {
+    "admin": {
+      "manage-user": "Manage Users",
+      "manage-doctor": "Manage Doctors",
+      "manage-admin": "Manage Admin",
+      "crud": "CRUD User",
+      "crud-redux": "CRUD Redux",
 
-        "admin": {
-            "manage-user": "Manage Users",
-            "manage-doctor": "Manage Doctors",
-            "manage-admin": "Manage Admin",
-            "crud": "CRUD User",
-            "crud-redux": "CRUD Redux",
-
-            "manage-clinic": "Manage Clinics",
-            "clinic": "Clinic",
-            "specialty": "Specialty",
-            "manage-specialty": "Manage Specialties",
-            "handbook": "Handbook",
-            "manage-handbook": "Manage Handbooks"
-          },
-
-          "doctor": {
-            "manage-schedule": "Manage Doctor's Schedule"
-          }
-    }, 
-
-    "manage-user": {
-        "addingTitle": "Adding User With ThanhKira",
-        "manageUserTitle": "Manage User With ThanhKira",
-        "uploadImage": "Upload Image",
-        "email": "Email",
-        "password": "Password",
-        "firstname": "First Name",
-        "lastname": "Last Name",
-        "address": "Address",
-        "image": "Avatar",
-        "phonenumber": "Phone Number",
-        "gender": "Gender",
-        "position": "Position",
-        "role": "Role",
-        "submitCreate": "Create", 
-        "submitEdit": "Save changes",
-        "userCreatedSuccess": "USER CREATED SUCCESSFULLY",
-        "userDeletedSuccess": "USER DELETED SUCCESSFULLY",
-        "userDeleteFailed": "USER DELETED FAILED",
-        "updateUserSuccess": "UPDATE USER SUCCESSFULLY",
-        "updateUserSuccessFailed": "UPDATE USER FAILED",
-        "btnEdit": "Edit",
-        "btnDelete": "Delete"
+      "manage-clinic": "Manage Clinics",
+      "clinic": "Clinic",
+      "specialty": "Specialty",
+      "manage-specialty": "Manage Specialties",
+      "handbook": "Handbook",
+      "manage-handbook": "Manage Handbooks"
     },
 
-    "manage-doctor": {
-        "title": "Manage Doctors",
-        "doctorLabel": "Doctor",
-        "description": "Description",
-        "btnSave": "Save changes",
-        "saveDetailDoctorSuccess": "SAVE DETAIL DOCTOR SUCCESS",
-        "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL"
-        }
-    , 
+    "doctor": {
+      "manage-schedule": "Manage Doctor's Schedule"
+    }
+  },
 
-    "home-page": {
-        "out-standings-doctor": "Outstanding Doctor of the Week",
-        "btnSeeMore": "See more"
-        }
-      ,
-      
-    "manage-schedules": {
-        "title": "Quản lý lịch khám bệnh",
-        "pick-doctor": "Chọn bác sỹ",
-        "pick-date": "Chọn ngày khám"
-      }
-      
+  "manage-user": {
+    "addingTitle": "Adding User With ThanhKira",
+    "manageUserTitle": "Manage User With ThanhKira",
+    "uploadImage": "Upload Image",
+    "email": "Email",
+    "password": "Password",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "address": "Address",
+    "image": "Avatar",
+    "phonenumber": "Phone Number",
+    "gender": "Gender",
+    "position": "Position",
+    "role": "Role",
+    "submitCreate": "Create",
+    "submitEdit": "Save changes",
+    "userCreatedSuccess": "USER CREATED SUCCESSFULLY",
+    "userDeletedSuccess": "USER DELETED SUCCESSFULLY",
+    "userDeleteFailed": "USER DELETED FAILED",
+    "updateUserSuccess": "UPDATE USER SUCCESSFULLY",
+    "updateUserSuccessFailed": "UPDATE USER FAILED",
+    "btnEdit": "Edit",
+    "btnDelete": "Delete"
+  },
+
+  "manage-doctor": {
+    "title": "Manage Doctors",
+    "doctorLabel": "Doctor",
+    "description": "Description",
+    "btnSave": "Save changes",
+    "saveDetailDoctorSuccess": "SAVE DETAIL DOCTOR SUCCESS",
+    "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL"
+  },
+  "home-page": {
+    "out-standings-doctor": "Outstanding Doctor of the Week",
+    "btnSeeMore": "See more"
+  },
+  "manage-schedules": {
+    "title": "Manage Medical Appointment Schedules",
+    "pick-doctor": "Select Doctor",
+    "pick-date": "Select Examination Date",
+    "btnSave": "Save",
+    "saveChangesSuccess": "Information saved successfully",
+    "saveChangesFailed": "Failed to save information",
+    "invalidDoctor": "Please select a name",
+    "invalidDate": "Please select a date"
+  },
+  "patient": {
+    "appointment": "APPOINTMENT",
+    "not-available-time": "No appointment is available on this date",
+    "pick-time-tittle-first-part": "Choose",
+    "pick-time-tittle-second-part": " and book (Booking fee 0$)"
+  }
 }

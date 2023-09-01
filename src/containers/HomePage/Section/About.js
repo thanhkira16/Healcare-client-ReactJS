@@ -17,23 +17,47 @@ class About extends Component {
               </div>
               <ul className="social-list col-6">
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://www.youtube.com/watch?v=mstAc81lpMc"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
 
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://vietnamnet.vn/thong-tin-truyen-thong"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://infonet.vietnamnet.vn/da-co-hon-20000-luot-benh-nhan-dat-lich-kham-qua-bookingcare-175080.html"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://suckhoedoisong.vn/dat-lich-kham-benh-tiet-kiem-thong-minh-va-hieu-qua-169153232.htm"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://video.vnexpress.net/cuoc-song-4-0/kham-benh-khong-phai-xep-hang-o-ha-noi-3797126.html"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
                 <li className="social-item">
-                  <a href="#" target="_blank" className="social-link"></a>
+                  <a
+                    href="https://vtv.vn/video/ca-phe-khoi-nghiep-14-11-2018-334894.htm"
+                    target="_blank"
+                    className="social-link"
+                  ></a>
                 </li>
               </ul>
             </div>

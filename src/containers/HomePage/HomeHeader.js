@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./Base.scss";
 import "./HomeHeader.scss";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
@@ -37,55 +36,55 @@ class HomeHeader extends Component {
     return (
       <React.Fragment>
         <div className="header">
-          <div className="grid">
+          <div className="container">
             <div className="header-navbar row">
               <div className="col-2 nav-left">
                 <i className="fas fa-bars header-open-slidebar"></i>
                 <a
                   href=""
-                  className="header-logo"
+                  className="header-logo d-none d-md-block"
                   onClick={this.returnToHomePage}
                 ></a>
               </div>
               <div className="col-8 nav-center">
                 <ul className="row nav-center-list">
-                  <li className="col-2 nav-center-item">
+                  <li className="col-md-3 d-none d-md-block nav-center-item">
                     <p className="main-title">
                       <b>
                         <FormattedMessage id="homeheader.speciality" />
                       </b>
                     </p>
-                    <p className="sub-title">
+                    <p className="sub-title d-none d-sm-block ">
                       <FormattedMessage id="homeheader.searchdoctor" />
                     </p>
                   </li>
-                  <li className="col-2 nav-center-item">
+                  <li className="col-md-3 d-none d-md-block nav-center-item">
                     <p className="main-title">
                       <b>
                         <FormattedMessage id="homeheader.health-facility" />
                       </b>
                     </p>
-                    <p className="sub-title">
+                    <p className="sub-title d-none d-sm-block ">
                       <FormattedMessage id="homeheader.select-room" />
                     </p>
                   </li>
-                  <li className="col-2 nav-center-item">
+                  <li className="col-md-3 d-none d-md-block nav-center-item">
                     <p className="main-title">
                       <b>
                         <FormattedMessage id="homeheader.doctor" />
                       </b>
                     </p>
-                    <p className="sub-title">
+                    <p className="sub-title d-none d-sm-block ">
                       <FormattedMessage id="homeheader.select-doctor" />
                     </p>
                   </li>
-                  <li className="col-2 nav-center-item">
+                  <li className="col-md-3 d-none d-md-block nav-center-item">
                     <p className="main-title">
                       <b>
                         <FormattedMessage id="homeheader.fee" />
                       </b>
                     </p>
-                    <p className="sub-title">
+                    <p className="sub-title d-none d-sm-block ">
                       <FormattedMessage id="homeheader.check-health" />
                     </p>
                   </li>
@@ -140,7 +139,7 @@ class HomeHeader extends Component {
         {this.props.isShowBanner == true && (
           <div className="banner">
             <div className="banner-container">
-              <div className=" grid-full-width">
+              <div className=" container-full-width">
                 <div className="title">
                   <h3>
                     <FormattedMessage id="banner.main-title" />

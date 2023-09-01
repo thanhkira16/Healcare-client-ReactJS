@@ -8,9 +8,9 @@ import HandBook from "./Section/HandBook";
 import About from "./Section/About";
 import Footer from "./Section/Footer";
 import "./HomePage.scss";
-import "./Base.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../../styles/Base.scss";
 class HomePage extends Component {
   render() {
     let settings = {

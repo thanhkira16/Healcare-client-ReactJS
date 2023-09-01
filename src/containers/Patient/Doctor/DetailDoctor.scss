@@ -4,35 +4,42 @@
 
     .avatar-doctor {
       display: block;
-      border: 1px solid #ccc;
       width: 120px;
       height: 120px;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
-
+      margin-left: 40px;
       border-radius: 50%;
+      border: none;
     }
 
     .info-doctor {
-      width: 70%;
+      width: 600px;
       margin-left: 30px;
       .main-title {
-        margin-bottom: 15px;
-        font-size: 2.7rem;
+        margin-bottom: 5px;
+        font-size: 2.4rem;
         font-weight: 600;
       }
 
       .desc {
-        font-size: 13px;
+        font-size: 14px;
       }
     }
   }
+}
 
-  .detail-doctor {
-    width: 100%;
-    border-top: 1px solid var(--border-color);
-    padding-top: 10px;
-    background-color: var(--gray-medium-color);
+.detail-doctor {
+  width: 100%;
+  padding-top: 10px;
+  background-color: var(--gray-medium-color);
+  .detail-doctor-content {
+    padding: 0 50px 20px 50px;
   }
+}
+
+.comment-doctor {
+  height: 100px;
+  width: 100px;
 }

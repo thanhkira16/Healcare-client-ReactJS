@@ -19,50 +19,6 @@ html {
   box-sizing: border-box;
 }
 
-.btn {
-  max-width: 142px;
-  height: 34px;
-  background-color: var(--gray-medium-color);
-  text-decoration: none;
-  border: none;
-  border-radius: 2px;
-  font-size: 1.6rem;
-  padding: 0 12px;
-  outline: none;
-  cursor: pointer;
-  color: var(--text-color);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 4px;
-}
-.btn {
-  &.btn--normal {
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-      color: var(--white-color);
-    }
-  }
-
-  &.btn--size-s {
-    font-size: 12px;
-    padding: 0 8px;
-    margin-bottom: 4px;
-    border: 1px solid var(--border-color);
-  }
-
-  &.btn--primary {
-    color: var(--white-color);
-    background-color: var(--blue-medium-color);
-  }
-
-  &.btn-disabled {
-    cursor: default;
-    color: #949494;
-    background: #c3c3c3;
-  }
-}
-
 /* Responsive  */
 .grid {
   display: block;

@@ -31,7 +31,7 @@
       width: 50%;
       .nav-center-list {
         padding-left: 0;
-        width: 100%;
+
         padding-top: 10px;
         display: flex;
         justify-content: center;
@@ -39,7 +39,7 @@
         .nav-center-item {
           display: flex;
           flex-direction: column;
-          width: 25%;
+
           align-self: baseline;
           .main-title {
             margin-bottom: 0;

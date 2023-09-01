@@ -1,95 +1,104 @@
 {
-    "homeheader": {
-        "speciality": "Chuyên khoa",
-        "searchdoctor":"Tìm bác sĩ theo chuyên khoa",
-        "health-facility": "Cơ sở y tế",
-        "select-room":"Chọn bệnh viện phòng khám",
-        "doctor":"Bác sĩ",
-        "select-doctor":"Chọn bác sĩ giỏi",
-        "fee": "Gói khám",
-        "check-health": "Khám sức khỏe tổng quát ",
-        "support": "Hỗ trợ", 
-        "language": "Ngôn ngữ",
-        "welcome": "Xin chào "
-    },
-    "banner": {
-        "main-title": "NỀN TẢNG Y TẾ ",
-        "sub-title": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
-        "search-placeholder": "Tìm bác sĩ",
-        "option1": "Khám chuyên Khoa",
-        "option2": "Khám từ xa",
-        "option3": "Khám tổng quát",
-        "option4": "Xét nghiệp y học",
-        "option5": "Sức khỏe tinh thần",
-        "option6": "Khám nha khoa"
-      },
-    "menu": {
+  "homeheader": {
+    "speciality": "Chuyên khoa",
+    "searchdoctor": "Tìm bác sĩ theo chuyên khoa",
+    "health-facility": "Cơ sở y tế",
+    "select-room": "Chọn bệnh viện phòng khám",
+    "doctor": "Bác sĩ",
+    "select-doctor": "Chọn bác sĩ giỏi",
+    "fee": "Gói khám",
+    "check-health": "Khám sức khỏe tổng quát ",
+    "support": "Hỗ trợ",
+    "language": "Ngôn ngữ",
+    "welcome": "Xin chào "
+  },
+  "banner": {
+    "main-title": "NỀN TẢNG Y TẾ ",
+    "sub-title": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+    "search-placeholder": "Tìm bác sĩ",
+    "option1": "Khám chuyên Khoa",
+    "option2": "Khám từ xa",
+    "option3": "Khám tổng quát",
+    "option4": "Xét nghiệp y học",
+    "option5": "Sức khỏe tinh thần",
+    "option6": "Khám nha khoa"
+  },
+  "menu": {
+    "admin": {
+      "manage-user": "Quản lý người dùng",
+      "manage-doctor": "Quản lý bác sỹ",
+      "manage-admin": "Quản lý admin",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD redux",
 
-        "admin": {
-            "manage-user": "Quản lý người dùng",
-            "manage-doctor": "Quản lý bác sỹ",
-            "manage-admin": "Quản lý admin", 
-            "crud": "CRUD user",
-            "crud-redux": "CRUD redux",
+      "manage-clinic": "Quản lý phòng khám",
+      "clinic": "Phòng khám",
 
-            "manage-clinic": "Quản lý phòng khám",
-            "clinic": "Phòng khám",
+      "specialty": "Chuyên khoa",
+      "manage-specialty": "Quản lý chuyên khoa",
 
-            "specialty": "Chuyên khoa",
-            "manage-specialty": "Quản lý chuyên khoa",
-
-            "handbook": "Cẩm nang",
-            "manage-handbook": "Quản lý cẩm nang"
-        },
-
-        "doctor": {
-          "manage-schedule": "Quản lý lịch khám bệnh"
-        }
-        
+      "handbook": "Cẩm nang",
+      "manage-handbook": "Quản lý cẩm nang"
     },
 
-    "manage-user": {
-        "addingTitle": "Thêm Người Dùng Với ThanhKira",
-        "manageUserTitle": "Quản Lý Người Dùng Với ThanhKira",
-        "uploadImage": "Tải Ảnh Lên",
-        "email": "Email",
-        "password": "Mật Khẩu",
-        "firstname": "Tên",
-        "lastname": "Họ",
-        "address": "Địa Chỉ",
-        "image": "Ảnh Đại Diện",
-        "phonenumber": "Số Điện Thoại",
-        "gender": "Giới Tính",
-        "position": "Vị Trí",
-        "role": "Vai Trò",
-        "submitCreate": "Tạo Mới",
-        "submitEdit": "Lưu Thay Đổi",
-        "userCreatedSuccess": "NGƯỜI DÙNG ĐÃ ĐƯỢC TẠO THÀNH CÔNG",
-        "userDeletedSuccess": "NGƯỜI DÙNG ĐÃ ĐƯỢC XÓA THÀNH CÔNG",
-        "userDeleteFailed": "XÓA NGƯỜI DÙNG THẤT BẠI",
-        "updateUserSuccess": "CẬP NHẬT NGƯỜI DÙNG THÀNH CÔNG",
-        "updateUserSuccessFailed": "CẬP NHẬT NGƯỜI DÙNG THẤT BẠI",
-        "btnEdit": "Chỉnh Sửa",
-        "btnDelete": "Xóa"
-      },
-
-      "manage-doctor": {
-        "title": "Quản lý bác sỹ",
-        "doctorLabel": "Bác sỹ",
-        "description": "Mô tả",
-        "btnSave": "Lưu thông tin",
-        "saveDetailDoctorSuccess": "LƯU THÔNG TIN THÀNH CÔNG",
-        "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI"
-      },
-
-    "home-page": {
-        "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
-        "btnSeeMore": "Xem thêm"
-    },
-
-    "manage-schedules": {
-      "title": "Quản lý lịch khám bệnh",
-      "pick-doctor": "Chọn bác sỹ",
-      "pick-date": "Chọn ngày khám"
+    "doctor": {
+      "manage-schedule": "Quản lý lịch khám bệnh"
     }
+  },
+
+  "manage-user": {
+    "addingTitle": "Thêm Người Dùng Với ThanhKira",
+    "manageUserTitle": "Quản Lý Người Dùng Với ThanhKira",
+    "uploadImage": "Tải Ảnh Lên",
+    "email": "Email",
+    "password": "Mật Khẩu",
+    "firstname": "Tên",
+    "lastname": "Họ",
+    "address": "Địa Chỉ",
+    "image": "Ảnh Đại Diện",
+    "phonenumber": "Số Điện Thoại",
+    "gender": "Giới Tính",
+    "position": "Vị Trí",
+    "role": "Vai Trò",
+    "submitCreate": "Tạo Mới",
+    "submitEdit": "Lưu Thay Đổi",
+    "userCreatedSuccess": "NGƯỜI DÙNG ĐÃ ĐƯỢC TẠO THÀNH CÔNG",
+    "userDeletedSuccess": "NGƯỜI DÙNG ĐÃ ĐƯỢC XÓA THÀNH CÔNG",
+    "userDeleteFailed": "XÓA NGƯỜI DÙNG THẤT BẠI",
+    "updateUserSuccess": "CẬP NHẬT NGƯỜI DÙNG THÀNH CÔNG",
+    "updateUserSuccessFailed": "CẬP NHẬT NGƯỜI DÙNG THẤT BẠI",
+    "btnEdit": "Chỉnh Sửa",
+    "btnDelete": "Xóa"
+  },
+
+  "manage-doctor": {
+    "title": "Quản lý bác sỹ",
+    "doctorLabel": "Bác sỹ",
+    "description": "Mô tả",
+    "btnSave": "Lưu thông tin",
+    "saveDetailDoctorSuccess": "LƯU THÔNG TIN THÀNH CÔNG",
+    "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI"
+  },
+
+  "home-page": {
+    "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
+    "btnSeeMore": "Xem thêm"
+  },
+
+  "manage-schedules": {
+    "title": "Quản lý lịch khám bệnh",
+    "pick-doctor": "Chọn bác sỹ",
+    "pick-date": "Chọn ngày khám",
+    "btnSave": "Lưu",
+    "saveChangesSuccess": "Lưu thông tin thành công",
+    "saveChangesFailed": "Lưu thông tin thất bại",
+    "invalidDoctor": "Vui lòng chọn tên",
+    "invalidDate": "Vui lòng chọn ngày"
+  },
+  "patient": {
+    "appointment": "Lịch khám",
+    "not-available-time": "Không có lịch khám vào ngày này",
+    "pick-time-tittle-first-part": "Chọn",
+    "pick-time-tittle-second-part": " và đặt (Phí đặt lịch 0đ)"
+  }
 }

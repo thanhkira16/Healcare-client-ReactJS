@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import HomeHeader from "../../HomePage/HomeHeader";
 import { getDetailInfoDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
-import "../../../styles/Base.scss";
 import "./DetailDoctor.scss";
-
+import DoctorSchedule from "./DoctorSchedule";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -26,12 +25,12 @@ class DetailDoctor extends Component {
           detailDoctor: res.data,
         });
       }
-      console.log(res);
+      // console.log(res);
     }
   }
 
   render() {
-    console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.id);
     let language = this.props.language;
     let { detailDoctor } = this.state;
 
@@ -44,7 +43,7 @@ class DetailDoctor extends Component {
     return (
       <>
         <HomeHeader isShowBanner={false} />
-        <div className="detail-doctor-container grid">
+        <div className="detail-doctor-container container">
           <div className="introduction-doctor">
             <span
               className="avatar-doctor"
@@ -63,8 +62,23 @@ class DetailDoctor extends Component {
               </p>
             </div>
           </div>
-          <div className="schedule-doctor"></div>
-          <div className="detail-doctor">
+          <div className="schedule-doctor container">
+            <div class="row">
+              <div class="col-md-7 col-sm-12">
+                <DoctorSchedule
+                  doctorId={
+                    detailDoctor && detailDoctor.id ? detailDoctor.id : -1
+                  }
+                />
+              </div>
+              <div class="col-md-5 col-sm-12">
+                <div class="bg-secondary"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="detail-doctor container-fluid">
+          <div className="container detail-doctor-content">
             {detailDoctor &&
               detailDoctor.Markdown &&
               detailDoctor.Markdown.contentHTML && (
@@ -75,8 +89,8 @@ class DetailDoctor extends Component {
                 />
               )}
           </div>
-          <div className="comment-doctor"></div>
         </div>
+        <div className="comment-doctor"></div>
       </>
     );
   }
