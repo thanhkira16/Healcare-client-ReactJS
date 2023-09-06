@@ -1,0 +1,90 @@
+.open-close-price-detail-btn {
+  color: var(--blue-medium-color);
+  cursor: pointer;
+}
+
+.price-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--bold-color);
+  font-weight: bold;
+}
+
+.doctor-extra-info-container {
+  .content-up {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .text-address {
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: var(--bold-color);
+      font-weight: bold;
+    }
+    .name-clinic {
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-size: 13px;
+      padding: 3px 0;
+    }
+    .detail-address {
+      margin-bottom: 4px;
+      font-size: 13px;
+      padding: 3px 0;
+    }
+  }
+
+  .content-down {
+    border-top: 1px solid var(--border-color-light);
+    padding-top: 10px;
+    margin-top: 10px;
+
+    .price-content-up {
+      .price-sub-title {
+        display: inline-block;
+        padding: 0 4px;
+        color: var(--black-color);
+      }
+
+      .open-close-price-detail-btn {
+        color: var(--blue-medium-color);
+        cursor: pointer;
+      }
+    }
+
+    .price-content-down {
+      .price-detail {
+        border: 1px solid var(--border-color);
+        padding-top: 6px;
+        .price-detail-title {
+          padding: 0 6px;
+          display: flex;
+          justify-content: space-between;
+          color: var(--black-color);
+          font-size: 1.6rem;
+          margin-bottom: 4px;
+        }
+
+        .price-desc {
+          padding: 0 6px;
+          font-size: 1.4rem;
+          color: var(--black-medium-color);
+          margin-bottom: 4px;
+        }
+
+        .payment-method-detail {
+          padding: 4px 6px;
+          width: 100%;
+          height: 20%;
+          border-top: var(--border-color);
+          background-color: #ddd;
+        }
+      }
+      .open-close-price-detail-btn {
+        margin-top: 10px;
+        display: block;
+      }
+    }
+  }
+}

@@ -76,7 +76,19 @@
     "description": "Description",
     "btnSave": "Save changes",
     "saveDetailDoctorSuccess": "SAVE DETAIL DOCTOR SUCCESS",
-    "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL"
+    "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL",
+
+    "provinceLabel": "Province",
+    "paymentLabel": "Payment Method",
+    "priceLabel": "Price",
+    "nameClinic": "Name of clinic",
+    "addressClinic": "Address of clinic",
+    "note": "Note",
+
+    "select-placeholder-doctor": "Select a doctor",
+    "select-placeholder-province": "Select a province",
+    "select-placeholder-payment": "Select a payment method",
+    "select-placeholder-price": "Select a price"
   },
   "home-page": {
     "out-standings-doctor": "Outstanding Doctor of the Week",
@@ -93,9 +105,39 @@
     "invalidDate": "Please select a date"
   },
   "patient": {
-    "appointment": "APPOINTMENT",
-    "not-available-time": "No appointment is available on this date",
-    "pick-time-tittle-first-part": "Choose",
-    "pick-time-tittle-second-part": " and book (Booking fee 0$)"
+    "detail-doctor": {
+      "appointment": "APPOINTMENT",
+      "not-available-time": "No appointment is available on this date",
+      "pick-time-tittle-first-part": "Choose",
+      "pick-time-tittle-second-part": " and book (Booking fee 0$)"
+    },
+    "extra-infor-doctor": {
+      "address-title": "CLINIC ADDRESS",
+      "price-title": "Medical examination price",
+      "payment-detail": "The clinic accepts payment via: ",
+      "show-price-detail": "View Details",
+      "hide-price-detail": "Hide Price List"
+    },
+
+    "booking-modal": {
+      "fullname": "Full Name",
+      "fullname-placeholder": "Enter your full name",
+      "phonenumber": "Phone Number",
+      "phonenumber-placeholder": "Enter your phone number",
+      "email": "Email",
+      "email-placeholder": "Enter your email",
+      "gender": "Gender",
+      "gender-placeholder": "Select gender",
+      "address": "Address",
+      "address-placeholder": "Enter your address",
+      "birthday": "Birthday",
+      "reason": "Reason for Examination",
+      "btn-confirm": "Confirm",
+      "btn-cancel": "Cancel",
+      "booking-title": "BOOK APPOINTMENT",
+      "price-title": "Price",
+      "booking-success": "Booking Successfully",
+      "booking-failed": "Booking Failed"
+    }
   }
 }

@@ -4,7 +4,10 @@ import HomeHeader from "../../HomePage/HomeHeader";
 import { getDetailInfoDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import "./DetailDoctor.scss";
+import "../../../styles/Base.scss";
 import DoctorSchedule from "./DoctorSchedule";
+import DoctorExtraInfor from "./DoctorExtraInfor";
+
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +28,7 @@ class DetailDoctor extends Component {
           detailDoctor: res.data,
         });
       }
-      // console.log(res);
+      console.log("detail doctor", res);
     }
   }
 
@@ -72,7 +75,11 @@ class DetailDoctor extends Component {
                 />
               </div>
               <div class="col-md-5 col-sm-12">
-                <div class="bg-secondary"></div>
+                <DoctorExtraInfor
+                  doctorId={
+                    detailDoctor && detailDoctor.id ? detailDoctor.id : -1
+                  }
+                />
               </div>
             </div>
           </div>

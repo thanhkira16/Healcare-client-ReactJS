@@ -77,7 +77,16 @@
     "description": "Mô tả",
     "btnSave": "Lưu thông tin",
     "saveDetailDoctorSuccess": "LƯU THÔNG TIN THÀNH CÔNG",
-    "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI"
+    "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI",
+
+    "provinceLabel": "Tỉnh/Thành phố",
+    "paymentLabel": "Phương thức thanh toán",
+    "priceLabel": "Giá",
+
+    "select-placeholder-doctor": "Chọn một bác sĩ",
+    "select-placeholder-province": "Chọn tỉnh/Thành phố",
+    "select-placeholder-payment": "Chọn phương thức thanh toán",
+    "select-placeholder-price": "Chọn giá"
   },
 
   "home-page": {
@@ -96,9 +105,40 @@
     "invalidDate": "Vui lòng chọn ngày"
   },
   "patient": {
-    "appointment": "Lịch khám",
-    "not-available-time": "Không có lịch khám vào ngày này",
-    "pick-time-tittle-first-part": "Chọn",
-    "pick-time-tittle-second-part": " và đặt (Phí đặt lịch 0đ)"
+    "detail-doctor": {
+      "appointment": "Lịch khám",
+      "not-available-time": "Không có lịch khám vào ngày này",
+      "pick-time-tittle-first-part": "Chọn",
+      "pick-time-tittle-second-part": " và đặt (Phí đặt lịch 0đ)"
+    },
+
+    "extra-infor-doctor": {
+      "address-title": "ĐỊA CHỈ PHÒNG KHÁM",
+      "price-title": "Giá Khám Bệnh",
+      "payment-detail": "Phòng khám chấp nhận thanh toán qua: ",
+      "show-price-detail": "Xem Chi Tiết",
+      "hide-price-detail": "Ẩn Bảng Giá"
+    },
+
+    "booking-modal": {
+      "fullname": "Họ và tên",
+      "fullname-placeholder": "Nhập họ và tên của bạn",
+      "phonenumber": "Số điện thoại",
+      "phonenumber-placeholder": "Nhập số điện thoại của bạn",
+      "gender": "Giới tính",
+      "gender-placeholder": "Chọn giới tính",
+      "email": "Email",
+      "email-placeholder": "Nhập địa chỉ email của bạn",
+      "address": "Địa chỉ",
+      "address-placeholder": "Nhập địa chỉ của bạn",
+      "birthday": "Ngày sinh",
+      "reason": "Lý do khám",
+      "btn-confirm": "Xác nhận",
+      "btn-cancel": "Hủy",
+      "booking-title": "ĐẶT LỊCH KHÁM",
+      "price-title": "Giá khám",
+      "booking-success": "Đặt lịch thành công",
+      "booking-failed": "Đặt lịch thất bại"
+    }
   }
 }
