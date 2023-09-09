@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import moment from "moment";
+import "moment/locale/vi";
 import { connect } from "react-redux";
 import { LANGUAGES } from "../../../../utils";
 import { FormattedMessage } from "react-intl";
@@ -13,6 +15,7 @@ import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import { toast } from "react-toastify";
+
 class BookingModal extends Component {
   constructor(props) {
     super(props);
@@ -128,35 +131,73 @@ class BookingModal extends Component {
   handleOnChangeSelect = (selectedOption) => {
     this.setState({ selectedGender: selectedOption });
   };
+
   handleConfirmBooking = async () => {
     const err = this.validateInput();
     this.setState({ errors: err });
     if (_.isEmpty(err)) {
+      let timeString = this.buildTimeBooking(this.props.dataBookingModal);
+      console.log("Time", timeString);
       let date = new Date(this.state.birthday).getTime();
+      let doctorName = this.buildDoctorName(this.props.dataBookingModal);
       let res = await postPatientBookAppointment({
         fullname: this.state.fullname,
         phoneNumber: this.state.phoneNumber,
         email: this.state.email,
         address: this.state.address,
         reason: this.state.reason,
-        // forWhom:this.state.fullname,
+        // forWhom :this.state.fullname,
         selectedGender: this.state.selectedGender.value,
         date: date,
         doctorId: this.state.doctorId,
-        timeType: this.state.timeType,
+        time: timeString,
+        language: this.props.language,
+        doctorName: doctorName,
       });
       console.log(res);
       if (res && res.errCode === 0) {
         toast.success(
           <FormattedMessage id="patient.booking-modal.booking-success" />
         );
+        this.handleCloseModal();
       } else {
         toast.error(
           <FormattedMessage id="patient.booking-modal.booking-failded" />
         );
       }
-    } else {
-      console.log("Booking", this.state);
+    }
+  };
+  buildTimeBooking = (dataTime) => {
+    let language = this.props.language;
+    if (dataTime && !_.isEmpty(dataTime)) {
+      let time =
+        language === LANGUAGES.VI
+          ? dataTime.timeTypeData.valueVi
+          : dataTime.timeTypeData.valueEn;
+      let date =
+        language === LANGUAGES.VI
+          ? moment.unix(+dataTime.date / 1000).format("dddd - DD/MM/YYYY")
+          : moment
+              .unix(+dataTime.date / 1000)
+              .locale("en")
+              .format("dddd - MM/DD/YYYY");
+      let formattedDate = this.capitalizeFirstLetter(date);
+      return `${time} - ${formattedDate}`;
+    }
+  };
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  buildDoctorName = (dataTime) => {
+    let language = this.props.language;
+    if (dataTime && !_.isEmpty(dataTime)) {
+      let doctorName =
+        language === LANGUAGES.VI
+          ? dataTime.doctorData.lastName + " " + dataTime.doctorData.firstName
+          : dataTime.doctorData.firstName + " " + dataTime.doctorData.lastName;
+
+      return doctorName;
     }
   };
 
@@ -166,6 +207,7 @@ class BookingModal extends Component {
       birthday: date,
     });
   };
+
   render() {
     let { language, dataBookingModal } = this.props;
     let doctorId =
@@ -293,10 +335,10 @@ class BookingModal extends Component {
                         onChange={this.handleOnChangeDatePicker}
                         className="form-control  "
                         selected={this.state.birthday}
-                        minDate={
-                          new Date(new Date().getTime() - 24 * 60 * 60 * 1000)
-                        }
-                        // minDate={new Date()}
+                        // minDate={
+                        //   new Date(new Date().getTime() - 24 * 60 * 60 * 1000)
+                        // }
+                        maxDate={new Date()}
                         style={{ fontSize: "18px" }}
                       />
                     </div>

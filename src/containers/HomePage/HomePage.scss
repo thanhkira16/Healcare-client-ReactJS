@@ -44,7 +44,7 @@
   }
 
   height: 330px;
-  .common-header {
+  .section-header {
     height: 60px;
     margin-bottom: 30px;
     padding-top: 30px;
@@ -72,11 +72,12 @@
     }
   }
 
-  .common-body {
-    .common-custiomize {
+  .section-body {
+    .section-custiomize {
       margin-left: 76px !important;
       cursor: pointer;
       .bg-img {
+        display: block;
         width: 250px;
         height: 150px;
         // background: url(../../assets/images/specialty/112457-co-xuong-khop.jpg);
@@ -90,7 +91,7 @@
         }
 
         &.section-outstanding-doctor {
-          background-image: url(../../assets/images/OuttandingDoctor/105401-bsckii-tran-minh-khuyen.jpg);
+          // background-image: url(../../assets/images/OuttandingDoctor/105401-bsckii-tran-minh-khuyen.jpg);
           width: 120px;
           height: 120px;
           border-radius: 50%;
@@ -105,8 +106,8 @@
   }
 }
 
-.common-custiomize {
-  .card-doctor {
+.section-custiomize {
+  .slider-card {
     border: 1px solid #ccc;
     width: 300px;
     height: 100%;
@@ -116,7 +117,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .doctor-details {
+    &:hover {
+      color: var(--blue-medium-color);
+    }
+    .slider-card-detail {
       text-align: center;
       font-size: 14px;
       width: 90%;
@@ -124,7 +128,7 @@
         display: block;
       }
 
-      .doctor-name {
+      .slider-card-title {
         margin-bottom: 6px;
         font-weight: 600;
       }

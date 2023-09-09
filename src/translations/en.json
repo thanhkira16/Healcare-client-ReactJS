@@ -92,7 +92,8 @@
   },
   "home-page": {
     "out-standings-doctor": "Outstanding Doctor of the Week",
-    "btnSeeMore": "See more"
+    "btnSeeMore": "See more",
+    "speciality-popularity": "Pupular specialities"
   },
   "manage-schedules": {
     "title": "Manage Medical Appointment Schedules",
@@ -104,6 +105,16 @@
     "invalidDoctor": "Please select a name",
     "invalidDate": "Please select a date"
   },
+
+  "manage-specialty": {
+    "specialtyName": "Specialty Name",
+    "specialtyImage": "Specialty Image",
+    "missingParameterError": "Missing required parameter",
+    "createSpecialtySuccess": "Specialty created successfully",
+    "createSpecialtyFailed": "Failed to create specialty",
+    "unknownError": "An unknown error occurred"
+  },
+
   "patient": {
     "detail-doctor": {
       "appointment": "APPOINTMENT",

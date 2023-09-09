@@ -23,6 +23,11 @@
     "option5": "Sức khỏe tinh thần",
     "option6": "Khám nha khoa"
   },
+  "home-page": {
+    "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
+    "btnSeeMore": "Xem thêm",
+    "speciality-popularity": "Chuyên khoa phổ biến"
+  },
   "menu": {
     "admin": {
       "manage-user": "Quản lý người dùng",
@@ -89,9 +94,13 @@
     "select-placeholder-price": "Chọn giá"
   },
 
-  "home-page": {
-    "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
-    "btnSeeMore": "Xem thêm"
+  "manage-specialty": {
+    "specialtyName": "Tên chuyên khoa",
+    "specialtyImage": "Hình ảnh chuyên khoa",
+    "missingParameterError": "Vui lòng điền đầy đủ thông tin",
+    "createSpecialtySuccess": "Tạo chuyên khoa thành công",
+    "createSpecialtyFailed": "Không thể tạo chuyên khoa",
+    "unknownError": "Đã xảy ra lỗi không xác định"
   },
 
   "manage-schedules": {

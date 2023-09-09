@@ -37,9 +37,15 @@ class ManageDoctor extends Component {
       listPrice: [],
       listPayment: [],
       listProvince: [],
+      listClinic: [],
+      listSpecialty: [],
+
       selectedPrice: "",
       selectedPayment: "",
       selectedProvince: "",
+
+      clinicId: "",
+      specialtyId: "",
       nameClinic: "",
       addressClinic: "",
       note: "",

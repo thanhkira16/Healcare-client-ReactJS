@@ -10,34 +10,34 @@ class HandBook extends Component {
   render() {
     return (
       <div className="section-common section-handbook">
-        <div className="common-header">
+        <div className="section-header">
           <span className="title-section">common</span>
           <button className="btn-section">See more</button>
         </div>
 
-        <div className="common-body">
+        <div className="section-body">
           <Slider {...this.props.settings}>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 1</div>
             </div>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 2</div>
             </div>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 3</div>
             </div>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 4</div>
             </div>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 5</div>
             </div>
-            <div className="common-custiomize">
+            <div className="section-custiomize">
               <div className="bg-img section-handbook"></div>
               <div>Bệnh viện Hữu nghị Việt Đức 6</div>
             </div>

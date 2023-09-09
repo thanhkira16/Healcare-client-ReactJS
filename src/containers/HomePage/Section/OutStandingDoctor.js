@@ -43,7 +43,7 @@ class OutStandingDoctor extends Component {
     console.log(arrDoctors);
     return (
       <div className="section-common section-outstanding-doctor">
-        <div className="common-header">
+        <div className="section-header">
           <span className="title-section">
             <FormattedMessage id="home-page.out-standings-doctor" />
           </span>
@@ -52,7 +52,7 @@ class OutStandingDoctor extends Component {
           </button>
         </div>
 
-        <div className="common-body">
+        <div className="section-body">
           <Slider {...this.props.settings}>
             {arrDoctors &&
               arrDoctors.length > 0 &&
@@ -67,17 +67,17 @@ class OutStandingDoctor extends Component {
                 let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
                 return (
                   <div
-                    className="common-custiomize"
+                    className="section-custiomize"
                     key={index}
                     onClick={() => this.handleViewDetailDoctor(item)}
                   >
-                    <div className="card-doctor">
+                    <div className="slider-card">
                       <div
                         className="bg-img section-outstanding-doctor"
                         style={{ backgroundImage: `url(${imgBase64})` }}
                       ></div>
-                      <div className="doctor-details">
-                        <span className="doctor-name">
+                      <div className="slider-card-detail">
+                        <span className="slider-card-title">
                           {language === LANGUAGES.VI ? nameVi : nameEn}
                         </span>
                         <span className="doctor-title">

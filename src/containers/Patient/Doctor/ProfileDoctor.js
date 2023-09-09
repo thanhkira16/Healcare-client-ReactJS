@@ -121,7 +121,7 @@ class ProfileDoctor extends Component {
                 <FormattedMessage id="patient.booking-modal.booking-title" />
               </li>
               <li className="infor-doctor-contain-name-and-time">
-                <span className="doctor-name">
+                <span className="slider-card-title">
                   {language === LANGUAGES.VI ? nameVi : nameEn}
                 </span>
                 <>{this.renderTimeBooking(dataBookingModal)}</>
