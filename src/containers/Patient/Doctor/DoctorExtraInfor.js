@@ -13,7 +13,14 @@ class DoctorExtraInfor extends Component {
       extraDoctor: {},
     };
   }
-
+  async componentDidMount(prevProps) {
+    if (this.props.doctorId) {
+      let res = await getExtraInforDoctorByID(this.props.doctorId);
+      if (res && res.errCode === 0) {
+        this.setState({ extraDoctor: res.data });
+      }
+    }
+  }
   async componentDidUpdate(prevProps) {
     if (this.props.doctorId !== prevProps.doctorId) {
       let res = await getExtraInforDoctorByID(this.props.doctorId);
@@ -22,6 +29,7 @@ class DoctorExtraInfor extends Component {
       }
     }
   }
+
   showHideDetailDoctorInfor = (status) => {
     this.setState({ isShowDetailPrice: status });
   };
@@ -49,6 +57,7 @@ class DoctorExtraInfor extends Component {
                 : ""}
             </span>
             <span className="detail-address">
+              <i className="detail-address-icon fas fa-map-marker"></i>
               {extraDoctor && extraDoctor.addressClinic
                 ? extraDoctor.addressClinic
                 : ""}

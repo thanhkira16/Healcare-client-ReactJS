@@ -229,6 +229,7 @@ class BookingModal extends Component {
               <ProfileDoctor
                 doctorId={doctorId}
                 dataBookingModal={dataBookingModal}
+                isShowDescription={false}
                 // timeSelected={this.props.timeSelected}
                 // dateSelected={this.props.dateSelected}
               />

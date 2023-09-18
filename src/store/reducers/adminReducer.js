@@ -128,6 +128,7 @@ const adminReducer = (state = initialState, action) => {
       };
     // get requrired doctor
     case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS:
+      // console.log("admin reducer", action.data);
       state.allRerequiredDoctorInfor = action.data;
       return {
         ...state,

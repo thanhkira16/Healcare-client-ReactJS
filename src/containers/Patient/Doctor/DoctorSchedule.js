@@ -17,13 +17,24 @@ class DoctorSchedule extends Component {
       dataBookingModalFromSchedule: [],
     };
   }
-  componentDidMount() {
+  async componentDidMount() {
     let language = this.props.language;
     this.getArrDays(language);
     let allDays = this.getArrDays(language);
     this.setState({
       allDays,
     });
+
+    if (this.props.doctorId) {
+      let allDays = this.getArrDays(this.props.language);
+      let res = await getScheduleDoctorByDate(
+        this.props.doctorId,
+        allDays[0].value
+      );
+      this.setState({
+        allAvailableTimes: res.data ? res.data : [],
+      });
+    }
   }
 
   async componentDidUpdate(prevProps) {
@@ -115,7 +126,7 @@ class DoctorSchedule extends Component {
 
     return (
       <>
-        <div className="doctor-schedule">
+        <div className="doctor-schedule ">
           <div className="all-schedule">
             <select
               onChange={(event) => this.handleOnChangeSelect(event)}
@@ -167,11 +178,19 @@ class DoctorSchedule extends Component {
               )}
             </div>
           </div>
-          <span className="pick-title">
-            <FormattedMessage id="patient.detail-doctor.pick-time-tittle-first-part" />{" "}
-            <i class="fas fa-hand-point-up"></i>
-            <FormattedMessage id="patient.detail-doctor.pick-time-tittle-second-part" />
-          </span>
+
+          {allAvailableTimes && allAvailableTimes.length > 0 && (
+            <span className="pick-title">
+              <FormattedMessage id="patient.detail-doctor.pick-time-tittle-first-part" />{" "}
+              <i class="fas fa-hand-point-up"></i>
+              <FormattedMessage id="patient.detail-doctor.pick-time-tittle-second-part" />
+            </span>
+          )}
+          {this.props.isShowSeparator && this.props.isShowSeparator === true ? (
+            <div className="seperator"></div>
+          ) : (
+            ""
+          )}
         </div>
         <BookingModal
           isOpenModalBooking={isOpenModalBooking}

@@ -91,7 +91,13 @@
     "select-placeholder-doctor": "Chọn một bác sĩ",
     "select-placeholder-province": "Chọn tỉnh/Thành phố",
     "select-placeholder-payment": "Chọn phương thức thanh toán",
-    "select-placeholder-price": "Chọn giá"
+    "select-placeholder-price": "Chọn giá",
+    "select-placeholder-specialty": "Chọn chuyên khoa",
+
+    "specialty": "Chuyên khoa",
+    "nameClinic": "Tên phòng khám",
+    "addressClinic": "Địa chỉ phòng khám",
+    "note": "Ghi chú"
   },
 
   "manage-specialty": {

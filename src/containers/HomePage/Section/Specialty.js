@@ -4,7 +4,7 @@ import "./Specialty.scss";
 import { FormattedMessage } from "react-intl";
 import { getAllSpecialties } from "../../../services/userService";
 import Slider from "react-slick";
-
+import { withRouter } from "react-router";
 class Specialty extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +26,11 @@ class Specialty extends Component {
       console.error("An error occurred:", error);
     }
   }
-
+  handleViewDetailSpecialty(specialty) {
+    console.log(specialty);
+    const specialtyId = specialty.id;
+    this.props.history.push(`/detail-specialty/${specialtyId}`);
+  }
   render() {
     const { dataSpecialty } = this.state;
     console.log("props", this.props);
@@ -55,7 +59,7 @@ class Specialty extends Component {
                   <div
                     className="slider-card card-specialty"
                     key={index}
-                    // onClick={() => this.handleViewDetailDoctor(item)}
+                    onClick={() => this.handleViewDetailSpecialty(item)}
                   >
                     <div className="section-specialty" key={index}>
                       <span
@@ -86,4 +90,6 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Specialty)
+);

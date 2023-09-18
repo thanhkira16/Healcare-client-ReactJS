@@ -1,13 +1,15 @@
 .profile-doctor-container {
   width: 100%;
-  height: 100px;
+  // height: 100px;
   margin-bottom: 16px;
   .introduction-doctor {
     display: flex;
 
     .avatar-doctor {
+      position: relative;
+      cursor: pointer;
       display: block;
-      width: 100px;
+      min-width: 100px;
       height: 100px;
       background-size: cover;
       background-repeat: no-repeat;
@@ -16,11 +18,22 @@
       margin-right: 14px;
       border-radius: 50%;
       border: none;
+      .link-to-detail-doctor {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+      }
     }
 
     .info-doctor {
       list-style: none;
-
+      max-width: 600px;
+      .doctor-desc {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
       .profile-title {
         font-weight: 500;
         font-size: 1.6rem;

@@ -18,6 +18,7 @@ import CustomScrollbars from "../components/CustomScrollbars";
 import DetailDoctor from "./Patient/Doctor/DetailDoctor";
 import Doctor from "../routes/Doctor";
 import VerifyEmail from "./Patient/VerifyEmail";
+import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -43,7 +44,7 @@ class App extends Component {
         <Router history={history}>
           <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
             <div className="main-container">
-              <span className="content-container">
+              <div className="content-container">
                 <Switch>
                   <Route path={path.HOME} exact component={Home} />
                   <Route
@@ -61,11 +62,15 @@ class App extends Component {
                   <Route path={path.HOMEPAGE} component={HomePage} />
                   <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                   <Route
+                    path={path.DETAIL_SPECIALTY}
+                    component={DetailSpecialty}
+                  />
+                  <Route
                     path={path.VERIFY_EMAIL_BOOKING}
                     component={VerifyEmail}
                   />
                 </Switch>
-              </span>
+              </div>
 
               {/* <ToastContainer
                 className="toast-container"

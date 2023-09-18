@@ -10,7 +10,7 @@ class Footer extends Component {
         <div className="copyright">
           <div className="grid copyright-content">
             <span>
-              © 2023 BookingCare. <br /> Truong Cong Hoang Thanh
+              © 2023 VKU healcare. <br /> Truong Cong Hoang Thanh
             </span>
             <ul className="social-media-list">
               <li className="social-media-item">

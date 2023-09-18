@@ -8,6 +8,7 @@ import {
   getTopDoctorHomeService,
   getAllDoctorsService,
   saveDetailDoctor,
+  getAllSpecialties,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 import { FormattedMessage } from "react-intl";
@@ -316,20 +317,24 @@ export const getRequiredDoctorInfor = () => {
       let resPrice = await getAllCodeService("PRICE");
       let resPayment = await getAllCodeService("PAYMENT");
       let resProvince = await getAllCodeService("PROVINCE");
+      let resSpecialty = await getAllSpecialties();
       if (
         resPrice &&
         resPrice.errCode === 0 &&
         resPayment &&
         resPayment.errCode === 0 &&
         resProvince &&
-        resProvince.errCode === 0
+        resProvince.errCode === 0 &&
+        resSpecialty &&
+        resSpecialty.errCode === 0
       ) {
         let data = {
           resPrice: resPrice.data,
           resPayment: resPayment.data,
           resProvince: resProvince.data,
+          resSpecialty: resSpecialty.data,
         };
-        // console.log("action data", data);
+        console.log("action data", data);
         dispatch(fetchRequiredDoctorInforSuccess(data));
       } else {
         dispatch(fetchRequiredDoctorInforFailed());
@@ -341,9 +346,9 @@ export const getRequiredDoctorInfor = () => {
   };
 };
 
-export const fetchRequiredDoctorInforSuccess = (allRerequiredData) => ({
+export const fetchRequiredDoctorInforSuccess = (allRerequiredDoctorInfor) => ({
   type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS,
-  data: allRerequiredData,
+  data: allRerequiredDoctorInfor,
 });
 
 export const fetchRequiredDoctorInforFailed = () => ({

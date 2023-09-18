@@ -1,19 +1,18 @@
 .doctor-schedule {
-  padding: 20px 0 0 35px;
+  // padding: 20px 0 0 35px;
   width: 100%;
-  height: 300px;
-  &::after {
-    content: "";
-    height: 50%;
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: 25%;
-    background-color: #ccc;
-  }
+  height: 200px;
   // border: 1px solid red;
   position: relative;
-
+  .seperator {
+    display: block;
+    top: 40px;
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    background-color: #ccc;
+  }
   .all-schedule {
     .select-schedule {
       width: 150px;
@@ -27,7 +26,7 @@
     }
   }
   .all-available-time {
-    height: 160px;
+    // height: 160px;
     overflow: scroll;
     &::-webkit-scrollbar {
       width: 0.5em;
@@ -70,7 +69,7 @@
   }
 
   .pick-title {
-    position: absolute;
     bottom: 20px;
+    display: block;
   }
 }

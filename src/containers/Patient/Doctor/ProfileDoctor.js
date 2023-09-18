@@ -7,6 +7,7 @@ import "moment/locale/vi";
 import { getProfileDoctorByID } from "../../../services/userService";
 import { FormattedMessage } from "react-intl";
 import _ from "lodash";
+import { Link } from "react-router-dom";
 class ProfileDoctor extends Component {
   constructor(props) {
     super(props);
@@ -94,10 +95,10 @@ class ProfileDoctor extends Component {
   };
 
   render() {
-    console.log("check prop", this.props.dataBookingModal);
+    // console.log("check prop", this.props.dataBookingModal);
     let { dataProfile } = this.state;
-    console.log("render", dataProfile);
-    let { language, dataBookingModal } = this.props;
+    console.log("render", this.props.doctorId);
+    let { language, dataBookingModal, isShowDescription } = this.props;
 
     let nameVi = "";
     let nameEn = "";
@@ -109,12 +110,17 @@ class ProfileDoctor extends Component {
       <>
         <div className="profile-doctor-container">
           <div className="introduction-doctor">
-            <span
+            <div
               className="avatar-doctor"
               style={{
                 backgroundImage: `url(${dataProfile.image})`,
               }}
-            ></span>
+            >
+              <Link
+                className="link-to-detail-doctor"
+                to={`/detail-doctor/${this.props.doctorId}`}
+              ></Link>
+            </div>
 
             <ul className="info-doctor">
               <li className="profile-title">
@@ -126,6 +132,17 @@ class ProfileDoctor extends Component {
                 </span>
                 <>{this.renderTimeBooking(dataBookingModal)}</>
               </li>
+              {isShowDescription == true ? (
+                <li className="doctor-desc">
+                  {dataProfile &&
+                  dataProfile.Markdown &&
+                  dataProfile.Markdown.description
+                    ? dataProfile.Markdown.description
+                    : ""}
+                </li>
+              ) : (
+                ""
+              )}
               <li className="price">
                 <span>
                   <FormattedMessage id="patient.booking-modal.price-title" />

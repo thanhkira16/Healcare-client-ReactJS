@@ -72,6 +72,7 @@ class DetailDoctor extends Component {
                   doctorId={
                     detailDoctor && detailDoctor.id ? detailDoctor.id : -1
                   }
+                  isShowSeparator={true}
                 />
               </div>
               <div class="col-md-5 col-sm-12">

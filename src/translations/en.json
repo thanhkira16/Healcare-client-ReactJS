@@ -84,7 +84,9 @@
     "nameClinic": "Name of clinic",
     "addressClinic": "Address of clinic",
     "note": "Note",
+    "specialty": "Specialty",
 
+    "select-placeholder-specialty": "Select specialty",
     "select-placeholder-doctor": "Select a doctor",
     "select-placeholder-province": "Select a province",
     "select-placeholder-payment": "Select a payment method",
