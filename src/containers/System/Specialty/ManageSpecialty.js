@@ -163,7 +163,7 @@ class ManageSpecialty extends Component {
                   className="btn btn-primary px-5"
                   onClick={this.handleSave}
                 >
-                  Save
+                  <FormattedMessage id="manage-specialty.btnSave" />
                 </button>
               </div>
             </div>

@@ -114,7 +114,18 @@
     "missingParameterError": "Missing required parameter",
     "createSpecialtySuccess": "Specialty created successfully",
     "createSpecialtyFailed": "Failed to create specialty",
-    "unknownError": "An unknown error occurred"
+    "unknownError": "An unknown error occurred",
+    "btnSave": "Save"
+  },
+  "manage-clinic": {
+    "clinicName": "Clinic Name",
+    "clinicImage": "Clinic Image",
+    "clinicAddress": "Clinic Address",
+    "missingParameterError": "Missing required parameter",
+    "createClinicSuccess": "Clinic created successfully",
+    "createClinicFailed": "Failed to create clinic",
+    "unknownError": "An unknown error occurred",
+    "btnSave": "Save"
   },
 
   "patient": {

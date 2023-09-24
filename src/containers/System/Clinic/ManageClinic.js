@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
 import { LANGUAGES, CommonUtils } from "../../../utils";
-import { createSpecialty } from "../../../services/userService";
+import { createClinic } from "../../../services/userService";
 import { toast } from "react-toastify";
 
 const mdParser = new MarkdownIt(/* Markdown-it options */);
@@ -15,7 +15,9 @@ class ManageClinic extends Component {
     super(props);
     this.state = {
       name: "",
+      address: "",
       imageBase64: "",
+
       descriptionHTML: "",
       descriptionMarkdown: "",
       previewImgURL: "",
@@ -52,32 +54,33 @@ class ManageClinic extends Component {
   };
 
   handleSave = () => {
-    const { name, imageBase64, descriptionHTML, descriptionMarkdown } =
+    const { address, name, imageBase64, descriptionHTML, descriptionMarkdown } =
       this.state;
 
     // Check if any required fields are empty
     if (!name || !imageBase64 || !descriptionHTML || !descriptionMarkdown) {
       toast.error(
-        <FormattedMessage id="manage-specialty.missingParameterError" />
+        <FormattedMessage id="manage-clinic.missingParameterError" />
       );
       return;
     }
 
-    // Call the API service to create a new specialty
-    createSpecialty({
+    // Call the API service to create a new clinic
+    createClinic({
       name,
+      address,
       imageBase64,
       descriptionHTML,
       descriptionMarkdown,
     })
-      .then((newSpecialty) => {
-        if (newSpecialty.errCode === 0) {
+      .then((newClinic) => {
+        if (newClinic.errCode === 0) {
           toast.success(
-            <FormattedMessage id="manage-specialty.createSpecialtySuccess" />
+            <FormattedMessage id="manage-clinic.createClinicSuccess" />
           );
         } else {
           toast.error(
-            <FormattedMessage id="manage-specialty.createSpecialtyFailed" />
+            <FormattedMessage id="manage-clinic.createClinicFailed" />
           );
         }
         this.setState({
@@ -86,10 +89,11 @@ class ManageClinic extends Component {
           descriptionHTML: "",
           descriptionMarkdown: "",
           previewImgURL: "",
+          address: "",
         });
       })
       .catch((error) => {
-        toast.error(<FormattedMessage id="manage-specialty.unknownError" />);
+        toast.error(<FormattedMessage id="manage-clinic.unknownError" />);
         console.error("Error:", error);
       });
   };
@@ -97,18 +101,18 @@ class ManageClinic extends Component {
   render() {
     return (
       <>
-        <div className="specialty-container">
+        <div className="app-container">
           <div className="container">
-            <div className="row mb-5">
-              {/* Input for Specialty Name */}
+            <div className="row mb-3">
+              {/* Input for clinic Name */}
               <div className="col-md-6">
                 <div className="form-group">
-                  <label htmlFor="specialtyName">
-                    <FormattedMessage id="manage-specialty.specialtyName" />
+                  <label htmlFor="clinicName">
+                    <FormattedMessage id="manage-clinic.clinicName" />
                   </label>
                   <input
                     type="text"
-                    id="specialtyName"
+                    id="clinicName"
                     className="form-control input-area"
                     value={this.state.name}
                     onChange={(event) =>
@@ -118,10 +122,10 @@ class ManageClinic extends Component {
                 </div>
               </div>
 
-              {/* Input for Specialty Image */}
+              {/* Input for clinic Image */}
               <div className="col-md-6">
                 <label htmlFor="inputImage" className="d-block">
-                  <FormattedMessage id="manage-specialty.specialtyImage" />
+                  <FormattedMessage id="manage-clinic.clinicImage" />
                 </label>
                 <div className="previewImg-container">
                   <input
@@ -146,6 +150,22 @@ class ManageClinic extends Component {
             </div>
 
             <div className="row">
+              <div className="col-md-6 mb-5">
+                <div className="form-group">
+                  <label htmlFor="clinicName">
+                    <FormattedMessage id="manage-clinic.clinicAddress" />
+                  </label>
+                  <input
+                    type="text"
+                    id="address"
+                    className="form-control input-area"
+                    value={this.state.address}
+                    onChange={(event) =>
+                      this.handleOnChangeInput(event, "address")
+                    }
+                  />
+                </div>
+              </div>
               <div className="col-md-12">
                 <MdEditor
                   style={{ height: "500px" }}
@@ -163,7 +183,7 @@ class ManageClinic extends Component {
                   className="btn btn-primary px-5"
                   onClick={this.handleSave}
                 >
-                  Save
+                  <FormattedMessage id="manage-clinic.btnSave" />
                 </button>
               </div>
             </div>

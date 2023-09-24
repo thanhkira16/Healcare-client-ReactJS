@@ -121,6 +121,12 @@ class ManageDoctor extends Component {
           // object.label = language === LANGUAGES.VI ? labelVi : labelEn;
           object.label = item.name;
           object.value = item.id;
+        } else if (type === "CLINIC") {
+          // labelVi = item.valueVI;
+          // labelEn = item.valueEN;
+          // object.label = language === LANGUAGES.VI ? labelVi : labelEn;
+          object.label = item.name;
+          object.value = item.id;
         }
 
         results.push(object);
@@ -174,7 +180,7 @@ class ManageDoctor extends Component {
     ) {
       let allRerequiredDoctorInfor = this.props.allRerequiredDoctorInfor;
       if (allRerequiredDoctorInfor) {
-        let { resPayment, resPrice, resProvince, resSpecialty } =
+        let { resPayment, resPrice, resProvince, resSpecialty, resClinic } =
           allRerequiredDoctorInfor;
 
         let dataSelectPaymemt = this.buildDataSelectDoctor(
@@ -190,11 +196,13 @@ class ManageDoctor extends Component {
           resSpecialty,
           "SPECIALTY"
         );
+        let dataSelectClinic = this.buildDataSelectDoctor(resClinic, "CLINIC");
         this.setState({
           listPrice: dataSelectPrice,
           listPayment: dataSelectPaymemt,
           listProvince: dataSelectProvince,
           listSpecialty: dataSelectSpecialty,
+          listClinic: dataSelectClinic,
         });
       } else {
         console.log("allRerequiredDoctorInfor is not defined");
@@ -271,6 +279,10 @@ class ManageDoctor extends Component {
         selectedSpecialty = listSpecialty.find((item) => {
           return item && item.value.toString() === specialtyId.toString();
         });
+        selectedClinic = listClinic.find((item) => {
+          return item && item.value.toString() === clinicId.toString();
+        });
+        console.log("object clinic", selectedClinic);
         // selectedClinic = listClinic.find((item) => {
         //   return item && item.value.toString() === clinicId.toString();
         // });
@@ -297,7 +309,7 @@ class ManageDoctor extends Component {
         selectedPrice,
         // availbleToSave: true,
         selectedSpecialty,
-        // selectedClinic,
+        selectedClinic,
       });
     } else {
       this.setState({
@@ -313,7 +325,7 @@ class ManageDoctor extends Component {
         selectedPrice: "",
         // availbleToSave: false, // Set other related state properties as needed
         selectedSpecialty: "",
-        // selectedClinic: "",
+        selectedClinic: "",
       });
     }
   };
@@ -341,7 +353,7 @@ class ManageDoctor extends Component {
       clinicId:
         this.state.selectedClinic && this.state.selectedClinic.value
           ? this.state.selectedClinic.value
-          : "1",
+          : "",
       specialtyId:
         this.state.selectedSpecialty && this.state.selectedSpecialty.value
           ? this.state.selectedSpecialty.value
@@ -545,7 +557,7 @@ class ManageDoctor extends Component {
                 placeholder={
                   <FormattedMessage id="manage-doctor.select-placeholder-clinic" />
                 }
-                name={"selectedPrice"}
+                name={"selectedClinic"}
               />
             </div>
           </div>

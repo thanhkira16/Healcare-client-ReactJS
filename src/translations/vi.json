@@ -106,7 +106,18 @@
     "missingParameterError": "Vui lòng điền đầy đủ thông tin",
     "createSpecialtySuccess": "Tạo chuyên khoa thành công",
     "createSpecialtyFailed": "Không thể tạo chuyên khoa",
-    "unknownError": "Đã xảy ra lỗi không xác định"
+    "unknownError": "Đã xảy ra lỗi không xác định",
+    "btnSave": "Lưu"
+  },
+  "manage-clinic": {
+    "clinicName": "Tên Phòng Khám",
+    "clinicImage": "Hình Ảnh Phòng Khám",
+    "clinicAddress": "Địa Chỉ Phòng Khám",
+    "missingParameterError": "Thiếu thông số bắt buộc",
+    "createClinicSuccess": "Tạo phòng khám thành công",
+    "createClinicFailed": "Không thể tạo phòng khám",
+    "unknownError": "Đã xảy ra lỗi không xác định",
+    "btnSave": "Lưu"
   },
 
   "manage-schedules": {
