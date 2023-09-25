@@ -98,7 +98,7 @@ class UserManage extends Component {
   render() {
     const { arrUsers, showModalUser, showModalEditUser } = this.state;
     return (
-      <div className="user-container">
+      <div className="container">
         <div className="text-center">Somthing different</div>
         <div className="table-user">
           <div className="mx-1">
@@ -126,7 +126,7 @@ class UserManage extends Component {
             />
           )}
 
-          <table id="user-table">
+          <table id="table">
             <thead>
               <tr>
                 <th>Email</th>

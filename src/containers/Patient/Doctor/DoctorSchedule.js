@@ -102,7 +102,7 @@ class DoctorSchedule extends Component {
     let allDays = [];
     for (let i = 0; i < 7; i++) {
       let object = {};
-      let label = this.initDateLabel(i, language, object);
+      let label = this.initDateLabel(i, language);
       object.label = label;
       object.value = moment(new Date()).add(i, "days").startOf("day").valueOf();
       object.index = i;

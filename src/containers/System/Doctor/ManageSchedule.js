@@ -22,6 +22,8 @@ class ManageSchedule extends Component {
       listDoctors: "",
       currDate: "",
       rangeTime: [],
+      textDate: "",
+      isDatePickerOpen: false,
     };
   }
 
@@ -145,11 +147,33 @@ class ManageSchedule extends Component {
   };
 
   handleOnChangeDatePicker = (date) => {
+    let formattedDate;
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      weekday: "long", // Include the full name of the day of the week
+    };
+
+    if (this.props.language === LANGUAGES.VI) {
+      // For Vietnamese language, format as "Thứ N, dd/mm/yyyy"
+      formattedDate = date.toLocaleDateString("vi-VN", options);
+    } else {
+      // For English language, format as "Monday, mm/dd/yyyy"
+      formattedDate = date.toLocaleDateString("en-US", options);
+    }
+
     this.setState({
       currDate: date,
+      textDate: formattedDate,
     });
   };
 
+  handleDatePickerClick = () => {
+    this.setState((prevState) => ({
+      isDatePickerOpen: !prevState.isDatePickerOpen,
+    }));
+  };
   render() {
     const { selectedDoctor, listDoctors } = this.state;
     // console.log(listDoctors);
@@ -164,7 +188,7 @@ class ManageSchedule extends Component {
             <FormattedMessage id="manage-schedules.title" />
           </span>
           <div className="select-container row mb-3 mt-3">
-            <div className="col-md-6 ">
+            <div className="col-md-6 mb-3">
               <label>
                 <FormattedMessage id="manage-schedules.pick-doctor" />
               </label>
@@ -180,15 +204,24 @@ class ManageSchedule extends Component {
               <label>
                 <FormattedMessage id="manage-schedules.pick-date" />
               </label>
-              <div className="date-picker">
+
+              <div className="date-picker" onClick={this.handleDatePickerClick}>
                 <DatePicker
                   onChange={this.handleOnChangeDatePicker}
-                  className="form-control  "
+                  className="form-control date-picker-select"
                   selected={this.state.currDate}
                   minDate={new Date(new Date().getTime() - 24 * 60 * 60 * 1000)}
                   // minDate={new Date()}
                   style={{ fontSize: "18px" }}
                   format={dateFormat.SEND_TO_SERVER}
+                  isOpen={this.state.isDatePickerOpen}
+                />
+                <input
+                  type="text"
+                  className="date-picker-text"
+                  value={this.state.textDate}
+                  readOnly // Make the input read-only to display the selected date
+                  placeholder="Select a date"
                 />
               </div>
             </div>

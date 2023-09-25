@@ -148,9 +148,11 @@ class BookingModal extends Component {
         reason: this.state.reason,
         // forWhom :this.state.fullname,
         selectedGender: this.state.selectedGender.value,
-        date: date,
+        date: this.props.dataBookingModal.date,
+        birthday: date,
         doctorId: this.state.doctorId,
-        time: timeString,
+        timeString: timeString,
+        timeType: this.state.timeType,
         language: this.props.language,
         doctorName: doctorName,
       });
@@ -214,7 +216,7 @@ class BookingModal extends Component {
       dataBookingModal && !_.isEmpty(dataBookingModal)
         ? dataBookingModal.doctorId
         : "";
-    console.log("state", this.state);
+    console.log("data booking modal", this.props);
     return (
       <>
         <div>

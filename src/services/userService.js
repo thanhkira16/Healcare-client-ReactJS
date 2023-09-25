@@ -1,5 +1,5 @@
 import axios from "../axios";
-
+//system
 const handleLoginApi = (email, password) => {
   return axios.post("/api/login", { email, password });
 };
@@ -25,10 +25,11 @@ const editUserService = (data) => {
   console.log("check data from service", data);
   return axios.put("/api/edit-user", data);
 };
-
 const getAllCodeService = (inputType) => {
   return axios.get(`/api/allcode?type=${inputType}`);
 };
+
+//Doctor
 const getTopDoctorHomeService = (numOfDoctors) => {
   return axios.get(`/api/top-doctor-home?numOfDoctors=${numOfDoctors}`);
 };
@@ -58,12 +59,21 @@ const getExtraInforDoctorByID = (doctorId, date) => {
 const getProfileDoctorByID = (doctorId) => {
   return axios.get(`/api/get-project-doctor-by-id?doctorId=${doctorId}`);
 };
+const getAllPaitentsBookedAppoiment = (data) => {
+  return axios.get(
+    `/api/get-list-patients-booked-appoiment?doctorId=${data.doctorId}&date=${data.date}`
+  );
+};
+
+//Patient
 const postPatientBookAppointment = (data) => {
   return axios.post("/api/patient-book-appointment", data);
 };
 const postVerifyBookAppointment = (data) => {
   return axios.post("/api/verify-book-appointment", data);
 };
+
+//Specialty
 const createSpecialty = (data) => {
   return axios.post("/api/create-new-specialty", data);
 };
@@ -110,4 +120,5 @@ export {
   createClinic,
   getAllClinics,
   getDetailClinicById,
+  getAllPaitentsBookedAppoiment,
 };
