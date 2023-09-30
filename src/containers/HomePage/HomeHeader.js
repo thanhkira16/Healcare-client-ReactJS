@@ -5,7 +5,9 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
+
 class HomeHeader extends Component {
+  componentDidMount() {}
   switchLanguage() {
     const currLanguage = this.props.language;
 
@@ -137,20 +139,32 @@ class HomeHeader extends Component {
         </div>
 
         {this.props.isShowBanner == true && (
-          <div className="banner">
-            <div className="banner-container">
-              <div className=" container-full-width">
-                <div className="title">
-                  <h3>
-                    <FormattedMessage id="banner.main-title" />
-                  </h3>
-                  <h2>
-                    <FormattedMessage id="banner.sub-title" />
-                  </h2>
-                </div>
+          <div className="banner row">
+            <div className="banner-left col-12 col-sm-12  col-lg-6">
+              <div className="banner-title">
+                <h3 className="main-title">
+                  <FormattedMessage id="banner.main-title" />
+                </h3>
+                <h2 className="sub-title">
+                  <FormattedMessage id="banner.sub-title" />
+                </h2>
+                <p className="desc">
+                  <FormattedMessage id="banner.desc" />
+                </p>
               </div>
+              <span className="btn-appoiment">
+                <FormattedMessage id="banner.btn-make-appoiment" />
+              </span>
             </div>
-            <div className="search">
+            <div className="banner-right col-12 col-sm-12  col-lg-6">
+              <div className="banner-right-background"></div>
+            </div>
+            {/* <div className="banner-container">
+              <div className=" container-full-width">
+                
+              </div>
+            </div> */}
+            {/* <div className="search">
               <i className="fas fa-search"></i>
               <input
                 type="text"
@@ -158,9 +172,9 @@ class HomeHeader extends Component {
                   <FormattedMessage id="banner.search-placeholder" />
                 }
               />
-            </div>
+            </div> */}
 
-            <ul className="row options-banner-list">
+            {/* <ul className="row options-banner-list">
               <li className="col-2 option-banner-item">
                 <a href="#" className="option-banner-link">
                   <i className="fas fa-hospital"></i>
@@ -216,7 +230,7 @@ class HomeHeader extends Component {
                   </span>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         )}
       </React.Fragment>

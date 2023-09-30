@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import HomeHeader from "./HomeHeader";
 import Specialty from "./Section/Specialty.js";
@@ -7,11 +7,45 @@ import OutStandingDoctor from "./Section/OutStandingDoctor";
 import HandBook from "./Section/HandBook";
 import About from "./Section/About";
 import Footer from "./Section/Footer";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/Base.scss";
 import "./HomePage.scss";
+const ScrollToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleScroll = () => {
+    console.log("Scrolling...");
+    const scrollTop = window.scrollY;
+    setIsVisible(scrollTop > 100);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    console.log("Effect is running...");
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      console.log("Cleanup...");
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <button
+      className={`scroll-to-top-button ${isVisible ? "visible" : "hidden"}`}
+      onClick={scrollToTop}
+    >
+      Go to Top
+    </button>
+  );
+};
 class HomePage extends Component {
   render() {
     let settings = {
@@ -56,6 +90,7 @@ class HomePage extends Component {
         {/* <HandBook settings={settings} /> */}
         <About />
         <Footer />
+        <ScrollToTopButton />
       </>
     );
   }

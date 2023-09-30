@@ -2,32 +2,44 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import "./ManagePatient.scss";
-import { LANGUAGES, dateFormat } from "../../../utils";
+import { LANGUAGES } from "../../../utils";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
-import { getAllPaitentsBookedAppoiment } from "../../../services/userService";
+import {
+  getAllPaitentsBookedAppoiment,
+  postSendRemedy,
+} from "../../../services/userService";
 import moment from "moment";
+import RemedyModal from "../../Patient/Doctor/Modal/RemedyModal";
+import { toast } from "react-toastify";
+import LoadingOverlay from "react-loading-overlay";
 class ManagePatient extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOpenModalRemedy: false,
       isDatePickerOpen: false,
       currDate: moment(new Date()).add(0, "days").startOf("day").valueOf(),
       textDate: "",
       dataPatients: [],
+      dataRemedyModal: {},
+      isLoading: false,
     };
   }
 
   async componentDidMount() {
-    let { user } = this.props;
-
-    let { currDate } = this.state;
-    let formatedDate = new Date(currDate).getTime();
-    this.getDataPatients(user, formatedDate);
+    this.getDataPatients();
   }
 
-  getDataPatients = async (user, formatedDate) => {
+  getDataPatients = async () => {
+    //set date
+    let { user } = this.props;
+    let date = new Date(new Date().getTime() - 24 * 60 * 60 * 1000);
+    let { currDate } = this.state;
+    let formatedDate = new Date(currDate).getTime();
+    this.setState({ textDate: this.convertDateToString(date) });
+    //render patient appoiments
     let res = await getAllPaitentsBookedAppoiment({
       doctorId: user.id,
       date: formatedDate,
@@ -46,10 +58,8 @@ class ManagePatient extends Component {
       isDatePickerOpen: !prevState.isDatePickerOpen,
     }));
   };
-
-  handleOnChangeDatePicker = (date) => {
-    let formattedDate, currDate;
-    currDate = moment(date).add(0, "days").startOf("day").valueOf();
+  convertDateToString = (date) => {
+    let formattedDate = "";
     const options = {
       year: "numeric",
       month: "2-digit",
@@ -65,34 +75,76 @@ class ManagePatient extends Component {
       formattedDate = date.toLocaleDateString("en-US", options);
     }
 
+    return formattedDate;
+  };
+  handleOnChangeDatePicker = (date) => {
+    let currDate;
+    currDate = moment(date).add(0, "days").startOf("day").valueOf();
+
     this.setState(
       {
         currDate,
-        textDate: formattedDate,
+        textDate: this.convertDateToString(date),
       },
-      () => {
-        let { user } = this.props;
-        let { currDate } = this.state;
-        let formatedDate = new Date(currDate).getTime();
-        this.getDataPatients(user, formatedDate);
+      async () => {
+        await this.getDataPatients();
       }
     );
   };
 
+  handleConfirmAppoiment = (item) => {
+    let data = {
+      doctorId: item.doctorId,
+      patientId: item.patientId,
+      email: item.patientData.email,
+      timeType: item.timeType,
+      patientName: item.patientData.firstName,
+    };
+    this.setState({ isOpenModalRemedy: true, dataRemedyModal: data });
+    console.log("data", data);
+  };
+  handleCloseRemedyModal = () => {
+    this.setState({ isOpenModalRemedy: false });
+  };
+  sendRemedy = async (data) => {
+    this.setState({ isLoading: true });
+    let { dataRemedyModal } = this.state;
+    let res = await postSendRemedy({
+      email: data.email,
+      imgBase64: data.imgBase64,
+      patientId: dataRemedyModal.patientId,
+      doctorId: dataRemedyModal.doctorId,
+      timeType: dataRemedyModal.timeType,
+      language: this.props.language,
+      patientName: dataRemedyModal.patientName,
+    });
+    if (res && res.errCode === 0) {
+      await this.getDataPatients();
+      this.handleCloseRemedyModal();
+      this.setState({ isLoading: false });
+      toast.success("Successfully sent");
+    } else {
+      toast.error("Error sending");
+    }
+  };
   render() {
     console.log(" user ", this.state);
-    let { dataPatients } = this.state;
+    let { dataPatients, isOpenModalRemedy, dataRemedyModal, isLoading } =
+      this.state;
     let { language } = this.props;
     return (
       <>
-        <div className="container">
+        <div className="container manage-patient-container">
           <div className="title">Quan ly benh nhan</div>
           <div className="row mb-4">
-            <div className="input-area col-md-4">
+            <div className="col-md-4">
               <label>
                 <FormattedMessage id="manage-schedules.pick-date" />
               </label>
-              <div className="date-picker" onClick={this.handleDatePickerClick}>
+              <div
+                className="date-picker "
+                onClick={this.handleDatePickerClick}
+              >
                 <DatePicker
                   onChange={this.handleOnChangeDatePicker}
                   className="form-control date-picker-select"
@@ -150,15 +202,9 @@ class ManagePatient extends Component {
 
                           <button
                             className="btn red px-3"
-                            // onClick={() => this.handleEditUser(user)}
+                            onClick={() => this.handleConfirmAppoiment(item)}
                           >
-                            Edit
-                          </button>
-                          <button
-                            className="btn btn-primary px-3"
-                            // onClick={() => this.handleDeleteUser(user)}
-                          >
-                            Delete
+                            Conform
                           </button>
                         </td>
                       </tr>
@@ -168,6 +214,22 @@ class ManagePatient extends Component {
             </table>
           </div>
         </div>
+        <RemedyModal
+          isOpenModalBooking={isOpenModalRemedy}
+          dataRemedyModal={dataRemedyModal}
+          onCloseRemedyModal={this.handleCloseRemedyModal}
+          sendRemedy={this.sendRemedy}
+        />
+
+        <LoadingOverlay
+          className="loading-overlay"
+          active={isLoading}
+          spinner
+          text="Loading..."
+        >
+          {/* Your content goes here */}
+          <div></div>
+        </LoadingOverlay>
       </>
     );
   }

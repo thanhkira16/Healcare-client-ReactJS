@@ -331,6 +331,7 @@ class ManageDoctor extends Component {
   };
 
   handleOnChangeDesc = (event) => {
+    document.title = event.target.value;
     this.setState({ description: event.target.value });
   };
 

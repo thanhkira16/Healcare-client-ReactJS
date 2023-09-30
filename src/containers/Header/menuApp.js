@@ -50,7 +50,7 @@ export const adminMenu = [
 
 export const doctorMenu = [
   {
-    name: "menu.admin.manage-user",
+    name: "menu.doctor.manage-user",
     menus: [
       {
         name: "menu.doctor.manage-schedule",

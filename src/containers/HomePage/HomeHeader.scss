@@ -76,7 +76,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 62px;
+        min-width: 62px;
+
         height: 30px;
         position: relative;
         .hide-language-btn {
@@ -140,100 +141,150 @@
 }
 
 .banner {
-  background: url("../../assets/header-background.jpg") top center/cover
-    no-repeat;
-  padding-top: 45%;
-  position: relative;
-  .title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    top: 40px;
-    text-transform: uppercase;
-    color: var(--white-color);
-    text-shadow: 1px 1px 1px #333;
-    font-size: 1.8rem;
-  }
-
-  .search {
-    height: 50px;
-    width: 380px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    top: 136px;
-    border-radius: 25px;
-    overflow: hidden;
-    background-color: var(--yellow-color);
-    input {
-      top: 0;
-      left: 44px;
-      background-color: transparent;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: none;
-      outline: none;
-      font-size: 1.6rem;
-    }
-    i {
-      position: absolute;
-      top: 16px;
-      left: 18px;
-      font-size: 1.6rem;
-    }
-  }
-  .options-banner-list {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 1)
-    );
-    margin-bottom: 0;
-    padding-left: -5px;
-    align-items: baseline;
-    justify-content: center;
+  background: url("../../assets/banner-top-bg.png") top center/cover no-repeat;
+  // padding-top: 45%;
+  // position: relative;
+  display: flex;
+  width: 100vw;
+  // height: 100vh;
+  min-height: 800px;
+  flex-wrap: wrap-reverse;
+  .banner-left {
     display: flex;
-    list-style: none;
-    padding-bottom: 20px;
-    .option-banner-item {
-      &:hover .option-text {
-        color: var(--blue-medium-color);
+    flex-direction: column;
+    // justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+    .banner-title {
+      width: 400px;
+      text-align: center;
+      .main-title {
+        color: var(--bs-primary);
+
+        font-size: 37px;
       }
-      display: flex;
-      justify-content: center;
+      .sub-title {
+        color: var(--bs-secondary);
 
-      .option-banner-link {
-        width: 50%;
-        text-decoration: none;
-        display: block;
-        i {
-          color: var(--blue-medium-color);
-          height: 56px;
-          width: 56px;
-          border-radius: 50%;
-          font-size: 3.6rem;
-          margin-bottom: 6px;
-          background-color: #fff;
-          text-align: center;
-          line-height: 52px;
-        }
-
-        .option-banner-text {
-          font-size: 2rem;
-          color: var(--black-bolor);
-          font-weight: 500;
-        }
+        font-size: 40px;
+      }
+      .desc {
+        font-size: 20px;
+        color: var(--bs-secondary);
       }
     }
+    .btn-appoiment {
+      display: block;
+      color: var(--bs-white);
+      font-size: 14px;
+      text-align: center;
+      line-height: 60px;
+      width: 280px;
+      font-weight: 550;
+      height: 60px;
+      background-color: var(--bs-primary);
+      border-radius: 30px;
+    }
   }
+  .banner-right {
+    padding-top: 50px;
+    .banner-right-background {
+      background: url("../../assets/banner-background.png") top center/contain
+        no-repeat;
+
+      padding-top: 100%;
+    }
+  }
+  // .title {
+  //   position: absolute;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   text-align: center;
+  //   top: 40px;
+  //   text-transform: uppercase;
+  //   color: var(--white-color);
+  //   text-shadow: 1px 1px 1px #333;
+  //   font-size: 1.8rem;
+  // }
+
+  // .search {
+  //   height: 50px;
+  //   width: 380px;
+  //   position: absolute;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   text-align: center;
+  //   top: 136px;
+  //   border-radius: 25px;
+  //   overflow: hidden;
+  //   background-color: var(--yellow-color);
+  //   input {
+  //     top: 0;
+  //     left: 44px;
+  //     background-color: transparent;
+  //     position: absolute;
+  //     width: 100%;
+  //     height: 100%;
+  //     border: none;
+  //     outline: none;
+  //     font-size: 1.6rem;
+  //   }
+  //   i {
+  //     position: absolute;
+  //     top: 16px;
+  //     left: 18px;
+  //     font-size: 1.6rem;
+  //   }
+  // }
+  // .options-banner-list {
+  //   position: absolute;
+  //   text-align: center;
+  //   width: 100%;
+  //   bottom: 0;
+  //   right: 0;
+  //   background-image: linear-gradient(
+  //     rgba(255, 255, 255, 0.1),
+  //     rgba(255, 255, 255, 0.9),
+  //     rgba(255, 255, 255, 1)
+  //   );
+  //   margin-bottom: 0;
+  //   padding-left: -5px;
+  //   align-items: baseline;
+  //   justify-content: center;
+  //   display: flex;
+  //   list-style: none;
+  //   padding-bottom: 20px;
+  //   .option-banner-item {
+  //     &:hover .option-text {
+  //       color: var(--blue-medium-color);
+  //     }
+  //     display: flex;
+  //     justify-content: center;
+
+  //     .option-banner-link {
+  //       width: 50%;
+  //       text-decoration: none;
+  //       display: block;
+  //       i {
+  //         color: var(--blue-medium-color);
+  //         height: 56px;
+  //         width: 56px;
+  //         border-radius: 50%;
+  //         font-size: 3.6rem;
+  //         margin-bottom: 6px;
+  //         background-color: #fff;
+  //         text-align: center;
+  //         line-height: 52px;
+  //       }
+
+  //       .option-banner-text {
+  //         font-size: 2rem;
+  //         color: var(--black-bolor);
+  //         font-weight: 500;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .about {
@@ -340,4 +391,13 @@
       }
     }
   }
+}
+
+.header-logo {
+  // background: url("../../assets/logo.jpg") center center no-repeat;
+  background: url("../../assets/logo.jpg") top center/contain no-repeat;
+  // display: block;
+  // padding-top: 50%;
+  height: 160%;
+  width: 100%;
 }

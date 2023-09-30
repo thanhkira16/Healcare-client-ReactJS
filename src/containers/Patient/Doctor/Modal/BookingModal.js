@@ -15,7 +15,7 @@ import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 import { toast } from "react-toastify";
-
+import LoadingOverlay from "react-loading-overlay";
 class BookingModal extends Component {
   constructor(props) {
     super(props);
@@ -31,8 +31,10 @@ class BookingModal extends Component {
       doctorId: "",
       timeType: "",
       genders: "",
-
+      textDate: "",
+      isDatePickerOpen: false,
       errors: {},
+      isLoading: false,
     };
   }
   componentDidMount() {
@@ -133,6 +135,7 @@ class BookingModal extends Component {
   };
 
   handleConfirmBooking = async () => {
+    this.setState({ isLoading: true });
     const err = this.validateInput();
     this.setState({ errors: err });
     if (_.isEmpty(err)) {
@@ -158,6 +161,7 @@ class BookingModal extends Component {
       });
       console.log(res);
       if (res && res.errCode === 0) {
+        this.setState({ isLoading: false });
         toast.success(
           <FormattedMessage id="patient.booking-modal.booking-success" />
         );
@@ -202,16 +206,43 @@ class BookingModal extends Component {
       return doctorName;
     }
   };
+  handleDatePickerClick = () => {
+    this.setState((prevState) => ({
+      isDatePickerOpen: !prevState.isDatePickerOpen,
+    }));
+  };
+  convertDateToString = (date) => {
+    let formattedDate = "";
+    const options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      weekday: "long", // Include the full name of the day of the week
+    };
 
+    if (this.props.language === LANGUAGES.VI) {
+      // For Vietnamese language, format as "Thứ N, dd/mm/yyyy"
+      formattedDate = date.toLocaleDateString("vi-VN", options);
+    } else {
+      // For English language, format as "Monday, mm/dd/yyyy"
+      formattedDate = date.toLocaleDateString("en-US", options);
+    }
+
+    return formattedDate;
+  };
   handleOnChangeDatePicker = (date) => {
-    console.log(date);
+    let currDate;
+    currDate = moment(date).add(0, "days").startOf("day").valueOf();
+
     this.setState({
-      birthday: date,
+      birthday: currDate,
+      textDate: this.convertDateToString(date),
     });
   };
 
   render() {
     let { language, dataBookingModal } = this.props;
+    let { isLoading } = this.state;
     let doctorId =
       dataBookingModal && !_.isEmpty(dataBookingModal)
         ? dataBookingModal.doctorId
@@ -330,20 +361,34 @@ class BookingModal extends Component {
                         }
                       />
                     </div>
-                    <div className="col-12 col-md-6">
+                    <div className=" col-12 col-md-6">
                       <label for="address">
                         <FormattedMessage id="patient.booking-modal.birthday" />
                       </label>
-                      <DatePicker
-                        onChange={this.handleOnChangeDatePicker}
-                        className="form-control  "
-                        selected={this.state.birthday}
-                        // minDate={
-                        //   new Date(new Date().getTime() - 24 * 60 * 60 * 1000)
-                        // }
-                        maxDate={new Date()}
-                        style={{ fontSize: "18px" }}
-                      />
+                      <div
+                        className="date-picker"
+                        onClick={this.handleDatePickerClick}
+                      >
+                        <DatePicker
+                          onChange={this.handleOnChangeDatePicker}
+                          className="form-control date-picker-select"
+                          selected={this.state.currDate}
+                          maxDate={
+                            new Date(new Date().getTime() - 24 * 60 * 60 * 1000)
+                          }
+                          // minDate={new Date()}
+                          style={{ fontSize: "18px" }}
+                          // format={dateFormat.SEND_TO_SERVER}
+                          isOpen={this.state.isDatePickerOpen}
+                        />
+                        <input
+                          type="text"
+                          className="date-picker-text"
+                          value={this.state.textDate}
+                          readOnly // Make the input read-only to display the selected date
+                          placeholder="Select a date"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -435,7 +480,15 @@ class BookingModal extends Component {
             </div>
           </Modal>
         </div>
-        <div style={{ height: "100px" }}></div>
+        <LoadingOverlay
+          className="loading-overlay"
+          active={isLoading}
+          spinner
+          text="Loading..."
+        >
+          {/* Your content goes here */}
+          <div></div>
+        </LoadingOverlay>
       </>
     );
   }
