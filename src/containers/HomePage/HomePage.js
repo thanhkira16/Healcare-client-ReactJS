@@ -1,16 +1,17 @@
 import React, { Component, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import HomeHeader from "./HomeHeader";
-import Specialty from "./Section/Specialty.js";
-import MedicalFacility from "./Section/MedicalFacility";
-import OutStandingDoctor from "./Section/OutStandingDoctor";
-import HandBook from "./Section/HandBook";
+import Specialty from "./Section/slider/Specialty";
+import MedicalFacility from "./Section/slider/MedicalFacility";
+import OutStandingDoctor from "./Section/slider/OutStandingDoctor";
+// import HandBook from "./Section/HandBook";
 import About from "./Section/About";
 import Footer from "./Section/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/Base.scss";
 import "./HomePage.scss";
+import Carousel from "./Section/slider/Carousel";
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -48,35 +49,34 @@ const ScrollToTopButton = () => {
 };
 class HomePage extends Component {
   render() {
-    let settings = {
+    const settings = {
       dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 3,
+      initialSlide: 0,
       responsive: [
         {
           breakpoint: 1024,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: false,
+            slidesToScroll: 3,
           },
         },
         {
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
             initialSlide: 2,
           },
         },
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            slidesToShow: 2,
+            slidesToScroll: 2,
           },
         },
       ],
@@ -88,6 +88,7 @@ class HomePage extends Component {
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />
         {/* <HandBook settings={settings} /> */}
+        <Carousel></Carousel>
         <About />
         <Footer />
         <ScrollToTopButton />

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./Specialty.scss";
+import "../scss/Specialty.scss";
 import { FormattedMessage } from "react-intl";
-import { getAllSpecialties } from "../../../services/userService";
+import { getAllSpecialties } from "../../../../services/userService";
 import Slider from "react-slick";
 import { withRouter } from "react-router";
 class Specialty extends Component {

@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 import "./Login.scss";
-// import { FormattedMessage } from "react-intl";
+
 import { handleLoginApi } from "../../services/userService";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +15,9 @@ class Login extends Component {
       errMsg: "",
       isShowPassword: false,
     };
+  }
+  componentDidMount() {
+    document.title = "VKU Healcare - login or sign up";
   }
 
   // Event handler for the username input
@@ -183,7 +187,42 @@ class Login extends Component {
       //     </div>
       //   </div>
       // </section>
-      <div></div>
+      <>
+        <div className="container-fluid">
+          <div className="row login-container">
+            <div className="left col-7 d-none d-lg-block">
+              <h1>Facebook</h1>
+              <p>
+                Facebook helps you connect and share with the people in your
+                life.
+              </p>
+            </div>
+            <div className="right col-5">
+              <form action="" className="gap-3">
+                <input
+                  type="text"
+                  placeholder="Email address or phone number"
+                />
+                <input type="password" placeholder="Password" />
+                <a href="" className="loginBtn">
+                  Log In
+                </a>
+                <a href="" className="forget">
+                  Forgotten password?
+                </a>
+                <div className="sign-up">
+                  <a href="" className="signupBtn">
+                    Create New Account
+                  </a>
+                </div>
+              </form>
+              <p>
+                <b>Create a Page</b> for a celebrity, band, or business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }

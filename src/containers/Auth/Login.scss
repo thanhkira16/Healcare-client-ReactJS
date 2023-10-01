@@ -1,31 +1,113 @@
-// Define variables (optional)
-$gradient-color-1: #ee7724;
-$gradient-color-2: #d8363a;
-$gradient-color-3: #dd3675;
-$gradient-color-4: #b44593;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 100vw;
+  height: 100vh;
+  background-color: var(--bs-light);
 
-// SCSS code
-.gradient-custom-2 {
-  // fallback for old browsers
-  background: #fccb90;
+  .left {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-  // Chrome 10-25, Safari 5.1-6
-  background: -webkit-linear-gradient(to right, $gradient-color-1, $gradient-color-2, $gradient-color-3, $gradient-color-4);
+    h1 {
+      font-family: "facebook letter faces";
+      font-size: 60px;
+      color: #1877f2;
+    }
 
-  // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
-  background: linear-gradient(to right, $gradient-color-1, $gradient-color-2, $gradient-color-3, $gradient-color-4);
-}
+    p {
+      font-size: 30px;
+      color: #1c1e21;
+      height: 200px;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+  }
 
-@media (min-width: 768px) {
-  .gradient-form {
-    height: 100vh !important;
+  .right {
+    width: 400px;
+
+    form {
+      background-color: var(--white-color);
+      border-radius: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #999;
+        outline: none;
+        font-size: 16px;
+      }
+
+      .loginBtn {
+        background-color: var(--bs-primary);
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.7rem;
+        font-family: "Arial";
+        font-weight: 700;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: var(--bs-secondary);
+        }
+      }
+
+      .forget {
+        margin: 15px 0;
+        text-decoration: none;
+        color: var(--bs-indigo);
+        font-family: "Arial";
+        font-size: 14px;
+        margin: 0 auto;
+        padding: 5px;
+      }
+
+      .sign-up {
+        padding-top: 20px;
+        border-top: 1px solid #999;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .signupBtn {
+          background-color: #42b72a;
+          padding: 15px;
+          text-align: center;
+          text-decoration: none;
+          border-radius: 5px;
+          color: white;
+          font-size: 17px;
+          font-family: "Arial";
+          font-weight: 600;
+          transition: 0.5s;
+
+          &:hover {
+            background-color: var(--bs-green);
+          }
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      font-family: "Arial";
+      font-size: 15px;
+    }
   }
 }
-
-@media (min-width: 769px) {
-  .gradient-custom-2 {
-    border-top-right-radius: .3rem;
-    border-bottom-right-radius: .3rem;
-  }
-}
-

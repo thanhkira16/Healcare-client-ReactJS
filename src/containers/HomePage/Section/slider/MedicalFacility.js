@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { getAllClinics } from "../../../services/userService";
+import { getAllClinics } from "../../../../services/userService";
 import { withRouter } from "react-router";
 class MedicalFacility extends Component {
   constructor(props) {

@@ -148,16 +148,17 @@
   width: 100vw;
   // height: 100vh;
   min-height: 800px;
-  flex-wrap: wrap-reverse;
+  // flex-wrap: wrap-reverse;
   .banner-left {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    margin-top: 100px;
+    // justify-content: flex-start;
     align-items: center;
+    margin-top: 20px;
+    min-width: 500px;
     .banner-title {
       width: 400px;
-      text-align: center;
+      text-align: left;
       .main-title {
         color: var(--bs-primary);
 
@@ -172,27 +173,55 @@
         font-size: 20px;
         color: var(--bs-secondary);
       }
-    }
-    .btn-appoiment {
-      display: block;
-      color: var(--bs-white);
-      font-size: 14px;
-      text-align: center;
-      line-height: 60px;
-      width: 280px;
-      font-weight: 550;
-      height: 60px;
-      background-color: var(--bs-primary);
-      border-radius: 30px;
+      .btn-appoiment {
+        cursor: pointer;
+        margin-top: 50px;
+        display: block;
+        color: var(--bs-white);
+        font-size: 14px;
+        text-align: center;
+        line-height: 60px;
+        width: 280px;
+        font-weight: 550;
+        height: 60px;
+        background-color: var(--bs-primary);
+        border-radius: 30px;
+        &:hover {
+          background-color: var(--bs-secondary);
+        }
+      }
     }
   }
   .banner-right {
     padding-top: 50px;
+
     .banner-right-background {
       background: url("../../assets/banner-background.png") top center/contain
         no-repeat;
+      padding-top: 65%;
+    }
+  }
 
-      padding-top: 100%;
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .banner-left {
+      margin-left: 40px;
+    }
+    .banner-right {
+      margin-left: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+    .banner-left {
+      .banner-title {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
     }
   }
   // .title {

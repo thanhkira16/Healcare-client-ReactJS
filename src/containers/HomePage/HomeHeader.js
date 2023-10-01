@@ -139,8 +139,8 @@ class HomeHeader extends Component {
         </div>
 
         {this.props.isShowBanner == true && (
-          <div className="banner row">
-            <div className="banner-left col-12 col-sm-12  col-lg-6">
+          <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">
+            <div className="banner-left   mt-md-5 mb-lg-5 text-md-start text-center col-md-5 col-12 col-sm-12  col-lg-6">
               <div className="banner-title">
                 <h3 className="main-title">
                   <FormattedMessage id="banner.main-title" />
@@ -151,12 +151,12 @@ class HomeHeader extends Component {
                 <p className="desc">
                   <FormattedMessage id="banner.desc" />
                 </p>
+                <span className="btn-appoiment">
+                  <FormattedMessage id="banner.btn-make-appoiment" />
+                </span>
               </div>
-              <span className="btn-appoiment">
-                <FormattedMessage id="banner.btn-make-appoiment" />
-              </span>
             </div>
-            <div className="banner-right col-12 col-sm-12  col-lg-6">
+            <div className="banner-right  col-12 col-md-5 col-sm-12  col-lg-6 text-center mx-auto mx-sm-0">
               <div className="banner-right-background"></div>
             </div>
             {/* <div className="banner-container">
