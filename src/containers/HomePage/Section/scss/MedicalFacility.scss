@@ -1,0 +1,56 @@
+.medical-container {
+  // background-color: var(--bs-cyan);
+  background-color: var(--bs-cyan);
+  padding-bottom: 10px;
+  .medical-header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-title {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+  }
+  .card-container {
+    .card {
+      //   width: 320px;
+      //   height: 260px;
+
+      position: relative;
+      width: 96%;
+      height: 30%;
+      min-height: 260px;
+      border-radius: 10px;
+      transition: all 1s;
+      cursor: pointer;
+      background-color: var(--bs-light);
+      margin: 4px;
+      display: flex;
+      align-items: center;
+      .avt-medical {
+        background-size: cover;
+        margin: 0 auto;
+        background-position: center;
+        width: 100%;
+        height: 180px;
+        border-radius: 4px;
+      }
+      .main-title {
+        margin-top: 10px;
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        -webkit-box-shadow: 3px 5px 17px -4px #777777;
+        box-shadow: 3px 5px 17px -4px #777777;
+      }
+
+      // .ratings {
+      //   i {
+      //     color: var(--bs-yellow);
+      //   }
+      // }
+    }
+  }
+}

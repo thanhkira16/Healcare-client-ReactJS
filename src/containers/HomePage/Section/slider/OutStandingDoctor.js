@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import "./Specialty.scss";
+import "../scss/OutStandingDoctor.scss";
 import { FormattedMessage } from "react-intl";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +8,6 @@ import Slider from "react-slick";
 import * as actions from "../../../../store/actions";
 import { LANGUAGES } from "../../../../utils";
 import { withRouter } from "react-router";
-import DoctorCard from "../card/DoctorCard";
 class OutStandingDoctor extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +19,7 @@ class OutStandingDoctor extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.language !== this.props.language) {
+      this.assignDataOfCarousel();
     }
     if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
       this.setState({
@@ -34,9 +34,12 @@ class OutStandingDoctor extends Component {
   componentDidMount() {
     this.props.loadTopDoctors();
   }
-  assignDataOfCarousel(arrDoctors) {
-    console.log("object", arrDoctors);
-    let language = this.props;
+  handleViewDetailDoctor(doctorId) {
+    this.props.history.push(`/detail-doctor/${doctorId}`);
+  }
+  assignDataOfCarousel() {
+    let { arrDoctors } = this.state;
+    let { language } = this.props;
     let slides = [];
 
     if (arrDoctors && arrDoctors.length > 0) {
@@ -66,30 +69,67 @@ class OutStandingDoctor extends Component {
 
   render() {
     let language = this.props.language;
-    console.log("dumaaaa", this.state);
     let { slides } = this.state;
+    // const imgDivStyle = {
+    //   backgroundImage: slide && slide.img ? `url(${slide.img})` : "none",
+    // };
     return (
       <>
-        <div className="container" style={this.props.backgroundColor}>
-          <h2> Responsive Product Carousel</h2>
-          <Slider {...this.props.settings}>
-            {slides.map((slide, index) => {
-              return (
-                <div key={index}>
-                  <DoctorCard slide={slide} />
-                  {/* <img src={slide.img} alt={`slide${index}`} /> */}
-                </div>
-              );
-            })}
-          </Slider>
+        <div className="container-fluid outstanding-container">
+          <div className="container">
+            <div className="outstanding-header">
+              <span className="header-title">
+                {" "}
+                <FormattedMessage id="home-page.out-standings-doctor" />
+              </span>
+              <span className="home-btn-see-more">
+                <FormattedMessage id="home-page.btnSeeMore" />
+              </span>
+            </div>
+            <Slider {...this.props.settings}>
+              {slides.map((slide, index) => {
+                return (
+                  <div className="card-container">
+                    <div
+                      className="card p-2 py-3 text-center"
+                      onClick={() =>
+                        this.handleViewDetailDoctor(slide.doctorId)
+                      }
+                      key={index}
+                    >
+                      <div
+                        className=" mb-2 avt-doctor"
+                        style={{
+                          backgroundImage: `url(${slide.img})`,
+                        }}
+                      ></div>
+                      <h5 className="mb-0 main-title">{slide.mainTitle}</h5>
+                      <small>Neurosurgeon</small>
+                      {/* <div className="ratings mt-2">
+                    <i className="fa fa-star"></i>
+                    <i className="fa fa-star"></i>
+                    <i className="fa fa-star"></i>
+                    <i className="fa fa-star"></i>
+                  </div> */}
+                      <div className="mt-4 apointment">
+                        <button className="btn btn-success text-uppercase">
+                          Book Appointment
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
         </div>
         {/* <div className="section-common section-outstanding-doctor">
           <div className="section-header">
             <span className="title-section">
-              <FormattedMessage id="home-page.out-standings-doctor" />
+             
             </span>
             <button className="btn-section">
-              <FormattedMessage id="home-page.btnSeeMore" />
+              
             </button>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import HomeHeader from "./HomeHeader";
 import Specialty from "./Section/slider/Specialty";
@@ -12,42 +12,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "../../styles/Base.scss";
 import "./HomePage.scss";
 import Carousel from "./Section/slider/Carousel";
-const ScrollToTopButton = () => {
-  const [isVisible, setIsVisible] = useState(true);
 
-  const handleScroll = () => {
-    console.log("Scrolling...");
-    const scrollTop = window.scrollY;
-    setIsVisible(scrollTop > 100);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    console.log("Effect is running...");
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      console.log("Cleanup...");
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <button
-      className={`scroll-to-top-button ${isVisible ? "visible" : "hidden"}`}
-      onClick={scrollToTop}
-    >
-      Go to Top
-    </button>
-  );
-};
 class HomePage extends Component {
+  componentDidMount() {
+    document.title = "VKU Healcare - Nền tảng y tế sức khỏe toàn diện";
+  }
   render() {
     const settings = {
       dots: false,
@@ -87,11 +56,9 @@ class HomePage extends Component {
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />
-        {/* <HandBook settings={settings} /> */}
-        <Carousel></Carousel>
+
         <About />
         <Footer />
-        <ScrollToTopButton />
       </>
     );
   }

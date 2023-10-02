@@ -1,0 +1,109 @@
+.about {
+  background-color: var(--bs-cyan);
+  padding: 10px 0;
+  .about-title {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: var(--title-font-size);
+    font-weight: 600;
+  }
+  .video {
+  }
+  .social-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    // align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    .social-item {
+      height: 60px;
+      min-width: 120px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+      .social-link {
+        display: block;
+        padding-top: 50%;
+      }
+    }
+
+    .social-item:nth-child(1) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/cuc-cong-nghe-thong-tin-bo-y-te-2.png)
+          top center/contain no-repeat;
+      }
+    }
+    .social-item:nth-child(2) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/ictnews.png) top
+          center/contain no-repeat;
+      }
+    }
+    .social-item:nth-child(3) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/infonet.png) top
+          center/contain no-repeat;
+      }
+    }
+    .social-item:nth-child(4) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/suckhoedoisong.png) top
+          center/contain no-repeat;
+      }
+    }
+    .social-item:nth-child(5) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/vnexpress.png) top
+          center/contain no-repeat;
+      }
+    }
+    .social-item:nth-child(6) {
+      .social-link {
+        background: url(../../../../assets/images/Footer/vtv1.png) top
+          center/contain no-repeat;
+      }
+    }
+  }
+}
+
+.copyright {
+  background-color: var(--blue-medium-color);
+  .copyright-content {
+    padding: 10px 0;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: var(--white-color);
+      font-size: 12px;
+    }
+
+    .social-media-list {
+      list-style: none;
+      display: flex;
+
+      .social-media-item {
+        height: 30px;
+        width: 30px;
+        margin: 4px;
+        .social-media-link {
+          display: block;
+          padding-top: 100%;
+        }
+      }
+
+      .social-media-item:nth-child(1) {
+        .social-media-link {
+          background: url(../../../../assets/images/Footer/facebook-square.svg)
+            top center/contain no-repeat;
+        }
+      }
+      .social-media-item:nth-child(2) {
+        .social-media-link {
+          background: url(../../../../assets/images/Footer/youtube-square.svg)
+            top center/contain no-repeat;
+        }
+      }
+    }
+  }
+}

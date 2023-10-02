@@ -7,8 +7,8 @@ class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="copyright">
-          <div className="grid copyright-content">
+        <div className="copyright container-fluid">
+          <div className="container copyright-content">
             <span>
               © 2023 VKU healcare. <br /> Truong Cong Hoang Thanh
             </span>

@@ -28,7 +28,9 @@
   "home-page": {
     "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
     "btnSeeMore": "Xem thêm",
-    "speciality-popularity": "Chuyên khoa phổ biến"
+    "speciality-popularity": "Chuyên khoa phổ biến",
+    "medical-popularity": "Cơ sở y tế nổi bật",
+    "about-title": "Truyền thông nói về BookingCare"
   },
   "menu": {
     "admin": {

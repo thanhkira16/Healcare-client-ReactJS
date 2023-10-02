@@ -147,7 +147,8 @@
   display: flex;
   width: 100vw;
   // height: 100vh;
-  min-height: 800px;
+  min-height: 700px;
+  border-bottom: 1px solid var(--bs-cyan);
   // flex-wrap: wrap-reverse;
   .banner-left {
     display: flex;
@@ -161,7 +162,6 @@
       text-align: left;
       .main-title {
         color: var(--bs-primary);
-
         font-size: 37px;
       }
       .sub-title {
@@ -203,24 +203,44 @@
   }
 
   @media (min-width: 768px) and (max-width: 991.98px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    .banner {
+      flex-direction: unset;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-    .banner-left {
-      margin-left: 40px;
-    }
-    .banner-right {
-      margin-left: 40px;
+      .banner-left {
+        margin-left: 40px;
+      }
+      .banner-right {
+        margin-left: 40px;
+      }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .banner-left {
       .banner-title {
+        // padding-right: 50px;
+        width: 380px;
         text-align: center;
+        margin-right: 20px;
         display: flex;
         align-items: center;
         flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+  @media (max-width: 567px) {
+    .banner-left {
+      .banner-title {
+        padding-right: 50px;
+        width: 380px;
+        text-align: center;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }
@@ -315,115 +335,8 @@
   //   }
   // }
 }
-
-.about {
-  background-color: #f5f5f5;
-  padding: 10px 0;
-  .about-title {
-    text-align: left;
-    margin-bottom: 30px;
-    font-size: var(--title-font-size);
-    font-weight: 600;
-  }
-  .social-list {
-    padding-left: 60px;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-self: flex-start;
-    .social-item {
-      height: 60px;
-      min-width: 120px;
-      margin: 4px;
-      .social-link {
-        display: block;
-        padding-top: 50%;
-      }
-    }
-
-    .social-item:nth-child(1) {
-      .social-link {
-        background: url(../../assets/images/Footer/cuc-cong-nghe-thong-tin-bo-y-te-2.png)
-          top center/contain no-repeat;
-      }
-    }
-    .social-item:nth-child(2) {
-      .social-link {
-        background: url(../../assets/images/Footer/ictnews.png) top
-          center/contain no-repeat;
-      }
-    }
-    .social-item:nth-child(3) {
-      .social-link {
-        background: url(../../assets/images/Footer/infonet.png) top
-          center/contain no-repeat;
-      }
-    }
-    .social-item:nth-child(4) {
-      .social-link {
-        background: url(../../assets/images/Footer/suckhoedoisong.png) top
-          center/contain no-repeat;
-      }
-    }
-    .social-item:nth-child(5) {
-      .social-link {
-        background: url(../../assets/images/Footer/vnexpress.png) top
-          center/contain no-repeat;
-      }
-    }
-    .social-item:nth-child(6) {
-      .social-link {
-        background: url(../../assets/images/Footer/vtv1.png) top center/contain
-          no-repeat;
-      }
-    }
-  }
-}
-
-.copyright {
-  background-color: var(--blue-medium-color);
-  .copyright-content {
-    padding: 10px 0;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    span {
-      color: var(--white-color);
-      font-size: 12px;
-    }
-
-    .social-media-list {
-      list-style: none;
-      display: flex;
-
-      .social-media-item {
-        height: 30px;
-        width: 30px;
-        margin: 4px;
-        .social-media-link {
-          display: block;
-          padding-top: 100%;
-        }
-      }
-
-      .social-media-item:nth-child(1) {
-        .social-media-link {
-          background: url(../../assets/images/Footer/facebook-square.svg) top
-            center/contain no-repeat;
-        }
-      }
-      .social-media-item:nth-child(2) {
-        .social-media-link {
-          background: url(../../assets/images/Footer/youtube-square.svg) top
-            center/contain no-repeat;
-        }
-      }
-    }
-  }
-}
-
 .header-logo {
-  // background: url("../../assets/logo.jpg") center center no-repeat;
+  // background: url("../../../../assets/logo.jpg") center center no-repeat;
   background: url("../../assets/logo.jpg") top center/contain no-repeat;
   // display: block;
   // padding-top: 50%;

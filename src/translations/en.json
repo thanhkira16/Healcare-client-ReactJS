@@ -98,7 +98,9 @@
   "home-page": {
     "out-standings-doctor": "Outstanding Doctor of the Week",
     "btnSeeMore": "See more",
-    "speciality-popularity": "Pupular specialities"
+    "speciality-popularity": "Pupular specialities",
+    "medical-popularity": "Prominent Healthcare Facilities",
+    "about-title": "Media Coverage on BookingCare"
   },
   "manage-schedules": {
     "title": "Manage Medical Appointment Schedules",

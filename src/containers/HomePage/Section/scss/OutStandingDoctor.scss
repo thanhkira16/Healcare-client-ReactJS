@@ -1,8 +1,7 @@
-.specialty-container {
-  // background-color: var(--bs-cyan);
+.outstanding-container {
   background-color: var(--bs-white);
   padding-bottom: 10px;
-  .specialty-header {
+  .outstanding-header {
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -20,7 +19,8 @@
       position: relative;
       width: 96%;
       height: 30%;
-      min-height: 200px;
+      min-height: 300px;
+      border: none;
       border-radius: 10px;
       transition: all 1s;
       cursor: pointer;
@@ -28,13 +28,13 @@
       margin: 4px;
       display: flex;
       align-items: center;
-      .avt-specialty {
+      .avt-doctor {
         background-size: cover;
         margin: 0 auto;
         background-position: center;
-        width: 100%;
-        height: 180px;
-        border-radius: 4px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
       }
       .main-title {
         margin-top: 10px;
@@ -46,11 +46,34 @@
         box-shadow: 3px 5px 17px -4px #777777;
       }
 
-      // .ratings {
-      //   i {
-      //     color: var(--bs-yellow);
-      //   }
-      // }
+      .ratings {
+        i {
+          color: var(--bs-yellow);
+        }
+      }
+
+      .apointment {
+        position: absolute;
+        width: 100%;
+        bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          border-radius: 20px;
+          background-color: var(--bs-primary);
+          color: var(--bs-white);
+          border-color: #eee;
+          font-size: 1rem;
+          padding: 0 20px;
+          min-width: 150px;
+          margin-bottom: 10px;
+          height: 35px;
+          &:hover {
+            background-color: var(--bs-secondary);
+          }
+        }
+      }
     }
   }
 }
