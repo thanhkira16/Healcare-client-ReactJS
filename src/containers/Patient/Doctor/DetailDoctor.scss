@@ -17,13 +17,17 @@
     .info-doctor {
       width: 600px;
       margin-left: 30px;
+      display: flex;
+      flex-direction: column;
       .main-title {
+        display: block;
         margin-bottom: 5px;
         font-size: 2.4rem;
         font-weight: 600;
       }
 
       .desc {
+        display: block;
         font-size: 14px;
       }
     }

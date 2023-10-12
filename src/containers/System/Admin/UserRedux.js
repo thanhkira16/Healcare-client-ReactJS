@@ -8,6 +8,7 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import "./UserRedux.scss";
 import TableManageUser from "./TableManageUser";
+import LoadingOverlay from "react-loading-overlay";
 
 class UserRedux extends Component {
   constructor(props) {
@@ -252,7 +253,16 @@ class UserRedux extends Component {
         <div className="title">
           <FormattedMessage id="manage-user.addingTitle" />
         </div>
-        <span>{isLoadingData === true ? "Loading..." : ""}</span>
+        <LoadingOverlay
+          className="loading-overlay"
+          active={isLoadingData}
+          spinner
+          text="Loading..."
+        >
+          {/* Your content goes here */}
+          <div></div>
+        </LoadingOverlay>
+        {/* <span>{isLoadingData === true ? "Loading..." : ""}</span> */}
         <div className="body">
           <div className="row mb-3 mt-3">
             <div className="col-md-6 ">

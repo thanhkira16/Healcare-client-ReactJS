@@ -7,7 +7,8 @@ import "./DetailDoctor.scss";
 import "../../../styles/Base.scss";
 import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfor from "./DoctorExtraInfor";
-
+import LikeAndShare from "../SocialPlugin/LikeAndShare";
+import Comments from "../SocialPlugin/Comments";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -63,6 +64,9 @@ class DetailDoctor extends Component {
                   detailDoctor.Markdown &&
                   detailDoctor.Markdown.description}
               </p>
+              <div className="like-and-share-btn">
+                <LikeAndShare></LikeAndShare>
+              </div>
             </div>
           </div>
           <div className="schedule-doctor container">
@@ -99,6 +103,10 @@ class DetailDoctor extends Component {
           </div>
         </div>
         <div className="comment-doctor"></div>
+        <Comments
+          width="100%"
+          dataHref="https://www.facebook.com/photo.php?fbid=697159589131554&set=a.555366243310890&type=3&mibextid=CDWPTG"
+        ></Comments>
       </>
     );
   }

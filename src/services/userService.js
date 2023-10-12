@@ -1,6 +1,7 @@
 import axios from "../axios";
 //system
 const handleLoginApi = (email, password) => {
+  console.log("username, password", email, password);
   return axios.post("/api/login", { email, password });
 };
 

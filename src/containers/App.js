@@ -10,7 +10,8 @@ import {
 } from "../hoc/authentication";
 import { path } from "../utils";
 import Home from "../routes/Home";
-import Login from "./Auth/Login.js";
+import Login from "./Auth/Login/Login.js";
+
 import System from "../routes/System";
 // import { CustomToastCloseButton } from "../components/CustomToast";
 import HomePage from "./HomePage/HomePage.js";
@@ -52,6 +53,7 @@ class App extends Component {
                     path={path.LOGIN}
                     component={userIsNotAuthenticated(Login)}
                   />
+
                   <Route
                     path={path.SYSTEM}
                     component={userIsAuthenticated(System)}
