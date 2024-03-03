@@ -25,13 +25,45 @@
       .header-logo {
         // background: url("../../assets/logo.jpg") center center no-repeat;
         background: url("../../assets/logo.jpg") top center/contain no-repeat;
-        // display: block;
+        display: block;
         // padding-top: 50%;
         height: 160%;
         width: 100%;
       }
     }
     .nav-center {
+      position: relative;
+      .input-group {
+        position: absolute;
+        width: 300px;
+        height: 60px;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #999;
+        right: 0;
+        top: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 20px;
+          left: 14px;
+          color: var(--bs-primary);
+          font-size: 1.8rem;
+        }
+        input {
+          padding-left: 30px;
+          top: 0;
+          border: none;
+          width: 100%;
+          outline: none;
+          font-size: 16px;
+        }
+      }
       width: 50%;
       .nav-center-list {
         padding-left: 0;

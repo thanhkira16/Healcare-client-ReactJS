@@ -70,6 +70,8 @@ class OutStandingDoctor extends Component {
   render() {
     let language = this.props.language;
     let { slides } = this.state;
+    console.log("state", this.state);
+    console.log("props", this.props);
     // const imgDivStyle = {
     //   backgroundImage: slide && slide.img ? `url(${slide.img})` : "none",
     // };

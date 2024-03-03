@@ -41,7 +41,7 @@ class HomeHeader extends Component {
           <div className="container">
             <div className="header-navbar row">
               <div className="col-2 nav-left">
-                <i className="fas fa-bars header-open-slidebar"></i>
+                {/* <i className="fas fa-bars header-open-slidebar"></i> */}
                 <a
                   href=""
                   className="header-logo d-none d-md-block"
@@ -49,7 +49,7 @@ class HomeHeader extends Component {
                 ></a>
               </div>
               <div className="col-8 nav-center">
-                <ul className="row nav-center-list">
+                {/* <ul className="row nav-center-list">
                   <li className="col-md-3 d-none d-md-block nav-center-item">
                     <p className="main-title">
                       <b>
@@ -90,7 +90,11 @@ class HomeHeader extends Component {
                       <FormattedMessage id="homeheader.check-health" />
                     </p>
                   </li>
-                </ul>
+                </ul> */}
+                <div class="input-group">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Type something..." />
+                </div>
               </div>
               <div className="col-2 nav-right">
                 <div className="support">

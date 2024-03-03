@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import * as actions from "../../../store/actions";
 import "./Login.scss";
-import { handleLoginApi } from "../../../services/userService";
+import { handleLoginApi, handleSignUpApi } from "../../../services/userService";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: "",
       confirmPassword: "",
       phoneNumber: "",
@@ -18,13 +18,13 @@ class Login extends Component {
       isOpenLogin: true,
       isShowConfirmPassword: false,
       isValidSignUp: {
-        username: true,
+        email: true,
         password: true,
         confirmPassword: true,
         phoneNumber: true,
       },
       isValidLogin: {
-        username: true,
+        email: true,
         password: true,
       },
     };
@@ -35,7 +35,7 @@ class Login extends Component {
   }
   resetState = () => {
     this.setState({
-      username: "",
+      email: "",
       password: "",
       confirmPassword: "",
       phoneNumber: "",
@@ -43,7 +43,7 @@ class Login extends Component {
       isShowPassword: false,
       isShowConfirmPassword: false,
       isValid: {
-        username: true,
+        email: true,
         password: true,
         confirmPassword: true,
         phoneNumber: true,
@@ -69,9 +69,9 @@ class Login extends Component {
     }, 200); // 1000 milliseconds (1 second) delay
   };
   validateLogin = () => {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     const isValidLogin = {
-      username: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(username),
+      email: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email),
       // password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password),
       password: password.trim() !== "",
       // confirmPassword: confirmPassword === password,
@@ -82,15 +82,16 @@ class Login extends Component {
     return Object.values(isValidLogin).every((value) => value);
   };
   validateSignUp = () => {
-    const { username, password, confirmPassword, phoneNumber } = this.state;
+    const { email, password, confirmPassword, phoneNumber } = this.state;
+    console.log(email);
     const isValidSignUp = {
-      username: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(username),
+      // email: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z.]+$/.test(email),
       // password: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password),
       password: password.trim() !== "",
       confirmPassword: confirmPassword === password,
       phoneNumber: /^[0-9]+$/.test(phoneNumber), // Example: only digits
     };
-
+    console.log(isValidSignUp);
     this.setState({ isValidSignUp });
     return Object.values(isValidSignUp).every((value) => value);
   };
@@ -103,8 +104,45 @@ class Login extends Component {
       });
 
       try {
-        const { username, password } = this.state;
-        let data = await handleLoginApi(username, password);
+        const { email, password } = this.state;
+        let data = await handleLoginApi(email, password);
+        console.log(data.user);
+
+        if (data && data.errCode !== 0) {
+          this.setState({
+            errMsg: data.message,
+          });
+        }
+        if (data && data.errCode === 0) {
+          this.props.userLoginSuccess(data.user);
+          console.log("Login successful");
+        } else {
+          console.log("errMsg", this.state.errMsg);
+        }
+      } catch (e) {
+        if (e.response) {
+          if (e.response.data) {
+            this.setState({
+              errMsg: e.response.data.message,
+            });
+          }
+        }
+        console.log(e.response);
+      }
+    }
+  };
+
+  handleSignUp = async () => {
+    console.log("signUp");
+    if (this.validateSignUp()) {
+      this.setState({
+        errMsg: "",
+      });
+
+      try {
+        const { email, phoneNumber, password } = this.state;
+        console.log(email, phoneNumber, password);
+        let data = await handleSignUpApi(email, phoneNumber, password);
         console.log(data.user);
 
         if (data && data.errCode !== 0) {
@@ -157,10 +195,10 @@ class Login extends Component {
         <div className="container-fluid">
           <div className="row login-container">
             <div className="left col-7 d-none d-lg-block">
-              <h1>Facebook</h1>
+              <h1>VKU Healcare</h1>
               <p>
-                Facebook helps you connect and share with the people in your
-                life.
+                You can get the care you need 24/7 – be it online or in person.
+                You will be treated by caring specialist doctors.
               </p>
             </div>
             {isOpenLogin ? (
@@ -170,15 +208,15 @@ class Login extends Component {
                   <input
                     type="text"
                     className={
-                      isValidLogin.username
+                      isValidLogin.email
                         ? "form-control"
                         : "form-control is-invalid"
                     }
                     placeholder="Email address or phone number"
-                    value={this.state.username}
-                    name="username"
+                    value={this.state.email}
+                    name="email"
                     onChange={(event) =>
-                      this.handleOnchangeInput(event, "username")
+                      this.handleOnchangeInput(event, "email")
                     }
                   />
                   <div className="password-input">
@@ -238,15 +276,15 @@ class Login extends Component {
                   <input
                     type="text"
                     placeholder="Email address"
-                    value={this.state.username}
-                    name="username"
+                    value={this.state.email}
+                    name="email"
                     className={
-                      isValidSignUp.username
+                      isValidSignUp.email
                         ? "form-control"
                         : "form-control is-invalid"
                     }
                     onChange={(event) =>
-                      this.handleOnchangeInput(event, "username")
+                      this.handleOnchangeInput(event, "email")
                     }
                   />
                   <input
@@ -333,7 +371,10 @@ class Login extends Component {
                         </span>
                       )}
                   </div>
-                  <span className="loginBtn" onClick={() => this.handleLogin()}>
+                  <span
+                    className="loginBtn"
+                    onClick={() => this.handleSignUp()}
+                  >
                     Sign Up
                   </span>
                   <a

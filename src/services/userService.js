@@ -4,6 +4,10 @@ const handleLoginApi = (email, password) => {
   console.log("username, password", email, password);
   return axios.post("/api/login", { email, password });
 };
+const handleSignUpApi = (email, phoneNumber, password) => {
+  console.log("username, password", email, password);
+  return axios.post("/api/signup", { email, phoneNumber, password });
+};
 
 const getAllUsers = (inputId) => {
   return axios.get(`/api/get-all-users?id=${inputId}`);
@@ -103,6 +107,7 @@ const getDetailClinicById = (data) => {
 
 export {
   handleLoginApi,
+  handleSignUpApi,
   getAllUsers,
   createNewUserService,
   deleteUserService,
