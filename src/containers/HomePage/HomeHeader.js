@@ -7,7 +7,22 @@ import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
 
 class HomeHeader extends Component {
-  componentDidMount() {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOverlayActive: false,
+
+    };
+  }
+  handleMenuOpen = () => {
+    this.setState({ isOverlayActive: true });
+  };
+
+  handleMenuClose = () => {
+    this.setState({ isOverlayActive: false });
+  };
+
+
   switchLanguage() {
     const currLanguage = this.props.language;
 
@@ -15,17 +30,17 @@ class HomeHeader extends Component {
     const oppositeLanguage =
       currLanguage === LANGUAGES.VI ? LANGUAGES.EN : LANGUAGES.VI;
 
-    const hideLanguageBtn =
-      document.getElementsByClassName("hide-language-btn")[0];
-    console.log(hideLanguageBtn);
+    // const hideLanguageBtn =
+    //   document.getElementsByClassName("hide-language-btn")[0];
+    // console.log(hideLanguageBtn);
 
-    if (oppositeLanguage === LANGUAGES.VI) {
-      hideLanguageBtn.style.left = "0px"; // Move to the left
-      console.log(hideLanguageBtn.style.left);
-    } else {
-      hideLanguageBtn.style.left = "32px"; // Move to the right
-      console.log(hideLanguageBtn.style.left);
-    }
+    // if (oppositeLanguage === LANGUAGES.VI) {
+    //   hideLanguageBtn.style.left = "0px";
+    //   console.log(hideLanguageBtn.style.left);
+    // } else {
+    //   hideLanguageBtn.style.left = "32px";
+    //   console.log(hideLanguageBtn.style.left);
+    // }
     this.props.changeLanguageAppRedux(oppositeLanguage);
   }
 
@@ -34,113 +49,46 @@ class HomeHeader extends Component {
   };
 
   render() {
+    const { isOverlayActive } = this.state;
     const language = this.props.language;
+    const oppositeLanguage =
+      language === LANGUAGES.VI ? LANGUAGES.EN : LANGUAGES.VI;
     return (
       <React.Fragment>
-        <div className="header">
-          <div className="container">
-            <div className="header-navbar row">
-              <div className="col-2 nav-left">
-                {/* <i className="fas fa-bars header-open-slidebar"></i> */}
-                <a
-                  href=""
-                  className="header-logo d-none d-md-block"
-                  onClick={this.returnToHomePage}
-                ></a>
-              </div>
-              <div className="col-8 nav-center">
-                {/* <ul className="row nav-center-list">
-                  <li className="col-md-3 d-none d-md-block nav-center-item">
-                    <p className="main-title">
-                      <b>
-                        <FormattedMessage id="homeheader.speciality" />
-                      </b>
-                    </p>
-                    <p className="sub-title d-none d-sm-block ">
-                      <FormattedMessage id="homeheader.searchdoctor" />
-                    </p>
-                  </li>
-                  <li className="col-md-3 d-none d-md-block nav-center-item">
-                    <p className="main-title">
-                      <b>
-                        <FormattedMessage id="homeheader.health-facility" />
-                      </b>
-                    </p>
-                    <p className="sub-title d-none d-sm-block ">
-                      <FormattedMessage id="homeheader.select-room" />
-                    </p>
-                  </li>
-                  <li className="col-md-3 d-none d-md-block nav-center-item">
-                    <p className="main-title">
-                      <b>
-                        <FormattedMessage id="homeheader.doctor" />
-                      </b>
-                    </p>
-                    <p className="sub-title d-none d-sm-block ">
-                      <FormattedMessage id="homeheader.select-doctor" />
-                    </p>
-                  </li>
-                  <li className="col-md-3 d-none d-md-block nav-center-item">
-                    <p className="main-title">
-                      <b>
-                        <FormattedMessage id="homeheader.fee" />
-                      </b>
-                    </p>
-                    <p className="sub-title d-none d-sm-block ">
-                      <FormattedMessage id="homeheader.check-health" />
-                    </p>
-                  </li>
-                </ul> */}
-                <div class="input-group">
-                  <i class="fas fa-search"></i>
-                  <input type="text" placeholder="Type something..." />
-                </div>
-              </div>
-              <div className="col-2 nav-right">
-                <div className="support">
-                  <i className="fas fa-question-circle"></i>
-                  <FormattedMessage id="homeheader.support" />
-                </div>
-                <div
-                  className="dropdown-language "
-                  onClick={() => this.switchLanguage()}
-                >
-                  <span className="hide-language-btn"></span>
-                  <span
-                    className={`language-btn${
-                      language !== LANGUAGES.VI
-                        ? " language-vi offline"
-                        : " language-vi"
-                    }`}
-                    // onClick={() => this.changeLanguage(LANGUAGES.VI)}
-                  >
-                    <i className="fas fa-star"></i>
-                  </span>
-                  <span
-                    className={`language-btn${
-                      language !== LANGUAGES.EN
-                        ? " language-en offline"
-                        : " language-en"
-                    }`}
-                    // onClick={  () => this.changeLanguage(LANGUAGES.EN)}
-                  >
-                    <i className="fas fa-plus"></i>
-                  </span>
-                </div>
-                {/* <div className="switch-language">
-                  <button
-                    id="language-button"
-                    className="button"
-                    value="en"
-                    onClick={() => this.switchLanguage()}
-                  >
-                    EN
-                  </button>
-                </div> */}
-              </div>
+        <header>
+          <a className="header-logo" href="/">
+            
+          </a>
+          <nav>
+            <ul className="nav__links">
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">Projects</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+            </ul>
+          </nav>
+          <a className="cta" href="#" onClick={() => this.switchLanguage()}>
+            {oppositeLanguage.toUpperCase()}
+          </a>
+          <p class="menu cta">Menu</p>
+          <div
+            className={`overlay ${isOverlayActive ? "overlay--active" : ""}`}
+          >
+            <a className="close" onClick={this.handleMenuClose}>
+              &times;
+            </a>
+            <div className="overlay__content">
+              <a href="#">Services</a>
+              <a href="#">Projects</a>
+              <a href="#">About</a>
             </div>
           </div>
-        </div>
+        </header>
 
         {this.props.isShowBanner == true && (
           <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">

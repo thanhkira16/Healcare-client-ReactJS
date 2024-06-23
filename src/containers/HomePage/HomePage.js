@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import HomeHeader from "./HomeHeader";
 import Specialty from "./Section/slider/Specialty";
+import Banner from "./Section/slider/Banner";
 import MedicalFacility from "./Section/slider/MedicalFacility";
 import OutStandingDoctor from "./Section/slider/OutStandingDoctor";
 // import HandBook from "./Section/HandBook";
@@ -52,7 +53,8 @@ class HomePage extends Component {
     };
     return (
       <>
-        <HomeHeader isShowBanner={true} />
+        <HomeHeader />
+        <Banner />
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />
