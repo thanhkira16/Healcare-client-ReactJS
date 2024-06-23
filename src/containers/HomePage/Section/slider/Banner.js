@@ -50,10 +50,9 @@ class Banner extends Component {
               <h1>The duotone image.</h1>
               <p>This is how the image looks like after applying a duotone effect.</p>
             </div>
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/duotone-image.jpg"
-              alt="Duotone"
-            />
+            <div className="banner-right  col-12 col-md-5 col-sm-12  col-lg-6 text-center mx-auto mx-sm-0">
+              <div className="banner-right-background"></div>
+            </div>
           </div>
         </div>
 

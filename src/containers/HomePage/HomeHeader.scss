@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,240 +5,139 @@
 }
 
 header {
-  z-index: 100;
-  top: 0;
-  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
   background-color: var(--white-color);
+}
 
-  .header-logo {
-    background: url("../../assets/logo.jpg") top center/contain no-repeat;
-    display: block;
-    height: 50px;
-    width: 100px;
+.header-logo {
+  background: url("../../assets/logo.jpg") top center/contain no-repeat;
+  display: block;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  // color: #edf0f1;
+  color: var(--blue-medium-color);
+  text-decoration: none;
+}
+
+.cta{
+  color: var(--white-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  font-size: 2.2rem;
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.button{
+ 
+}
+
+.cta {
+  margin-right: 5px;
+  padding: 9px 25px;
+  font-size: 1.4rem;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
   }
-
-  nav {
-    ul.nav__links {
-      list-style: none;
-      display: flex;
-
-      li {
-        padding: 0 20px;
-
-        a {
-          font-family: "Montserrat", sans-serif;
-          font-weight: 500;
-          color: var(--black-bolor);
-          text-decoration: none;
-          font-size: 2rem;
-          transition: color 0.3s ease;
-
-          &:hover {
-            color: #0088a9;
-          }
-        }
-      }
-    }
-  }
-
-  .cta {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    font-size: 1.4rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: var(--white-color);
-    text-decoration: none;
-    &:hover {
-      background-color: rgba(0, 136, 169, 0.8);
-    }
-  }
-
-  // Mobile Nav
-  .menu {
-    display: none;
-  }
-
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: #24252a;
-    overflow-x: hidden;
-    transition: width 0.5s ease;
-
-    &--active {
-      width: 100%;
-    }
-
-    &__content {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      a {
-        padding: 15px;
-        font-size: 36px;
-        display: block;
-        transition: color 0.3s ease;
-
-        &:hover,
-        &:focus {
-          color: #0088a9;
-        }
-      }
-
-      .close {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 60px;
-        color: #edf0f1;
-
-        &:hover {
-          color: #0088a9;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-height: 450px) {
-    .overlay {
-      a {
-        font-size: 20px;
-      }
-      .close {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    .nav__links,
-    .cta {
-      display: none;
-    }
-    .menu {
-      display: initial;
-    }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
 }
 
-
-
-// header {
-//   z-index: 100;
-//   top: 0;
-//   position: sticky;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 20px;
-//   background-color: #fff;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
-//   .logo img {
-//     height: 40px;
-//   }
-
-//   nav {
-//     ul {
-//       list-style: none;
-//       margin: 0;
-//       padding: 0;
-//       display: flex;
-
-//       li {
-//         margin: 0 15px;
-
-//         a {
-//           text-decoration: none;
-//           color: #333;
-//           font-weight: 500;
-//           transition: color 0.3s;
-
-//           &:hover {
-//             color: #007bff;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .cta {
-//     text-decoration: none;
-//     color: #007bff;
-//     font-weight: 500;
-//     padding: 10px 20px;
-//     border: 1px solid #007bff;
-//     border-radius: 4px;
-//     transition: background-color 0.3s, color 0.3s;
-
-//     &:hover {
-//       background-color: #007bff;
-//       color: #fff;
-//     }
-//   }
-
-//   .menu {
-//     display: none;
-//   }
-
-//   .overlay {
-//     position: fixed;
-//     height: 100%;
-//     width: 100%;
-//     background-color: rgba(0, 0, 0, 0.9);
-//     top: 0;
-//     left: 0;
-//     transition: 0.5s;
-//     display: none;
-
-//     .close {
-//       position: absolute;
-//       top: 20px;
-//       right: 45px;
-//       font-size: 60px;
-//       color: #fff;
-//       text-decoration: none;
-
-//       &:hover {
-//         color: #f1f1f1;
-//       }
-//     }
-
-//     .overlay__content {
-//       position: relative;
-//       top: 25%;
-//       width: 100%;
-//       text-align: center;
-//       margin-top: 30px;
-
-//       a {
-//         padding: 8px;
-//         text-decoration: none;
-//         font-size: 36px;
-//         color: #818181;
-//         display: block;
-//         transition: 0.3s;
-
-//         &:hover, &:focus {
-//           color: #f1f1f1;
-//         }
-//       }
-//     }
-//   }
-// }
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}

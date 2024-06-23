@@ -93,7 +93,17 @@ body {
 
       .content {
         transform: skew(30deg);
-        margin-left: 1000px;
+        margin-left: 1400px;
+        .banner-right {
+          padding-top: 50px;
+      
+          .banner-right-background {
+            background: url("../../../../assets/banner-background.png") top center/contain
+              no-repeat;
+            padding-top: 85%;
+            right: 5%;
+          }
+        }
       }
     }
   }
