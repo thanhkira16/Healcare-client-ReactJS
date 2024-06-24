@@ -155,10 +155,10 @@ class HomeHeader extends Component {
           <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">
             <div className="banner-left   mt-md-5 mb-lg-5 text-md-start text-center col-md-5 col-12 col-sm-12  col-lg-6">
               <div className="register">
-                <h2>
+                <strong className="register-title">
                   {" "}
                   <FormattedMessage id="homeheader.register" />
-                </h2>
+                </strong>
                 <form onSubmit={this.handleSubmit}>
                   <input
                     type="text"

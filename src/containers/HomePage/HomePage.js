@@ -4,6 +4,7 @@ import HomeHeader from "./HomeHeader";
 import Specialty from "./Section/slider/Specialty";
 import MedicalFacility from "./Section/slider/MedicalFacility";
 import OutStandingDoctor from "./Section/slider/OutStandingDoctor";
+import SearchCarousel from "./Section/slider/SearchCarousel";
 // import HandBook from "./Section/HandBook";
 import About from "./Section/About";
 import Footer from "./Section/Footer";
@@ -53,6 +54,7 @@ class HomePage extends Component {
     return (
       <>
         <HomeHeader isShowBanner={true} />
+        <SearchCarousel/>
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />

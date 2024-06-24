@@ -215,8 +215,10 @@
       margin-right: 28px;
       margin-top: 50px;
       font-family: Arial, sans-serif;
-      h2 {
-          margin-bottom: 20px;
+      .register-title {
+          margin-bottom: 10px;
+          display: block;
+          font-size: 1.2rem;
       }
   
       form {
