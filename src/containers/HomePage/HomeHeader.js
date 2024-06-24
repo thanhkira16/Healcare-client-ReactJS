@@ -42,7 +42,9 @@ class HomeHeader extends Component {
   handleMenuClose = () => {
     this.setState({ isOverlayActive: false });
   };
-
+  handleClickBtnShop = () => {
+    window.open('http://localhost:3000/', '_blank');
+  };
   render() {
     const { isOverlayActive } = this.state;
     const language = this.props.language;
@@ -104,7 +106,7 @@ class HomeHeader extends Component {
                 </ul> */}
               </div>
               <div className="col-2 nav-right">
-                <div className="shop">
+                <div className="shop" onClick={this.handleClickBtnShop}>
                   <i class="fas fa-shopping-bag"></i>
                   <FormattedMessage id="homeheader.shop" />
                 </div>

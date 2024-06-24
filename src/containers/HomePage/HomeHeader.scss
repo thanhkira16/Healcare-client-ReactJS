@@ -29,8 +29,8 @@
         background: url("../../assets/logo.jpg") top center/contain no-repeat;
         display: block;
         // padding-top: 50%;
-        height: 160%;
-        width: 100%;
+        height: 120%;
+        width:80%;
         margin-left: -160px;
       }
     }
@@ -106,7 +106,7 @@
         border-radius: 20px;
         margin-right: 24px;
         font-size: 1.8rem;
-        background-color: var(--blue-medium-color);
+        background-color: #6495ed;
         transition: background-color 0.3s ease;
         i {
           color: var(--white-color);
@@ -115,7 +115,7 @@
           margin-right: 5px;
         }
         &:hover{
-          background-color: #6495ed;
+          background-color:   #45C3D2;
         }
       }
 
@@ -196,7 +196,6 @@
   width: 100vw;
   // height: 100vh;
   min-height: 700px;
-  border-bottom: 1px solid var(--bs-cyan);
   // flex-wrap: wrap-reverse;
   .banner-left {
     display: flex;
@@ -209,7 +208,9 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      // box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      -webkit-box-shadow: 3px 5px 17px -4px #777777;
+      box-shadow: 3px 5px 17px -4px #777777;
       // margin: 0 auto;
       margin-right: 28px;
       margin-top: 50px;
@@ -253,7 +254,7 @@
 
               background-color: #4169e1;
               color: white;
-              padding: 12px 20px;
+              padding: 10px 70px;
               border: none;
               border-radius: 4px;
               cursor: pointer;
@@ -309,6 +310,9 @@
       }
     }
     .banner-right-background {
+      -webkit-box-shadow: 3px 5px 17px -4px #777777;
+      box-shadow: 3px 5px 17px -4px #777777;
+      border-radius: 150px;
       background: url("../../assets/banner-background.png") top center/contain
         no-repeat;
       padding-top: 60%;
@@ -456,7 +460,7 @@
   background: url("../../assets/brand.png") top center/contain no-repeat;
   // display: block;
   // padding-top: 50%;
-  height: 160%;
-  width: 100%;
+  height: 140%;
+  width: 80%;
 }
  
