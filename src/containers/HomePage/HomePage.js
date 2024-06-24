@@ -54,7 +54,7 @@ class HomePage extends Component {
     return (
       <>
         <HomeHeader isShowBanner={true} />
-        <SearchCarousel/>
+        {/* <SearchCarousel/> */}
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />

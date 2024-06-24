@@ -1,14 +1,32 @@
-.skill-section {
-    margin-top: 100px;
-  
+
+.search-container{
+
+  .search-section {
+    width: 100%;
+    margin-top: 40px;
+    // background-color: var(--main-color);
+    .section{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      
+    }
     .core-skill {
+
+      .search-characters{
+
+      }
       .section-title {
         width: 100px;
       }
     }
   
     .other-skill {
-      .search-container {
+      width: 50%;      .others-skill-title{
+        width: 200px;
+      }
+      .search-input {
 
         display: grid;
         grid-template:
@@ -229,3 +247,5 @@
     text-align: center;
     height: 30px;
 }
+}
+

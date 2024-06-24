@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 import { withRouter } from "react-router";
-
+import SearchCarousel from "./Section/slider/SearchCarousel";
 class HomeHeader extends Component {
   constructor(props) {
     super(props);
@@ -150,7 +150,7 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-
+        <SearchCarousel/>
         {this.props.isShowBanner == true && (
           <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">
             <div className="banner-left   mt-md-5 mb-lg-5 text-md-start text-center col-md-5 col-12 col-sm-12  col-lg-6">
