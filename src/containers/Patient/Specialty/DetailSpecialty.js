@@ -12,7 +12,7 @@ import {
   getDetailSpecialtyById,
   getAllCodeService,
 } from "../../../services/userService";
-import Footer from "../../../containers/HomePage/Section/Footer.js";
+import Footer from "../../../containers/HomePage/Section/Info/Footer.js";
 class DetailSpecialty extends Component {
   constructor(props) {
     super(props);

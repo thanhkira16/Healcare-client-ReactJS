@@ -1,0 +1,60 @@
+// TestimonialSlider.scss
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial-item {
+    &.equal-height.style-6 {
+      background-color: #eee;
+      border-radius: 10px;
+      margin: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+  
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  
+    .testimonial-image {
+      .cell-left {
+        img {
+          display: block;
+          width: 17%;
+          float: left;
+          border: 5px solid #fff;
+          border-radius: 20px;
+          margin-left: 54px;
+          margin-right: 35px;
+          margin-top: 15px;
+        }
+      }
+    }
+  
+    .cell-right {
+      text-align: center;
+      margin-right: 80px;
+      padding-top: 35px;
+      padding-bottom: 20px;
+    }
+  
+    .testimonial-name {
+      font-weight: 600;
+    }
+  
+    .testimonial-content.quote {
+      padding: 17px 55px;
+      color: #666;
+      font-style: italic;
+      font-size: 14px;
+    }
+  }
+  

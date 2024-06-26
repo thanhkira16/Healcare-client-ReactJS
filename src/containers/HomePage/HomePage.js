@@ -4,15 +4,15 @@ import HomeHeader from "./HomeHeader";
 import Specialty from "./Section/slider/Specialty";
 import MedicalFacility from "./Section/slider/MedicalFacility";
 import OutStandingDoctor from "./Section/slider/OutStandingDoctor";
-import SearchCarousel from "./Section/slider/SearchCarousel";
+import Footer from "./Section/Info/Footer";
+import ReactionOfUser from "./Section/Info/ReactionOfUser";
 // import HandBook from "./Section/HandBook";
 import About from "./Section/About";
-import Footer from "./Section/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../styles/Base.scss";
 import "./HomePage.scss";
-import Carousel from "./Section/slider/Carousel";
+
 
 class HomePage extends Component {
   componentDidMount() {
@@ -54,10 +54,11 @@ class HomePage extends Component {
     return (
       <>
         <HomeHeader isShowBanner={true} />
-        {/* <SearchCarousel/> */}
+
         <Specialty settings={settings} />
         <MedicalFacility settings={settings} />
         <OutStandingDoctor settings={settings} />
+        <ReactionOfUser />
 
         <About />
         <Footer />

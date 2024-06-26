@@ -9,7 +9,7 @@ import ProfileDoctor from "../Doctor/ProfileDoctor";
 import "../../../styles/Base.scss";
 import { LANGUAGES } from "../../../utils";
 import { getDetailClinicById } from "../../../services/userService";
-import Footer from "../../HomePage/Section/Footer.js";
+import Footer from "../../HomePage/Section/Info/Footer.js";
 class DetailClinic extends Component {
   constructor(props) {
     super(props);
