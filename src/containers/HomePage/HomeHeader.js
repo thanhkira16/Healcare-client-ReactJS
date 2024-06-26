@@ -43,8 +43,12 @@ class HomeHeader extends Component {
     this.setState({ isOverlayActive: false });
   };
   handleClickBtnShop = () => {
-    window.open('http://localhost:3000/', '_blank');
+    window.open("http://localhost:3000/", "_blank");
   };
+  returnToHomePage = () => {
+    this.props.history.push("/home");
+  };
+  x;
   render() {
     const { isOverlayActive } = this.state;
     const language = this.props.language;
@@ -150,79 +154,82 @@ class HomeHeader extends Component {
             </div>
           </div>
         </div>
-        <SearchCarousel/>
+
         {this.props.isShowBanner == true && (
-          <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">
-            <div className="banner-left   mt-md-5 mb-lg-5 text-md-start text-center col-md-5 col-12 col-sm-12  col-lg-6">
-              <div className="register">
-                <strong className="register-title">
-                  {" "}
-                  <FormattedMessage id="homeheader.register" />
-                </strong>
-                <form onSubmit={this.handleSubmit}>
-                  <input
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    value={this.state.fullname}
-                    onChange={this.handleChange}
-                    placeholder="Fullname"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    pattern="[0-9]{10,11}"
-                    value={this.state.phone}
-                    onChange={this.handleChange}
-                    placeholder="Phone number"
-                    required
-                  />
-                  <select
-                    id="department"
-                    name="department"
-                    value={this.state.department}
-                    onChange={this.handleChange}
-                    required
-                  >
-                    <option value="">Select speciality</option>
-                    <option value="Nội khoa">Nội khoa</option>
-                    <option value="Ngoại khoa">Ngoại khoa</option>
-                    <option value="Răng hàm mặt">Răng hàm mặt</option>
-                    <option value="Tim mạch">Tim mạch</option>
-                    {/* Add other specialties as needed */}
-                  </select>
+          <div>
+            <SearchCarousel />
+            <div className="banner row d-flex flex-wrap flex-lg-nowrap flex-md-wrap">
+              <div className="banner-left   mt-md-5 mb-lg-5 text-md-start text-center col-md-5 col-12 col-sm-12  col-lg-6">
+                <div className="register">
+                  <strong className="register-title">
+                    {" "}
+                    <FormattedMessage id="homeheader.register" />
+                  </strong>
+                  <form onSubmit={this.handleSubmit}>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      value={this.state.fullname}
+                      onChange={this.handleChange}
+                      placeholder="Fullname"
+                      required
+                    />
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      pattern="[0-9]{10,11}"
+                      value={this.state.phone}
+                      onChange={this.handleChange}
+                      placeholder="Phone number"
+                      required
+                    />
+                    <select
+                      id="department"
+                      name="department"
+                      value={this.state.department}
+                      onChange={this.handleChange}
+                      required
+                    >
+                      <option value="">Select speciality</option>
+                      <option value="Nội khoa">Nội khoa</option>
+                      <option value="Ngoại khoa">Ngoại khoa</option>
+                      <option value="Răng hàm mặt">Răng hàm mặt</option>
+                      <option value="Tim mạch">Tim mạch</option>
+                      {/* Add other specialties as needed */}
+                    </select>
 
-                  <textarea
-                    placeholder="Description..."
-                    id="description"
-                    name="description"
-                    value={this.state.description}
-                    onChange={this.handleChange}
-                    required
-                  ></textarea>
+                    <textarea
+                      placeholder="Description..."
+                      id="description"
+                      name="description"
+                      value={this.state.description}
+                      onChange={this.handleChange}
+                      required
+                    ></textarea>
 
-                  <input
-                    type="submit"
-                    value={language == "en" ? "Submit" : "Gửi đăng ký"}
-                  />
-                </form>
+                    <input
+                      type="submit"
+                      value={language == "en" ? "Submit" : "Gửi đăng ký"}
+                    />
+                  </form>
+                </div>
               </div>
-            </div>
-            <div className="banner-right  col-12 col-md-5 col-sm-12  col-lg-6 text-center mx-auto mx-sm-0">
-              <div className="banner-title">
-                <h3 className="main-title">
-                  <FormattedMessage id="banner.main-title" />
-                </h3>
-                <h2 className="sub-title">
-                  <FormattedMessage id="banner.sub-title" />
-                </h2>
-                <p className="desc">
-                  <FormattedMessage id="banner.desc" />
-                </p>
+              <div className="banner-right  col-12 col-md-5 col-sm-12  col-lg-6 text-center mx-auto mx-sm-0">
+                <div className="banner-title">
+                  <h3 className="main-title">
+                    <FormattedMessage id="banner.main-title" />
+                  </h3>
+                  <h2 className="sub-title">
+                    <FormattedMessage id="banner.sub-title" />
+                  </h2>
+                  <p className="desc">
+                    <FormattedMessage id="banner.desc" />
+                  </p>
+                </div>
+                <div className="banner-right-background"></div>
               </div>
-              <div className="banner-right-background"></div>
             </div>
           </div>
         )}

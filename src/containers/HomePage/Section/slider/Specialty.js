@@ -74,7 +74,7 @@ class Specialty extends Component {
         <div className="container-fluid specialty-container">
           <div className="container">
             <div className="specialty-header">
-              <span className="header-title">
+              <span className="header-title header-title-underline">
                 <FormattedMessage
                   id="home-page.speciality-popularity"
                   defaultMessage="Specialty"

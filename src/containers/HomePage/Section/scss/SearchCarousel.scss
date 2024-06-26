@@ -1,11 +1,11 @@
 
-.search-container{
 
   .search-section {
     width: 100%;
     margin-top: 40px;
     // background-color: var(--main-color);
     .section{
+
       display: flex;
       flex-direction: column;
       justify-content: start;
@@ -23,11 +23,11 @@
     }
   
     .other-skill {
-      width: 50%;      .others-skill-title{
+      .others-skill-title{
         width: 200px;
       }
       .search-input {
-
+        margin-bottom: 50px;
         display: grid;
         grid-template:
           "search" 60px
@@ -246,6 +246,5 @@
     min-width: 300px;
     text-align: center;
     height: 30px;
-}
 }
 

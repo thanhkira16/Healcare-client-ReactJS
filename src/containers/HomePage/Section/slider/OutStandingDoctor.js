@@ -80,7 +80,7 @@ class OutStandingDoctor extends Component {
         <div className="container-fluid outstanding-container">
           <div className="container">
             <div className="outstanding-header">
-              <span className="header-title">
+              <span className="header-title header-title-underline">
                 {" "}
                 <FormattedMessage id="home-page.out-standings-doctor" />
               </span>

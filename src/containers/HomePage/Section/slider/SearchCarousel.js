@@ -15,7 +15,7 @@ class SearchCarousel extends Component {
   render() {
     return (
       <>
-        <div className="search-container container">
+        <div className="container">
           <div className=" search-section  row">
             <ul className="core-skill section col-lg-6 col-md-6 col-12">
               <span className="section-title core-skill-title">
