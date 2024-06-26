@@ -1,0 +1,120 @@
+.wrapper {
+    background: var(--main-color);
+    height: 350px;
+    border-radius: 20px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .carousel__item {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 2px;
+    opacity: 0;
+    filter: drop-shadow(0 2px 2px #555);
+    will-change: transform, opacity;
+    animation: carousel-animate-vertical 25s linear infinite;
+  }
+  
+  @for $i from 1 through 8 { // Adjust according to your number of items
+    .carousel__item:nth-child(#{$i}) {
+      animation-delay: calc((25s / 9) * (#{$i} - 1));
+    }
+  }
+  
+  .carousel__item-head {
+    border-radius: 50%;
+    background-color: #d7f7fc;
+    width: 90px;
+    height: 90px;
+    padding: 14px;
+    position: relative;
+    margin-right: -45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+  }
+  
+  .carousel__item-body {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px 20px 16px 70px;
+  }
+  
+  .title {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  @keyframes carousel-animate-vertical {
+    0% {
+      transform: translateY(100%) scale(0);
+      opacity: 0;
+      visibility: hidden;
+    }
+    25% {
+      transform: translateY(100%) scale(0);
+      opacity: 0;
+      visibility: visible;
+    }
+    50% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+    75% {
+      transform: translateY(-100%) scale(0);
+      opacity: 0;
+      visibility: visible;
+    }
+    100% {
+      transform: translateY(-100%) scale(0);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  // @keyframes carousel-animate-vertical {
+  //   0% {
+  //     transform: translateY(100%) scale(0.5);
+  //     opacity: 0;
+  //     visibility: hidden;
+  //   }
+  //   25% {
+  //     transform: translateY(100%) scale(0.7);
+  //     opacity: 0.4;
+  //     visibility: visible;
+  //   }
+  //   50% {
+  //     transform: translateY(0) scale(1);
+  //     opacity: 1;
+  //     visibility: visible;
+  //   }
+  //   75% {
+  //     transform: translateY(-100%) scale(0.7);
+  //     opacity: 0.4;
+  //     visibility: visible;
+  //   }
+  //   100% {
+  //     transform: translateY(-100%) scale(0.5);
+  //     opacity: 0;
+  //     visibility: hidden;
+  //   }
+  // }
+  

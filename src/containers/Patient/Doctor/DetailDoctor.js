@@ -5,10 +5,12 @@ import { getDetailInfoDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import "./DetailDoctor.scss";
 import "../../../styles/Base.scss";
+import { FormattedMessage } from "react-intl";
 import DoctorSchedule from "./DoctorSchedule";
+import SchedulingToday from "./Modal/SchedulingToday";
 import DoctorExtraInfor from "./DoctorExtraInfor";
 import LikeAndShare from "../SocialPlugin/LikeAndShare";
-import Comments from "../SocialPlugin/Comments";
+import Footer from "../../HomePage/Section/Info/Footer"
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +49,7 @@ class DetailDoctor extends Component {
     return (
       <>
         <HomeHeader isShowBanner={false} />
+
         <div className="detail-doctor-container container">
           <div className="introduction-doctor">
             <span
@@ -90,23 +93,70 @@ class DetailDoctor extends Component {
           </div>
         </div>
         <div className="detail-doctor container-fluid">
-          <div className="container detail-doctor-content">
-            {detailDoctor &&
-              detailDoctor.Markdown &&
-              detailDoctor.Markdown.contentHTML && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: detailDoctor.Markdown.contentHTML,
-                  }}
-                />
-              )}
+          <div className="container ">
+            <div className="row detail-doctor-content">
+              <div className="col-lg-6 col-md-6 col-12 detail-doctor-content-left">
+                {" "}
+                {detailDoctor &&
+                  detailDoctor.Markdown &&
+                  detailDoctor.Markdown.contentHTML && (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: detailDoctor.Markdown.contentHTML,
+                      }}
+                    />
+                  )}
+              </div>
+              <div className="col-lg-6 col-md-6 col-12 detail-doctor-content-right">
+                <SchedulingToday />
+                <div className="register">
+                  <strong className="register-title">
+                    {" "}
+                    <FormattedMessage id="homeheader.register" />
+                  </strong>
+                  <form onSubmit={this.handleSubmit}>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      value={this.state.fullname}
+                      onChange={this.handleChange}
+                      placeholder="Fullname"
+                      required
+                    />
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      pattern="[0-9]{10,11}"
+                      value={this.state.phone}
+                      onChange={this.handleChange}
+                      placeholder="Phone number"
+                      required
+                    />
+
+                    <textarea
+                      placeholder="Description..."
+                      id="description"
+                      name="description"
+                      value={this.state.description}
+                      onChange={this.handleChange}
+                      required
+                    ></textarea>
+
+                    <input
+                      type="submit"
+                      value={language == "en" ? "Submit" : "Gửi đăng ký"}
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="comment-doctor"></div>
-        <Comments
-          width="100%"
-          dataHref="https://www.facebook.com/photo.php?fbid=697159589131554&set=a.555366243310890&type=3&mibextid=CDWPTG"
-        ></Comments>
+
+        <Footer/>
+
       </>
     );
   }
