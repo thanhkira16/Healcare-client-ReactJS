@@ -181,7 +181,7 @@ class DoctorSchedule extends Component {
             </div>
           </div>
 
-          {allAvailableTimes && allAvailableTimes.length > 0 && (
+          {/* {allAvailableTimes && allAvailableTimes.length > 0 && (
             <span className="pick-title">
               <FormattedMessage id="patient.detail-doctor.pick-time-tittle-first-part" />{" "}
               <i class="fas fa-hand-point-up"></i>
@@ -192,7 +192,7 @@ class DoctorSchedule extends Component {
             <div className="seperator"></div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         <BookingModal
           isOpenModalBooking={isOpenModalBooking}

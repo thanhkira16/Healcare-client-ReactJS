@@ -1,11 +1,12 @@
 .wrapper {
-    background: var(--main-color);
+    background: var(--blue-medium-color);
     height: 350px;
     border-radius: 20px;
     width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid var(--main-color);
   }
   
   .carousel {

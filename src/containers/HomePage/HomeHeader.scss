@@ -120,6 +120,7 @@
       }
 
       .dropdown-language {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -156,12 +157,12 @@
           width: 30px;
           height: 30px;
           display: block;
-          background-color: white;
+          background-color: var(--bs-indigo);
           text-align: center;
           border: 1px solid #ccc;
           left: 0;
           i {
-            color: red;
+            color: var(--white-color);
             font-size: 2.2rem;
             line-height: 28px;
           }

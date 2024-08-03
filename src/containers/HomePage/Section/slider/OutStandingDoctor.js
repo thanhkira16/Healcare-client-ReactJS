@@ -4,6 +4,7 @@ import "../scss/OutStandingDoctor.scss";
 import { FormattedMessage } from "react-intl";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { getAllSpecialties } from "../../../../services/userService"
 import Slider from "react-slick";
 import * as actions from "../../../../store/actions";
 import { LANGUAGES } from "../../../../utils";
@@ -13,6 +14,7 @@ class OutStandingDoctor extends Component {
     super(props);
     this.state = {
       arrDoctors: [],
+      dataSpecialty: [],
       slides: [],
     };
   }
@@ -31,15 +33,60 @@ class OutStandingDoctor extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.props.loadTopDoctors();
+    try {
+      const res = await getAllSpecialties();
+      if (res.errCode === 0) {
+        console.log("check data", res.data);
+        this.setState({ dataSpecialty: res.data ? res.data : [] });
+        console.log(this.state);
+      } else {
+        console.error("Failed to get all specialty");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   }
   handleViewDetailDoctor(doctorId) {
     this.props.history.push(`/detail-doctor/${doctorId}`);
   }
+  // assignDataOfCarousel() {
+  //   let { arrDoctors, dataSpecialty } = this.state;
+  //   let { language } = this.props;
+
+  //   let slides = [];
+
+  //   if (arrDoctors && arrDoctors.length > 0) {
+  //     arrDoctors.forEach((item, index) => {
+  //       let imgBase64 = "";
+  //       if (item.image) {
+  //         imgBase64 = Buffer.from(item.image, "base64").toString("binary");
+  //       }
+
+  //       let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
+  //       let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
+  //       let specialtyId = item.Doctor_Infor.specialtyId
+  //       // Create a new slide object for each iteration
+  //       let slide = {
+  //         img: imgBase64,
+  //         mainTitle: language === LANGUAGES.VI ? nameVi : nameEn,
+  //         doctorId: item.id,
+  //         specialtyId: specialtyId
+  //       };
+
+  //       slides.push(slide);
+  //     });
+  //     this.setState({
+  //       slides: slides,
+  //     });
+  //   }
+  // }
   assignDataOfCarousel() {
-    let { arrDoctors } = this.state;
+    let { arrDoctors, dataSpecialty } = this.state;
     let { language } = this.props;
+    // console.log("dataspe", dataSpecialty)
+    
     let slides = [];
 
     if (arrDoctors && arrDoctors.length > 0) {
@@ -48,19 +95,31 @@ class OutStandingDoctor extends Component {
         if (item.image) {
           imgBase64 = Buffer.from(item.image, "base64").toString("binary");
         }
-
         let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
         let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
+
+        let specialtyID = item.Doctor_Infor.specialtyId
+        let specialtyName = "";
+        // console.log("namename", specialtyID, dataSpecialty.length)
+        for (let i = 0; i < dataSpecialty.length; i++) {
+          if (dataSpecialty[i].id === specialtyID) {
+            specialtyName = dataSpecialty[i].name;
+            break;
+          }
+        }
+
 
         // Create a new slide object for each iteration
         let slide = {
           img: imgBase64,
           mainTitle: language === LANGUAGES.VI ? nameVi : nameEn,
           doctorId: item.id,
+          specialtyName
         };
 
         slides.push(slide);
       });
+
       this.setState({
         slides: slides,
       });
@@ -71,7 +130,7 @@ class OutStandingDoctor extends Component {
     let language = this.props.language;
     let { slides } = this.state;
     console.log("state", this.state);
-    console.log("props", this.props);
+    // console.log("props", this.props);
     // const imgDivStyle = {
     //   backgroundImage: slide && slide.img ? `url(${slide.img})` : "none",
     // };
@@ -106,7 +165,7 @@ class OutStandingDoctor extends Component {
                         }}
                       ></div>
                       <h5 className="mb-0 main-title">{slide.mainTitle}</h5>
-                      <small>Neurosurgeon</small>
+                      <small>{slide.specialtyName}</small>
                       {/* <div className="ratings mt-2">
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star"></i>
