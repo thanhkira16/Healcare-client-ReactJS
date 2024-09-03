@@ -1,58 +1,54 @@
 {
   "homeheader": {
-    "speciality": "Speciality",
-    "searchdoctor": "Find doctors by speciality",
-    "health-facility": "Health facility",
-    "select-room": "Select hospital/clinic",
-    "register": "Register for a consultation",
+    "speciality": "Specialty",
+    "searchdoctor": "Find courses by specialty",
+    "health-facility": "Learning Platform",
+    "select-room": "Select course/program",
+    "register": "Register for a course",
     "submit": "Submit",
-    "doctor": "Doctor",
-    "select-doctor": "Select a good doctor",
-    "fee": "Package fee",
-    "check-health": "General health check",
+    "doctor": "Instructor",
+    "select-doctor": "Select a top instructor",
+    "fee": "Course Fee",
+    "check-health": "General Course Overview",
     "shop": "Shop",
     "language": "Language",
-    "welcome": "Welcome "
+    "welcome": "Welcome"
   },
-
   "banner": {
-    "main-title": "HEALTHCARE PLATFORM ",
-    "sub-title": "COMPREHENSIVE HEALTHCARE",
-    "desc": "You can get the care you need 24/7 – be it online or in person. You will be treated by caring specialist doctors.",
-    "btn-make-appoiment": "Make an Appointment",
-    "search-placeholder": "Find a doctor",
-    "option1": "Specialty Examination",
-    "option2": "Remote Consultation",
-    "option3": "General Check-up",
-    "option4": "Medical Tests",
-    "option5": "Mental Health",
-    "option6": "Dental Examination"
+    "main-title": "JEAN EDUCATION",
+    "sub-title": "ONLINE LEARNING SOLUTIONS",
+    "desc": "Access top-quality education anytime, anywhere. Our platform offers a wide range of courses taught by expert instructors.",
+    "btn-make-appoiment": "Enroll Now",
+    "search-placeholder": "Find a course",
+    "option1": "Specialty Courses",
+    "option2": "Online Classes",
+    "option3": "General Overview",
+    "option4": "Educational Materials",
+    "option5": "Personal Development",
+    "option6": "Skill Workshops"
   },
   "menu": {
     "admin": {
       "manage-user": "Manage Users",
-      "manage-doctor": "Manage Doctors",
+      "manage-doctor": "Manage Instructors",
       "manage-admin": "Manage Admin",
       "crud": "CRUD User",
       "crud-redux": "CRUD Redux",
-
-      "manage-clinic": "Manage Clinics",
-      "clinic": "Clinic",
+      "manage-clinic": "Manage Courses",
+      "clinic": "Course",
       "specialty": "Specialty",
       "manage-specialty": "Manage Specialties",
       "handbook": "Handbook",
       "manage-handbook": "Manage Handbooks"
     },
-
     "doctor": {
-      "manage-schedule": "Manage Doctor's Schedule",
-      "manage-patient": "Manage Patient"
+      "manage-schedule": "Manage Instructor's Schedule",
+      "manage-patient": "Manage Students"
     }
   },
-
   "manage-user": {
-    "addingTitle": "Adding User With ThanhKira",
-    "manageUserTitle": "Manage User With ThanhKira",
+    "addingTitle": "Add User with ThanhKira",
+    "manageUserTitle": "Manage User with ThanhKira",
     "uploadImage": "Upload Image",
     "email": "Email",
     "password": "Password",
@@ -65,56 +61,52 @@
     "position": "Position",
     "role": "Role",
     "submitCreate": "Create",
-    "submitEdit": "Save changes",
+    "submitEdit": "Save Changes",
     "userCreatedSuccess": "USER CREATED SUCCESSFULLY",
     "userDeletedSuccess": "USER DELETED SUCCESSFULLY",
-    "userDeleteFailed": "USER DELETED FAILED",
-    "updateUserSuccess": "UPDATE USER SUCCESSFULLY",
-    "updateUserSuccessFailed": "UPDATE USER FAILED",
+    "userDeleteFailed": "USER DELETION FAILED",
+    "updateUserSuccess": "USER UPDATED SUCCESSFULLY",
+    "updateUserSuccessFailed": "USER UPDATE FAILED",
     "btnEdit": "Edit",
     "btnDelete": "Delete"
   },
-
   "manage-doctor": {
-    "title": "Manage Doctors",
-    "doctorLabel": "Doctor",
+    "title": "Manage Instructors",
+    "doctorLabel": "Instructor",
     "description": "Description",
-    "btnSave": "Save changes",
-    "saveDetailDoctorSuccess": "SAVE DETAIL DOCTOR SUCCESS",
-    "saveDetailDoctorFailure": "SAVE DETAIL DOCTOR FAIL",
-
-    "provinceLabel": "Province",
+    "btnSave": "Save Changes",
+    "saveDetailDoctorSuccess": "DETAILS SAVED SUCCESSFULLY",
+    "saveDetailDoctorFailure": "FAILED TO SAVE DETAILS",
+    "provinceLabel": "Location",
     "paymentLabel": "Payment Method",
-    "priceLabel": "Price",
-    "nameClinic": "Name of clinic",
-    "addressClinic": "Address of clinic",
+    "priceLabel": "Fee",
+    "nameClinic": "Course Name",
+    "addressClinic": "Course Location",
     "note": "Note",
     "specialty": "Specialty",
-
-    "select-placeholder-specialty": "Select specialty",
-    "select-placeholder-doctor": "Select a doctor",
-    "select-placeholder-province": "Select a province",
-    "select-placeholder-payment": "Select a payment method",
-    "select-placeholder-price": "Select a price"
+    "select-placeholder-specialty": "Select Specialty",
+    "select-placeholder-doctor": "Select an Instructor",
+    "select-placeholder-province": "Select Location",
+    "select-placeholder-payment": "Select Payment Method",
+    "select-placeholder-price": "Select Fee"
   },
   "home-page": {
-    "out-standings-doctor": "Outstanding Doctor of the Week",
-    "btnSeeMore": "See more",
-    "speciality-popularity": "Pupular specialities",
-    "medical-popularity": "Prominent Healthcare Facilities",
-    "about-title": "Media Coverage on BookingCare"
+    "out-standings-doctor": "Top Instructor of the Week",
+    "btnSeeMore": "See More",
+    "speciality-popularity": "Popular Courses",
+    "medical-popularity": "Top Programs",
+    "about-title": "Media Coverage of JeanEdu"
   },
   "manage-schedules": {
-    "title": "Manage Medical Appointment Schedules",
-    "pick-doctor": "Select Doctor",
-    "pick-date": "Select Examination Date",
+    "title": "Manage Course Schedules",
+    "pick-doctor": "Select Instructor",
+    "pick-date": "Select Course Date",
     "btnSave": "Save",
     "saveChangesSuccess": "Information saved successfully",
     "saveChangesFailed": "Failed to save information",
-    "invalidDoctor": "Please select a name",
+    "invalidDoctor": "Please select an instructor",
     "invalidDate": "Please select a date"
   },
-
   "manage-specialty": {
     "specialtyName": "Specialty Name",
     "specialtyImage": "Specialty Image",
@@ -125,31 +117,29 @@
     "btnSave": "Save"
   },
   "manage-clinic": {
-    "clinicName": "Clinic Name",
-    "clinicImage": "Clinic Image",
-    "clinicAddress": "Clinic Address",
+    "clinicName": "Course Name",
+    "clinicImage": "Course Image",
+    "clinicAddress": "Course Location",
     "missingParameterError": "Missing required parameter",
-    "createClinicSuccess": "Clinic created successfully",
-    "createClinicFailed": "Failed to create clinic",
+    "createClinicSuccess": "Course created successfully",
+    "createClinicFailed": "Failed to create course",
     "unknownError": "An unknown error occurred",
     "btnSave": "Save"
   },
-
   "patient": {
     "detail-doctor": {
-      "appointment": "APPOINTMENT",
-      "not-available-time": "No appointment is available on this date",
+      "appointment": "COURSE",
+      "not-available-time": "No course available on this date",
       "pick-time-tittle-first-part": "Choose",
-      "pick-time-tittle-second-part": " and book (Booking fee 0$)"
+      "pick-time-tittle-second-part": " and enroll (Enrollment fee 0$)"
     },
     "extra-infor-doctor": {
-      "address-title": "CLINIC ADDRESS",
-      "price-title": "Medical examination price",
-      "payment-detail": "The clinic accepts payment via: ",
+      "address-title": "COURSE LOCATION",
+      "price-title": "Course Fee",
+      "payment-detail": "The course accepts payment via: ",
       "show-price-detail": "View Details",
       "hide-price-detail": "Hide Price List"
     },
-
     "booking-modal": {
       "fullname": "Full Name",
       "fullname-placeholder": "Enter your full name",
@@ -162,13 +152,13 @@
       "address": "Address",
       "address-placeholder": "Enter your address",
       "birthday": "Birthday",
-      "reason": "Reason for Examination",
+      "reason": "Reason for Enrollment",
       "btn-confirm": "Confirm",
       "btn-cancel": "Cancel",
-      "booking-title": "BOOK APPOINTMENT",
-      "price-title": "Price",
-      "booking-success": "Booking Successfully",
-      "booking-failed": "Booking Failed"
+      "booking-title": "ENROLL IN COURSE",
+      "price-title": "Fee",
+      "booking-success": "Enrollment Successful",
+      "booking-failed": "Enrollment Failed"
     }
   }
 }

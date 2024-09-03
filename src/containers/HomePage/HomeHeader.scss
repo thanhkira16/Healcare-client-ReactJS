@@ -26,7 +26,7 @@
       }
       .header-logo {
         // background: url("../../assets/logo.jpg") center center no-repeat;
-        background: url("../../assets/logo.jpg") top center/contain no-repeat;
+        background: url("../../assets/logo.png") top center/contain no-repeat;
         display: block;
         // padding-top: 50%;
         height: 120%;
@@ -330,6 +330,9 @@
 
       .banner-left {
         margin-left: 40px;
+        .banner-title {
+          display: none;
+        }
       }
       .banner-right {
         margin-left: 40px;
@@ -339,6 +342,7 @@
   @media (max-width: 767px) {
     .banner-right {
       .banner-title {
+        display: none;
         // padding-right: 50px;
         width: 380px;
         text-align: center;

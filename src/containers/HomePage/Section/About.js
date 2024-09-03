@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import YouTube from "react-youtube";
 import "../Section/scss/About.scss";
 import "../Base.scss";
+import { FormattedMessage } from "react-intl";
 class About extends Component {
   changeLanguage(language) {
     this.props.changeLanguageAppRedux(language);
@@ -21,19 +22,19 @@ class About extends Component {
       <React.Fragment>
         <div className="about container-fluid">
           <div className="container">
-            <h4 className="about-title">Truyền thông nói về BookingCare</h4>
+            <h4 className="about-title">  <FormattedMessage id="home-page.about-title" /></h4>
             <div className="row">
               <div className=" d-block col-md-12 col-lg-7">
                 <div className="video">
                   {" "}
-                  <YouTube videoId="FyDQljKtWnI" opts={opts} />
+                  <YouTube videoId="2t1oOdc7aAs" opts={opts} />
                 </div>
               </div>
               <div className="col-md-12 col-lg-5">
                 <ul className="social-list ">
                   <li className="social-item">
                     <a
-                      href="https://www.youtube.com/watch?v=mstAc81lpMc"
+                      href="https://www.youtube.com/watch?v=2t1oOdc7aAs"
                       target="_blank"
                       className="social-link"
                     ></a>

@@ -1,0 +1,33 @@
+// body {
+//   background-color: #fcf9f4;
+//   font-family: Arial, sans-serif;
+// }
+
+.service-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .icon {
+    font-size: 50px;
+    color: #ff9f00;
+    margin-bottom: 15px;
+  }
+
+  .service-title {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  p {
+    color: #666;
+    font-size: 14px;
+  }
+}

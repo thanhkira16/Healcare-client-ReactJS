@@ -1,63 +1,58 @@
 {
   "homeheader": {
-    "speciality": "Chuyên khoa",
-    "searchdoctor": "Tìm bác sĩ theo chuyên khoa",
-    "health-facility": "Cơ sở y tế",
-    "select-room": "Chọn bệnh viện phòng khám",
-    "register": "Đăng ký tư vấn",
+    "speciality": "Chuyên ngành",
+    "searchdoctor": "Tìm khóa học theo chuyên ngành",
+    "health-facility": "Cơ sở đào tạo",
+    "select-room": "Chọn lớp học hoặc chương trình",
+    "register": "Đăng ký khóa học",
     "submit": "Gửi đăng ký",
-    "doctor": "Bác sĩ",
-    "select-doctor": "Chọn bác sĩ giỏi",
-    "fee": "Gói khám",
-    "check-health": "Khám sức khỏe tổng quát ",
+    "doctor": "Giảng viên",
+    "select-doctor": "Chọn giảng viên giỏi",
+    "fee": "Học phí",
+    "check-health": "Khóa học tổng quát",
     "shop": "Cửa hàng",
     "language": "Ngôn ngữ",
-    "welcome": "Xin chào "
+    "welcome": "Chào mừng"
   },
   "banner": {
-    "main-title": "NỀN TẢNG Y TẾ ",
-    "sub-title": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
-    "desc": "Bạn có thể nhận được sự chăm sóc cần thiết 24/7 - trực tuyến hoặc tại người. Bạn sẽ được các bác sĩ chuyên khoa tận tâm điều trị.",
-    "btn-make-appoiment": "Đặt lịch hẹn",
-    "search-placeholder": "Tìm bác sĩ",
-    "option1": "Khám chuyên Khoa",
-    "option2": "Khám từ xa",
-    "option3": "Khám tổng quát",
-    "option4": "Xét nghiệp y học",
-    "option5": "Sức khỏe tinh thần",
-    "option6": "Khám nha khoa"
+    "main-title": "NỀN TẢNG GIÁO DỤC JEAN",
+    "sub-title": "GIẢI PHÁP HỌC TẬP TRỰC TUYẾN",
+    "desc": "Truy cập giáo dục chất lượng cao mọi lúc, mọi nơi. Nền tảng của chúng tôi cung cấp nhiều khóa học được giảng dạy bởi các giảng viên chuyên gia.",
+    "btn-make-appoiment": "Đăng Ký Ngay",
+    "search-placeholder": "Tìm khóa học",
+    "option1": "Khóa học chuyên ngành",
+    "option2": "Khóa học trực tuyến",
+    "option3": "Khóa học tổng quát",
+    "option4": "Xét tuyển vào chương trình học",
+    "option5": "Khóa học phát triển cá nhân",
+    "option6": "Khóa học kỹ năng mềm"
   },
   "home-page": {
-    "out-standings-doctor": "Bác sĩ nổi bậc tuần qua",
+    "out-standings-doctor": "Giảng viên nổi bật tuần qua",
     "btnSeeMore": "Xem thêm",
-    "speciality-popularity": "Chuyên khoa phổ biến",
-    "medical-popularity": "Cơ sở y tế nổi bật",
-    "about-title": "Truyền thông nói về BookingCare"
+    "speciality-popularity": "Chuyên ngành phổ biến",
+    "medical-popularity": "Chương trình đào tạo nổi bật",
+    "about-title": "Truyền thông nói về JeansEdu"
   },
   "menu": {
     "admin": {
       "manage-user": "Quản lý người dùng",
-      "manage-doctor": "Quản lý bác sỹ",
+      "manage-doctor": "Quản lý giảng viên",
       "manage-admin": "Quản lý admin",
-      "crud": "CRUD user",
+      "crud": "CRUD người dùng",
       "crud-redux": "CRUD redux",
-
-      "manage-clinic": "Quản lý phòng khám",
-      "clinic": "Phòng khám",
-
-      "specialty": "Chuyên khoa",
-      "manage-specialty": "Quản lý chuyên khoa",
-
-      "handbook": "Cẩm nang",
-      "manage-handbook": "Quản lý cẩm nang"
+      "manage-clinic": "Quản lý chương trình đào tạo",
+      "clinic": "Chương trình đào tạo",
+      "specialty": "Chuyên ngành",
+      "manage-specialty": "Quản lý chuyên ngành",
+      "handbook": "Sổ tay",
+      "manage-handbook": "Quản lý sổ tay"
     },
-
     "doctor": {
-      "manage-schedule": "Quản lý lịch khám bệnh",
-      "manage-patient": "Quản lý bệnh nhân"
+      "manage-schedule": "Quản lý lịch dạy",
+      "manage-patient": "Quản lý học viên"
     }
   },
-
   "manage-user": {
     "addingTitle": "Thêm Người Dùng Với ThanhKira",
     "manageUserTitle": "Quản Lý Người Dùng Với ThanhKira",
@@ -82,77 +77,69 @@
     "btnEdit": "Chỉnh Sửa",
     "btnDelete": "Xóa"
   },
-
   "manage-doctor": {
-    "title": "Quản lý bác sỹ",
-    "doctorLabel": "Bác sỹ",
+    "title": "Quản lý giảng viên",
+    "doctorLabel": "Giảng viên",
     "description": "Mô tả",
     "btnSave": "Lưu thông tin",
     "saveDetailDoctorSuccess": "LƯU THÔNG TIN THÀNH CÔNG",
     "saveDetailDoctorFailure": "LƯU THÔNG TIN THẤT BẠI",
-
     "provinceLabel": "Tỉnh/Thành phố",
     "paymentLabel": "Phương thức thanh toán",
-    "priceLabel": "Giá",
-
-    "select-placeholder-doctor": "Chọn một bác sĩ",
+    "priceLabel": "Học phí",
+    "select-placeholder-doctor": "Chọn một giảng viên",
     "select-placeholder-province": "Chọn tỉnh/Thành phố",
     "select-placeholder-payment": "Chọn phương thức thanh toán",
-    "select-placeholder-price": "Chọn giá",
-    "select-placeholder-specialty": "Chọn chuyên khoa",
-
-    "specialty": "Chuyên khoa",
-    "nameClinic": "Tên phòng khám",
-    "addressClinic": "Địa chỉ phòng khám",
+    "select-placeholder-price": "Chọn học phí",
+    "select-placeholder-specialty": "Chọn chuyên ngành",
+    "specialty": "Chuyên ngành",
+    "nameClinic": "Tên chương trình đào tạo",
+    "addressClinic": "Địa chỉ chương trình đào tạo",
     "note": "Ghi chú"
   },
-
   "manage-specialty": {
-    "specialtyName": "Tên chuyên khoa",
-    "specialtyImage": "Hình ảnh chuyên khoa",
+    "specialtyName": "Tên chuyên ngành",
+    "specialtyImage": "Hình ảnh chuyên ngành",
     "missingParameterError": "Vui lòng điền đầy đủ thông tin",
-    "createSpecialtySuccess": "Tạo chuyên khoa thành công",
-    "createSpecialtyFailed": "Không thể tạo chuyên khoa",
+    "createSpecialtySuccess": "Tạo chuyên ngành thành công",
+    "createSpecialtyFailed": "Không thể tạo chuyên ngành",
     "unknownError": "Đã xảy ra lỗi không xác định",
     "btnSave": "Lưu"
   },
   "manage-clinic": {
-    "clinicName": "Tên Phòng Khám",
-    "clinicImage": "Hình Ảnh Phòng Khám",
-    "clinicAddress": "Địa Chỉ Phòng Khám",
+    "clinicName": "Tên Chương Trình Đào Tạo",
+    "clinicImage": "Hình Ảnh Chương Trình Đào Tạo",
+    "clinicAddress": "Địa Chỉ Chương Trình Đào Tạo",
     "missingParameterError": "Thiếu thông số bắt buộc",
-    "createClinicSuccess": "Tạo phòng khám thành công",
-    "createClinicFailed": "Không thể tạo phòng khám",
+    "createClinicSuccess": "Tạo chương trình đào tạo thành công",
+    "createClinicFailed": "Không thể tạo chương trình đào tạo",
     "unknownError": "Đã xảy ra lỗi không xác định",
     "btnSave": "Lưu"
   },
-
   "manage-schedules": {
-    "title": "Quản lý lịch khám bệnh",
-    "pick-doctor": "Chọn bác sỹ",
-    "pick-date": "Chọn ngày khám",
+    "title": "Quản lý lịch dạy",
+    "pick-doctor": "Chọn giảng viên",
+    "pick-date": "Chọn ngày dạy",
     "btnSave": "Lưu",
     "saveChangesSuccess": "Lưu thông tin thành công",
     "saveChangesFailed": "Lưu thông tin thất bại",
-    "invalidDoctor": "Vui lòng chọn tên",
+    "invalidDoctor": "Vui lòng chọn giảng viên",
     "invalidDate": "Vui lòng chọn ngày"
   },
   "patient": {
     "detail-doctor": {
-      "appointment": "Lịch khám",
-      "not-available-time": "Không có lịch khám vào ngày này",
+      "appointment": "Lịch dạy",
+      "not-available-time": "Không có lịch dạy vào ngày này",
       "pick-time-tittle-first-part": "Chọn",
-      "pick-time-tittle-second-part": " và đặt (Phí đặt lịch 0đ)"
+      "pick-time-tittle-second-part": " và đặt (Phí đăng ký 0đ)"
     },
-
     "extra-infor-doctor": {
-      "address-title": "ĐỊA CHỈ PHÒNG KHÁM",
-      "price-title": "Giá Khám Bệnh",
-      "payment-detail": "Phòng khám chấp nhận thanh toán qua: ",
+      "address-title": "ĐỊA CHỈ CHƯƠNG TRÌNH ĐÀO TẠO",
+      "price-title": "Học phí",
+      "payment-detail": "Chương trình đào tạo chấp nhận thanh toán qua: ",
       "show-price-detail": "Xem Chi Tiết",
       "hide-price-detail": "Ẩn Bảng Giá"
     },
-
     "booking-modal": {
       "fullname": "Họ và tên",
       "fullname-placeholder": "Nhập họ và tên của bạn",
@@ -165,13 +152,13 @@
       "address": "Địa chỉ",
       "address-placeholder": "Nhập địa chỉ của bạn",
       "birthday": "Ngày sinh",
-      "reason": "Lý do khám",
+      "reason": "Lý do đăng ký",
       "btn-confirm": "Xác nhận",
       "btn-cancel": "Hủy",
-      "booking-title": "ĐẶT LỊCH KHÁM",
-      "price-title": "Giá khám",
-      "booking-success": "Đặt lịch thành công",
-      "booking-failed": "Đặt lịch thất bại"
+      "booking-title": "ĐĂNG KÝ KHÓA HỌC",
+      "price-title": "Học phí",
+      "booking-success": "Đăng ký thành công",
+      "booking-failed": "Đăng ký thất bại"
     }
   }
 }

@@ -8,7 +8,9 @@ import "../../../styles/Base.scss";
 import { FormattedMessage } from "react-intl";
 import DoctorSchedule from "./DoctorSchedule";
 import SchedulingToday from "./Modal/SchedulingToday";
+import ListSolution from "./Modal/ListSolution";
 import DoctorExtraInfor from "./DoctorExtraInfor";
+import BrandDoctor from "./BrandDoctor";
 import LikeAndShare from "../SocialPlugin/LikeAndShare";
 import Footer from "../../HomePage/Section/Info/Footer"
 class DetailDoctor extends Component {
@@ -92,6 +94,7 @@ class DetailDoctor extends Component {
             </div>
           </div>
         </div>
+        <BrandDoctor/>
         <div className="detail-doctor container-fluid">
           <div className="container ">
             <div className="row detail-doctor-content">
@@ -108,7 +111,7 @@ class DetailDoctor extends Component {
                   )}
               </div>
               <div className="col-lg-6 col-md-6 col-12 detail-doctor-content-right">
-                <SchedulingToday />
+                <ListSolution />
                 <div className="register">
                   <strong className="register-title">
                     {" "}
@@ -154,7 +157,7 @@ class DetailDoctor extends Component {
             </div>
           </div>
         </div>
-
+                 
         <Footer/>
 
       </>
