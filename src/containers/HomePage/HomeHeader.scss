@@ -8,34 +8,40 @@
   background-color: var(--white-color);
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
   .header-navbar {
     width: 100%;
-    height:80px;
+    height: 80px;
     display: flex;
     margin: 0 5%;
+
     .nav-left {
       width: 25%;
       display: flex;
       align-items: center;
       justify-content: center;
+
       i {
         width: 20%;
         font-size: 30px;
         padding-left: 14px;
         cursor: pointer;
       }
+
       .header-logo {
         // background: url("../../assets/logo.jpg") center center no-repeat;
         background: url("../../assets/logo.png") top center/contain no-repeat;
         display: block;
         // padding-top: 50%;
         height: 120%;
-        width:80%;
+        width: 80%;
         margin-left: -160px;
       }
     }
+
     .nav-center {
       position: relative;
+
       .input-group {
         position: absolute;
         width: 300px;
@@ -49,6 +55,7 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+
         i {
           width: 30px;
           height: 30px;
@@ -58,6 +65,7 @@
           color: var(--bs-primary);
           font-size: 1.8rem;
         }
+
         input {
           padding-left: 30px;
           top: 0;
@@ -67,7 +75,9 @@
           font-size: 16px;
         }
       }
+
       width: 50%;
+
       .nav-center-list {
         padding-left: 0;
 
@@ -75,14 +85,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         .nav-center-item {
           display: flex;
           flex-direction: column;
 
           align-self: baseline;
+
           .main-title {
             margin-bottom: 0;
           }
+
           .sub-title {
             font-size: 1.2rem;
             font-weight: 400;
@@ -91,12 +104,14 @@
         }
       }
     }
+
     .nav-right {
       width: 25%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       font-size: 1.4rem;
+
       .shop {
         cursor: pointer;
         text-align: center;
@@ -108,14 +123,16 @@
         font-size: 1.8rem;
         background-color: #6495ed;
         transition: background-color 0.3s ease;
+
         i {
           color: var(--white-color);
           font-size: 1.6rem;
           padding: 2px;
           margin-right: 5px;
         }
-        &:hover{
-          background-color:   #45C3D2;
+
+        &:hover {
+          background-color: #45C3D2;
         }
       }
 
@@ -128,6 +145,7 @@
         margin-right: 60px;
         height: 30px;
         position: relative;
+
         .hide-language-btn {
           position: absolute;
           width: 30px;
@@ -139,6 +157,7 @@
           transition: left 0.5s;
           border: 0.5px solid #ccc;
         }
+
         .language-vi {
           position: absolute;
           width: 30px;
@@ -147,11 +166,13 @@
           background-color: red;
           text-align: center;
           right: 0;
+
           i {
             color: yellow;
             line-height: 30px;
           }
         }
+
         .language-en {
           position: absolute;
           width: 30px;
@@ -161,6 +182,7 @@
           text-align: center;
           border: 1px solid #ccc;
           left: 0;
+
           i {
             color: var(--white-color);
             font-size: 2.2rem;
@@ -177,10 +199,14 @@
         background-color: lightblue;
         color: white;
         font-size: 20px;
-        position: relative; /* Add this to enable animation */
-        left: 0; /* Add this to set the initial position */
-        transition: left 0.5s; /* Add this to set the animation duration */
+        position: relative;
+        /* Add this to enable animation */
+        left: 0;
+        /* Add this to set the initial position */
+        transition: left 0.5s;
+        /* Add this to set the animation duration */
       }
+
       .button:hover {
         background-color: blue;
       }
@@ -197,6 +223,7 @@
   width: 100vw;
   // height: 100vh;
   min-height: 700px;
+
   // flex-wrap: wrap-reverse;
   .banner-left {
     display: flex;
@@ -204,6 +231,7 @@
     // justify-content: flex-start;
     align-items: center;
     min-width: 500px;
+
     .register {
       max-width: 400px;
       background-color: #fff;
@@ -216,84 +244,91 @@
       margin-right: 28px;
       margin-top: 50px;
       font-family: Arial, sans-serif;
+
       .register-title {
-          margin-bottom: 10px;
-          display: block;
-          font-size: 1.2rem;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 1.2rem;
       }
-  
+
       form {
-          label {
-              font-weight: bold;
-              margin-bottom: 8px;
-              display: block;
-          }
-  
-          input[type="text"],
-          input[type="tel"],
-          select,
-          textarea {
-              width: calc(100% - 20px);
-              padding: 10px;
-              margin-bottom: 15px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-              font-size: 16px;
-          }
-  
-          textarea {
-              height: 120px;
-          }
-  
-          small {
-              color: #777;
-              font-size: 12px;
-              display: block;
-              margin-top: 5px;
-          }
-  
-          input[type="submit"] {
+        label {
+          font-weight: bold;
+          margin-bottom: 8px;
+          display: block;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        select,
+        textarea {
+          width: calc(100% - 20px);
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+        }
+
+        textarea {
+          height: 120px;
+        }
+
+        small {
+          color: #777;
+          font-size: 12px;
+          display: block;
+          margin-top: 5px;
+        }
+
+        input[type="submit"] {
 
 
-              background-color: #4169e1;
-              color: white;
-              padding: 10px 70px;
-              border: none;
-              border-radius: 4px;
-              cursor: pointer;
-              font-size: 16px;
-              transition: background-color 0.3s ease;
-  
-              &:hover {
-                  background-color: #6495ed;
-              }
+          background-color: #4169e1;
+          color: white;
+          padding: 10px 70px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #6495ed;
           }
+        }
       }
+    }
+
   }
-    
-  }
+
   .banner-right {
     padding-top: 20px;
+
     .banner-title {
       padding-right: 140px;
       width: 600px;
       margin-left: 150px;
       text-align: center;
+
       .main-title {
         color: var(--bs-primary);
         font-size: 37px;
       }
+
       .sub-title {
         color: var(--bs-secondary);
 
         font-size: 40px;
       }
+
       .desc {
         font-size: 16px;
         width: 550px;
         margin-left: -60px;
         color: var(--bs-primary);
       }
+
       .btn-appoiment {
         cursor: pointer;
         margin-top: 50px;
@@ -307,17 +342,18 @@
         height: 60px;
         background-color: var(--bs-primary);
         border-radius: 30px;
+
         &:hover {
           background-color: var(--bs-secondary);
         }
       }
     }
+
     .banner-right-background {
       -webkit-box-shadow: 3px 5px 17px -4px #777777;
       box-shadow: 3px 5px 17px -4px #777777;
       border-radius: 150px;
-      background: url("../../assets/banner-background.png") top center/contain
-        no-repeat;
+      background: url("../../assets/banner-background.png") top center/contain no-repeat;
       padding-top: 60%;
     }
   }
@@ -330,15 +366,18 @@
 
       .banner-left {
         margin-left: 40px;
+
         .banner-title {
           display: none;
         }
       }
+
       .banner-right {
         margin-left: 40px;
       }
     }
   }
+
   @media (max-width: 767px) {
     .banner-right {
       .banner-title {
@@ -354,6 +393,7 @@
       }
     }
   }
+
   @media (max-width: 567px) {
     .banner-left {
       .banner-title {
@@ -365,12 +405,14 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        .desc{
+
+        .desc {
           display: none;
         }
       }
     }
   }
+
   // .title {
   //   position: absolute;
   //   left: 50%;
@@ -462,6 +504,7 @@
   //   }
   // }
 }
+
 .header-logo {
   // background: url("../../../../assets/logo.jpg") center center no-repeat;
   background: url("../../assets/brand.png") top center/contain no-repeat;
@@ -470,4 +513,3 @@
   height: 140%;
   width: 80%;
 }
- 
