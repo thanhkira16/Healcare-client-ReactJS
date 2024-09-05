@@ -16,7 +16,7 @@ import "./HomePage.scss";
 
 class HomePage extends Component {
   componentDidMount() {
-    document.title = "PioEdu -  ONLINE LEARNING SOLUTIONS";
+    document.title = "PioEdu";
   }
   render() {
     const settings = {
