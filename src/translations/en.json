@@ -10,12 +10,12 @@
     "select-doctor": "Select a top instructor",
     "fee": "Course Fee",
     "check-health": "General Course Overview",
-    "shop": "Shop",
+    "shop": "Online courses",
     "language": "Language",
     "welcome": "Welcome"
   },
   "banner": {
-    "main-title": "JEAN EDUCATION",
+    "main-title": "PioEdu",
     "sub-title": "ONLINE LEARNING SOLUTIONS",
     "desc": "Access top-quality education anytime, anywhere. Our platform offers a wide range of courses taught by expert instructors.",
     "btn-make-appoiment": "Enroll Now",
@@ -93,8 +93,8 @@
   "home-page": {
     "out-standings-doctor": "Top Instructor of the Week",
     "btnSeeMore": "See More",
-    "speciality-popularity": "Popular Courses",
-    "medical-popularity": "Top Programs",
+    "speciality-popularity": "Popular Programs",
+    "medical-popularity": "Top Universities",
     "about-title": "Media Coverage of JeanEdu"
   },
   "manage-schedules": {

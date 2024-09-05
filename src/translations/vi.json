@@ -10,12 +10,12 @@
     "select-doctor": "Chọn giảng viên giỏi",
     "fee": "Học phí",
     "check-health": "Khóa học tổng quát",
-    "shop": "Cửa hàng",
+    "shop": "Khóa học",
     "language": "Ngôn ngữ",
     "welcome": "Chào mừng"
   },
   "banner": {
-    "main-title": "NỀN TẢNG GIÁO DỤC JEAN",
+    "main-title": "NỀN TẢNG GIÁO DỤC PioEdu",
     "sub-title": "GIẢI PHÁP HỌC TẬP TRỰC TUYẾN",
     "desc": "Truy cập giáo dục chất lượng cao mọi lúc, mọi nơi. Nền tảng của chúng tôi cung cấp nhiều khóa học được giảng dạy bởi các giảng viên chuyên gia.",
     "btn-make-appoiment": "Đăng Ký Ngay",
@@ -32,7 +32,7 @@
     "btnSeeMore": "Xem thêm",
     "speciality-popularity": "Chuyên ngành phổ biến",
     "medical-popularity": "Chương trình đào tạo nổi bật",
-    "about-title": "Truyền thông nói về JeansEdu"
+    "about-title": "Truyền thông nói về PioEdu"
   },
   "menu": {
     "admin": {
@@ -134,7 +134,7 @@
       "pick-time-tittle-second-part": " và đặt (Phí đăng ký 0đ)"
     },
     "extra-infor-doctor": {
-      "address-title": "ĐỊA CHỈ CHƯƠNG TRÌNH ĐÀO TẠO",
+      "address-title": "MÔ TẢ CHƯƠNG TRÌNH ĐÀO TẠO",
       "price-title": "Học phí",
       "payment-detail": "Chương trình đào tạo chấp nhận thanh toán qua: ",
       "show-price-detail": "Xem Chi Tiết",

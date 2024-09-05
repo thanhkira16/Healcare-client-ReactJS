@@ -31,7 +31,7 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    document.title = "VKU Healcare - login or sign up";
+    document.title = "PioEdu - login or sign up";
   }
   resetState = () => {
     this.setState({
@@ -195,7 +195,7 @@ class Login extends Component {
         <div className="container-fluid">
           <div className="row login-container">
             <div className="left col-7 d-none d-lg-block">
-              <h1>VKU Healcare</h1>
+              <h1>PioEdu</h1>
               <p>
                 You can get the care you need 24/7 – be it online or in person.
                 You will be treated by caring specialist doctors.
@@ -242,7 +242,7 @@ class Login extends Component {
                         onKeyDown={(event) => this.handleKeyDown(event)}
                       >
                         {this.state.isShowPassword &&
-                        this.state.isShowPassword == true ? (
+                          this.state.isShowPassword == true ? (
                           <i class="fas fa-eye-slash"></i>
                         ) : (
                           <i class="fas fa-eye"></i>
@@ -326,7 +326,7 @@ class Login extends Component {
                         onKeyDown={(event) => this.handleKeyDown(event)}
                       >
                         {this.state.isShowPassword &&
-                        this.state.isShowPassword == true ? (
+                          this.state.isShowPassword == true ? (
                           <i class="fas fa-eye-slash"></i>
                         ) : (
                           <i class="fas fa-eye"></i>
@@ -363,7 +363,7 @@ class Login extends Component {
                           onKeyDown={(event) => this.handleKeyDown(event)}
                         >
                           {this.state.isShowConfirmPassword &&
-                          this.state.isShowConfirmPassword == true ? (
+                            this.state.isShowConfirmPassword == true ? (
                             <i class="fas fa-eye-slash"></i>
                           ) : (
                             <i class="fas fa-eye"></i>

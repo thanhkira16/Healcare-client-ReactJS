@@ -16,7 +16,7 @@ import "./HomePage.scss";
 
 class HomePage extends Component {
   componentDidMount() {
-    document.title = "VKU Healcare - Nền tảng y tế sức khỏe toàn diện";
+    document.title = "PioEdu -  ONLINE LEARNING SOLUTIONS";
   }
   render() {
     const settings = {

@@ -89,7 +89,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className="col-2 nav-right">
                                 <div className="shop" onClick={this.handleClickBtnShop}>
-                                    <i className="fas fa-shopping-bag"></i>
+                                    <i class="fas fa-graduation-cap"></i>
                                     <FormattedMessage id="homeheader.shop" />
                                 </div>
                                 <div className="dropdown-language" onClick={this.switchLanguage}>
@@ -141,7 +141,7 @@ class HomeHeader extends Component {
                                             onChange={this.handleChange}
                                             required
                                         >
-                                            <option value="">Select specialty</option>
+                                            <option value="">Select Programs</option>
                                             {dataSpecialty.map(specialty => (
                                                 <option key={specialty.id} value={specialty.name}>
                                                     {specialty.name}
@@ -175,7 +175,7 @@ class HomeHeader extends Component {
                                 <div className="banner-right-background"></div>
                             </div>
                         </div>
-                        <SearchCarousel />
+                        {/* <SearchCarousel /> */}
                     </div>
                 )}
             </React.Fragment>
